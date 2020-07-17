@@ -20,7 +20,7 @@
     "copy-code-button",
     "expandable-chapters",
     "chapter-fold",
-    "donate"
+    "-donate"
   ],
   "pluginsConfig": {
     "search-pro": {

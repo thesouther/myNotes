@@ -5,7 +5,7 @@
 ## 论文笔记
 * [RL](./RL/index.md)
 * [MARL](./MARL/index.md)
-    * [遗传模糊树](./MARL/gft.md)
+    * [1.遗传模糊树](./MARL/gft.md)
 
 ## 算法学习
 * [ML](./AL_ML/index.md)
