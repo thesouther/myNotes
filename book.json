@@ -20,7 +20,11 @@
     "copy-code-button",
     "expandable-chapters",
     "chapter-fold",
-    "-donate"
+    "-donate",
+    "-page-treeview",
+    "pageview-count",
+    "auto-scroll-table",
+    "popup"
   ],
   "pluginsConfig": {
     "search-pro": {
@@ -72,6 +76,10 @@
       "button": "赏",
       "alipayText": "支付宝打赏",
       "wechatText": "微信打赏"
+    },
+    "page-treeview": {
+      "minHeaderCount": "2",
+      "minHeaderDeep": "2"
     }
   }
 }
