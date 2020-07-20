@@ -1,5 +1,5 @@
 # Introduction
 
-cc hello, ^_^
+cc hello,
 hhh!
 hhh!hhh
