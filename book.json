@@ -24,9 +24,14 @@
     "-page-treeview",
     "pageview-count",
     "auto-scroll-table",
-    "popup"
+    "popup",
+    "-mathjax-pro",
+    "katex"
   ],
   "pluginsConfig": {
+    "mathjax-pro":{
+      "version": "2.7.7"
+    },
     "search-pro": {
       "cutWordLib": "nodejieba",
       "defineWord": ["Gitbook Use"]

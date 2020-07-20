@@ -1,1 +1,0 @@
-ping www.baidu.com

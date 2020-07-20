@@ -4,6 +4,7 @@
 
 ## 论文笔记
 * [RL](./RL/index.md)
+    * [1.深度神经进化](./RL/deep_neuroecolution.md)
 * [MARL](./MARL/index.md)
     * [1.遗传模糊树](./MARL/gft.md)
     * [2.遗传模糊树训练](./MARL/gft_train.md)
