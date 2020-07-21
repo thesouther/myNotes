@@ -14,3 +14,7 @@
 * [RL](./AL_RL/index.md)
 * [MARL](./AL_MARL/index.md)
 
+## 竞赛
+* [智能博弈挑战赛](./AICombat/index.md)
+    * [Questions](./AICombat/questions.md)
+
