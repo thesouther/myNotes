@@ -14,6 +14,8 @@
 * [ML](./AL_ML/index.md)
 * [RL](./AL_RL/index.md)
 * [MARL](./AL_MARL/index.md)
+* [SC2](./AL_SC2/index.md)
+    * [1.环境安装](./AL_SC2/env_build.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
