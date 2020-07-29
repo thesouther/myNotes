@@ -21,3 +21,7 @@
 * [智能博弈挑战赛](./AICombat/index.md)
     * [Questions](./AICombat/questions.md)
 
+## 问题整理
+* [git](./problems/index.md)
+    * [上传大文件出错](./problems/git1.md)
+
