@@ -49,7 +49,7 @@
       }]
     },
     "editlink": {
-      "base": "https://github.com/thesouther/myNotes/blob/master",
+      "base": "https://github.com/thesouther/myNotes/blob/master/README.md",
       "label": "Edit",
       "multilingual": false
     },
