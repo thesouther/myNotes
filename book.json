@@ -24,7 +24,7 @@
     "-page-treeview",
     "pageview-count",
     "auto-scroll-table",
-    "popup",
+    "-popup",
     "-mathjax-pro",
     "katex"
   ],
