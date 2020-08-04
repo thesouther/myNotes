@@ -13,6 +13,9 @@
 
 ## 算法学习
 * [ML](./AL_ML/index.md)
+    * [1.1 遗传算法-基本原理](./AL_ML/BasicGA.md)
+    * [1.2 遗传算法-自适应策略](./AL_ML/AdaptiveGA.md)
+    * [1.3 遗传算法-精英保留](./AL_ML/ElitistPreservationGA.md)
 * [RL](./AL_RL/index.md)
 * [MARL](./AL_MARL/index.md)
 * [SC2](./AL_SC2/index.md)
