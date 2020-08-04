@@ -18,7 +18,10 @@
     * [1.3 遗传算法-精英保留](./AL_ML/ElitistPreservationGA.md)
 * [RL](./AL_RL/index.md)
     * [1 深度神经进化](./AL_RL/DeepNeuro.md)
+    * [2 遗传模糊树](./AL_RL/GFT.md)
 * [MARL](./AL_MARL/index.md)
+    * [1.1 协作MARL：QMIX](./AL_MARL/QMIX.md)
+    * [1.2 协作MARL：Qatten](./AL_MARL/Qatten.md)
 * [SC2](./AL_SC2/index.md)
     * [1 环境安装](./AL_SC2/env_build.md)
 

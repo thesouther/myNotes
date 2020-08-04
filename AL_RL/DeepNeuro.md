@@ -1,7 +1,10 @@
 # 1 深度神经进化
 
 作者：Ueber AI Lab
-代码：[github](https://github.com/uber-research/deep-neuroevolution)
+
+代码：[github](https://github.com/uber-research/
+deep-neuroevolution)
+
 复现：[github-thesouther](https://github.com/thesouther/GeneticAlgorithm_for_RL/tree/master/GA_Atari)
 
 ## Motivation
