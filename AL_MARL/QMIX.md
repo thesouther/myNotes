@@ -24,6 +24,12 @@
   - 简单地给每个智能体执行一个Q-learning；
 2. DRQN：用RNN替换DQN的CNN，解POMDP问题；
 3. VDN（value decomposition networks）
-  - 
+  - ![](img/2020-08-04-21-51-46.png)
   - 行动策略通过对每个𝑄^𝑖 求ragmax得到；
-  - VDN直接对局部Q函数求和，没有利用状态信息，且是线性表示
+  - VDN直接对局部Q函数求和，没有利用状态信息，且是线性表示。
+
+## QMIX算法
+
+![](img/2020-08-04-21-52-41.png)
+
+![](img/2020-08-04-21-52-49.png)

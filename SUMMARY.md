@@ -10,6 +10,8 @@
     * [1 遗传模糊树](./MARL/gft.md)
     * [2 遗传模糊树训练](./MARL/gft_train.md)
     * [3 Qatten](./MARL/Qatten.md)
+    * [4 QTRAN](./MARL/QTRAN.md)
+    * [5 MAVEN](./MARL/MAVEN.md)
 
 ## 算法学习
 * [ML](./AL_ML/index.md)
