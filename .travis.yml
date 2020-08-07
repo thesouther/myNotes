@@ -12,7 +12,7 @@ notifications:
 
 install:
   - npm install -g gitbook-cli
-  - gitbook install
+  - gitbook install ./
 
 script:
   - gitbook build
