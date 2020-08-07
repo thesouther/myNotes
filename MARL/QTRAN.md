@@ -36,6 +36,8 @@
 
 ### 2.1 因子函数$$[Q_i]$$的条件
 
+$$\pmb{\mu}$$
+
 定义$$\bar{\mu}_i=\argmax_{\mu_i}Q_i(\tau_i, \mu_i)$$表示最优动作，$$\bar{\pmb{\mu}}=[\bar{\mu}_i]_{i=1}^{N}$$；令$$\mathbf{Q}=[Q_i]\in \mathbb{R}^N$$，即$$Q_i, i = 1,...,N$$的列向量。
 
 **定理1** 给出$$[Q_i]$$满足**IGM**的条件。
