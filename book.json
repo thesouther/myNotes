@@ -25,8 +25,8 @@
     "pageview-count",
     "auto-scroll-table",
     "-popup",
-    "mathjax-pro",
-    "-katex"
+    "-mathjax-pro",
+    "katex"
   ],
   "pluginsConfig": {
     "mathjax-pro":{
