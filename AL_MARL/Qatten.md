@@ -1,4 +1,4 @@
-# 1.2 协作MARL：Qatten (Q-value Attention network
+# 1.3 协作MARL：Qatten (Q-value Attention network
 )
 
 ## Motivation
