@@ -20,6 +20,10 @@ QTRAN算法包括三个部分：联合动作值网络、个体动作值网络、
 
 同时论文作者设计了两种QTRAN算法：QTRAN-base和QTRAN-alt。这两种算法的区别在于如何构造非最优动作Q值的转换函数、收敛速度和稳定性。
 
+|![](img/2020-08-16-23-44-36.png)|
+|:-:|
+|Figure 1. QTRAN-base and QTRAN-alt Architecture|
+
 ### 2.1 QTRAN-base
 
 定义$$\bar{\mu}_i=argmax_{\mu_i}Q_i(\tau_i, \mu_i)$$表示最优动作，$$\bar{\mathbf{u}}=[\bar{\mu}_i]_{i=1}^{N}$$；令$$\mathbf{Q}=[Q_i]\in \mathbb{R}^N$$，即$$Q_i, i = 1,...,N$$的列向量。
