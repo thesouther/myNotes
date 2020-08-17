@@ -25,6 +25,7 @@
     * [1.1 协作MARL：QMIX](./AL_MARL/QMIX.md)
     * [1.2 协作MARL：QTRAN](./AL_MARL/QTRAN.md)
     * [1.3 协作MARL：Qatten](./AL_MARL/Qatten.md)
+    * [1.3 协作MARL：MAVEN](./AL_MARL/MAVEN.md)
 * [SC2](./AL_SC2/index.md)
     * [1 环境安装](./AL_SC2/env_build.md)
 
