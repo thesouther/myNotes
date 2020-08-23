@@ -1,4 +1,4 @@
-# 1.3 协作MARL：MAVEN
+# 1.4 协作MARL：MAVEN
 
 首先了解一些概念，Dec-POMDP, centralised training with decentralised execution(CTDE), [QMIX](./QMIX.md), [QTRAN](./QTRAN.md), [IGM](./QTRAN.md)，这些在之前的内容中讲过。
 
