@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 
-## 论文笔记
+## 论文总结与算法实现
 * [RL](./RL/index.md)
     * [1 深度神经进化](./RL/deep_neuroecolution.md)
     * [2 进化策略](./RL/ES.md)
@@ -13,7 +13,7 @@
     * [4 QTRAN](./MARL/QTRAN.md)
     * [5 MAVEN](./MARL/MAVEN.md)
 
-## 算法学习
+## 论文翻译与算法学习
 * [ML](./AL_ML/index.md)
     * [1.1 遗传算法-基本原理](./AL_ML/BasicGA.md)
     * [1.2 遗传算法-自适应策略](./AL_ML/AdaptiveGA.md)
@@ -26,6 +26,7 @@
     * [1.2 协作MARL：QTRAN](./AL_MARL/QTRAN.md)
     * [1.3 协作MARL：Qatten](./AL_MARL/Qatten.md)
     * [1.4 协作MARL：MAVEN](./AL_MARL/MAVEN.md)
+    * [2.1 沟通MARL：近似可分解函数](./AL_MARL/NearlyDecomposableFunc.md)
 * [SC2](./AL_SC2/index.md)
     * [1 环境安装](./AL_SC2/env_build.md)
 
