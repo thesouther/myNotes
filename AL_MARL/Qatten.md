@@ -1,5 +1,6 @@
 # 1.3 协作MARL：Qatten (Q-value Attention network
-)
+
+论文及翻译：[3 Qatten](./paper_MARL/Qatten.md)
 
 ## Motivation
 

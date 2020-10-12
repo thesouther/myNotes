@@ -1,5 +1,7 @@
 # 1.1 协作MARL：QMIX
 
+论文及翻译：[3 Qatten](./paper_MARL/Qatten.md)
+
 ## Motivation
 
 使用集中式学习分布式执行框架，本质还是值函数逼近算法；

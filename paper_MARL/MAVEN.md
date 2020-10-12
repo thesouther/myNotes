@@ -1,6 +1,11 @@
-# 1.4 协作MARL：MAVEN
+# 5 MAVEN
 
-论文及翻译：[MAVEN](./paper_MARL/MAVEN.md)
+MAVEN: 多智能体变分探索
+
+paper：[MAVEN: Multi-Agent Variational Exploration](https://arxiv.org/pdf/1910.07483v1.pdf)
+
+
+同样是基于集中式训练分布式执行的算法
 
 首先了解一些概念，Dec-POMDP, centralised training with decentralised execution(CTDE), [QMIX](./QMIX.md), [QTRAN](./QTRAN.md), [IGM](./QTRAN.md)，这些在之前的内容中讲过。
 
@@ -17,4 +22,3 @@ MAVEN算法思想：关注**在去中心化MARL中不充分的探索引起的问
 - MAVEN：通过引入分层控制隐空间，混合基于值与基于策略的方法。智能体基于值方法，通过共享隐变量（由分层策略控制）限制其行为。因此固定隐变量，每个联合动作值函数可以看作整个episode里的一个联合探索行为模式。
 - 然后，MAVEN最大化trajectories和隐变量之间的互信息，学习上述探索行为的多种集合。
 - 这使得MAVEN可以在遵循表示性限制的同时，实现committed exploration。
-

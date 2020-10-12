@@ -1,6 +1,6 @@
 # 2.进化策略
 
-论文：[Evolution Strategies as a Scalable Alternative to Reinforcement Learning]()
+论文：[Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/pdf/1703.03864.pdf)
 
 中文：进化策略算法
 

@@ -2,18 +2,7 @@
 
 * [Introduction](README.md)
 
-## 论文总结与算法实现
-* [RL](./RL/index.md)
-    * [1 深度神经进化](./RL/deep_neuroecolution.md)
-    * [2 进化策略](./RL/ES.md)
-* [MARL](./MARL/index.md)
-    * [1 遗传模糊树](./MARL/gft.md)
-    * [2 遗传模糊树训练](./MARL/gft_train.md)
-    * [3 Qatten](./MARL/Qatten.md)
-    * [4 QTRAN](./MARL/QTRAN.md)
-    * [5 MAVEN](./MARL/MAVEN.md)
-
-## 论文翻译与算法学习
+## 论文总结与算法学习
 * [ML](./AL_ML/index.md)
     * [1.1 遗传算法-基本原理](./AL_ML/BasicGA.md)
     * [1.2 遗传算法-自适应策略](./AL_ML/AdaptiveGA.md)
@@ -29,6 +18,18 @@
     * [2.1 沟通MARL：近似可分解函数](./AL_MARL/NearlyDecomposableFunc.md)
 * [SC2](./AL_SC2/index.md)
     * [1 环境安装](./AL_SC2/env_build.md)
+
+## 论文翻译
+* [RL](./paper_RL/index.md)
+    * [1 深度神经进化](./paper_RL/deep_neuroecolution.md)
+    * [2 进化策略](./paper_RL/ES.md)
+* [MARL](./paper_MARL/index.md)
+    * [1 遗传模糊树](./paper_MARL/gft.md)
+    * [2 遗传模糊树训练](./paper_MARL/gft_train.md)
+    * [3 Qatten](./paper_MARL/Qatten.md)
+    * [4 QTRAN](./paper_MARL/QTRAN.md)
+    * [5 MAVEN](./paper_MARL/MAVEN.md)
+    * [6 基于交流最小化的近似可分解价值函数](./paper_MARL/NearlyDecomposableFunc.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)

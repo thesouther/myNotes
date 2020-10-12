@@ -7,6 +7,8 @@ deep-neuroevolution)
 
 复现：[github-thesouther](https://github.com/thesouther/GeneticAlgorithm_for_RL/tree/master/GA_Atari)
 
+论文及翻译：[深度神经进化](./paper_RL/deep_neuroecolution.md)
+
 ## Motivation
 
 目前DRL将DNN与RL结合，有一系列成功的任务，

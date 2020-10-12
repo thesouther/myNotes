@@ -1,4 +1,9 @@
 # 1.深度神经进化
+
+深度神经进化：遗传算法是一种训练RL神经网络的有效替代方法
+
+论文：[Deep Neuroevolution: Genetic Algorithms are a Competitive Alternative for Training Deep Neural Networks for Reinforcement Learning](https://arxiv.org/pdf/1712.06567.pdf)
+
 ## 1 前言
 
 ### 1. 介绍
