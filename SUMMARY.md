@@ -40,4 +40,6 @@
 * [git](./problems/index.md)
     * [上传大文件出错](./problems/git1.md)
     * [! [rejected]master -> master (non-fast-forward)](./problems/git2.md)
+* [ubuntu](./problems/index.md)
+    * [ssr环境搭建](./problems/ssr.md)
 
