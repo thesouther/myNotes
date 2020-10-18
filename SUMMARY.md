@@ -31,6 +31,7 @@
     * [5 MAVEN](./paper_MARL/MAVEN.md)
     * [6 基于交流最小化的近似可分解价值函数](./paper_MARL/NearlyDecomposableFunc.md)
     * [7 交流-SchedNet](./paper_MARL/SchedNet.md)
+    * [8 交流-GatedMLAC](./paper_MARL/GatedMLAC.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
