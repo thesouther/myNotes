@@ -1,4 +1,4 @@
-# 通过交流最小化学习近似可分解价值函数
+# 2.1 通过交流最小化学习近似可分解价值函数
 
 论文： [Learning Nearly Decomposable Value Functions Via Communication Minimization](https://openreview.net/pdf?id=HJx-3grYDB)
 
