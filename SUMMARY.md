@@ -33,6 +33,7 @@
     * [2.2 交流-SchedNet](./paper_MARL/SchedNet.md)
     * [2.3 交流-GatedMLAC](./paper_MARL/GatedMLAC.md)
     * [2.4 交流-tarMAC](./paper_MARL/tarMAC.md)
+    * [2.5 交流-commNet](./paper_MARL/commNet.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
