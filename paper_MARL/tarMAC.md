@@ -61,9 +61,13 @@ TarMAC: 有目标的多智能体交流
 
 Critic每回合拿到GRU的state和各个agent的action,并给出Q.使用TD更新, 
 
-| ![](img/2020-10-20-21-25-58.png) |
-| :------------------------------: |
-|                                  |
+
+<table>
+    <tr>
+         <th><img src="img/2020-10-20-21-25-58.png" ></th>
+        <th> (0) </th>
+    </tr>
+</table>
 
 关于为什么不用individual critic,**文章中说是variance,我感觉其实就是会涉及credit assignment.**
 
@@ -75,15 +79,28 @@ Critic每回合拿到GRU的state和各个agent的action,并给出Q.使用TD更�
 
 上述乘积, 用于做value的权重.
 
-| ![](img/2020-10-20-21-31-27.png) |  (1)  |
-| :------------------------------: | :---: |
-|                                  |       |
+<table>
+    <tr>
+         <th><img src="img/2020-10-20-21-31-27.png" ></th>
+        <th> (1) </th>
+    </tr>
+</table>
 
 对于接收端, 每个智能体(j)为其隐状态 $$h_jt+1 $$ 预测一个query向量 $$q_j^{t+1}\in \mathbb{R}^{d_k} $$, 用于计算与所有智能体消息签字的点积值. 然后该值使用 $$1/\sqrt{d_k} $$缩放, 使用一个softmax函数就得到了每个输入消息的注意力权重$$\alpha_{ji}$$. 用其计算时间步t+1时的输入消息,$$c_j^{t+1} $$ .
 
-| ![](img/2020-10-20-21-31-44.png) | ![](img/2020-10-20-22-09-04.png) |
-| :------------------------------: | :------------------------------: |
-|               (2)                |               (3)                |
+<table>
+    <tr>
+         <th><img src="img/2020-10-20-21-31-44.png" ></th>
+        <th> (2) </th>
+    </tr>
+</table>
+
+<table>
+    <tr>
+         <th><img src="img/2020-10-20-22-09-04.png" ></th>
+        <th> (3) </th>
+    </tr>
+</table>
 
 直觉上, 当发送方和接收方分别预测相似的签名和查询向量时，注意权值较高. 公式(2)中包含$$\alpha_{ii}$$, 类似与自注意力机制, 实验发现它可以改进性能.尤其是协作导航任务, 当智能体发现目标时, 它只需要在目标上不动, 其他智能体接受它的消息, 但不必反馈给它消息.
 
@@ -91,9 +108,12 @@ Critic每回合拿到GRU的state和各个agent的action,并给出Q.使用TD更�
 
 **multi-round communication**, 第一回合通信,首先使用聚合消息向量$${c}_j^t $$和内部状态$${h}_j^t $$预测下一个内部状态$${h'}_j^t $$
 
-| ![](img/2020-10-20-22-09-25.png) |  (4)  |
-| :------------------------------: | :---: |
-|                                  |       |
+<table>
+    <tr>
+         <th><img src="img/2020-10-20-22-09-25.png" ></th>
+        <th> (4) </th>
+    </tr>
+</table>
 
 然后, 重新执行公式(1-4), 用新的隐状态$${h'}_j^t $$更新signature, query, value, 直到得到最终聚合消息 $$c_j^{t+1} $$作为下一个时间步的输入.  通信的轮数是超参数.
 
@@ -101,74 +121,9 @@ Critic每回合拿到GRU的state和各个agent的action,并给出Q.使用TD更�
 
 整个框架可微分, 消息向量通过反向传播学习.
 
-<table>
-	<tr>
-	    <th>属性</th>
-	    <th>属性值</th>
-	    <th>描述</th>  
-	</tr >
-	<tr >
-	    <td rowspan="9">type</td>
-	    <td>text</td>
-	    <td>单行文本输入框</td>
-	</tr>
-	<tr>
-	    <td>password</td>
-	    <td>密码输入框</td>
-	</tr>
-	<tr>
-	    <td>radio</td>
-	    <td>单选按钮</td>
-	</tr>
-	<tr>
-	    <td>CheckBox</td>
-	    <td>复选按钮</td>
-	</tr>
-	<tr><td>button</td>
-	    <td>普通按钮</td>
-	</tr>
-	<tr>
-	    <td>submit</td>
-	    <td>提交按钮</td>
-	</tr>
-	<tr>
-	    <td>reset</td>
-	    <td>重置按钮</td>
-	</tr>
-	<tr>
-	    <td>image</td>
-	    <td>图像形式的提交按钮</td>
-	</tr>
-	<tr>
-	    <td >file</td>
-	    <td>文件域</td>
-	</tr>
-	<tr>
-	    <td >name</td>
-	    <td>用户自定义</td>
-	    <td>控件名称</td>
-	</tr>
-	<tr>
-	    <td >value</td>
-	    <td >用户自定义</td>
-	    <td >默认文本值</td>
-	</tr>
-	<tr>
-	    <td >size</td>
-	    <td >正整数</td>
-	    <td >控件在页面中的显示宽度</td>
-	</tr>
-	<tr>
-	    <td >checked</td>
-	    <td >checked</td>
-	    <td >定义选择控件默认被选中项</td>
-	</tr>
-	<tr>
-	    <td >maxlength</td>
-	    <td >正整数</td>
-	    <td >控件允许输入的最多字符</td>
-	</tr>
-</table>
+| ![](img/2020-10-21-15-12-56.png) |
+| :------------------------------: |
+|              fig 2               |
 
 
  
