@@ -5,5 +5,8 @@
 论文:[Learning Attentional Communication for Multi-Agent Cooperation](http://papers.nips.cc/paper/7956-learning-attentional-communication-for-multi-agent-cooperation.pdf)
 
 
-## 1 总述
+## 1. 总述
 
+| ![](img/2020-10-24-15-54-46.png) |
+| :------------------------------: |
+|              fig 1               |
