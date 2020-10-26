@@ -37,6 +37,7 @@
     * [2.6 交流-IC3Net](./paper_MARL/IC3Net.md)
     * [2.7 交流-RIAL_DIAL](./paper_MARL/RIAL_DIAL.md)
     * [2.8 交流-ATOC](./paper_MARL/ATOC.md)
+    * [2.9 交流-I2C](./paper_MARL/I2C.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
