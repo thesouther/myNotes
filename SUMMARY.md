@@ -38,8 +38,16 @@
     * [2.7 交流-RIAL_DIAL](./paper_MARL/RIAL_DIAL.md)
     * [2.8 交流-ATOC](./paper_MARL/ATOC.md)
     * [2.9 交流-I2C](./paper_MARL/I2C.md)
-  * [Meta MARL](./paper_MMARL/index.md)
+* [Meta MARL](./paper_MMARL/index.md)
     * [1.1 LIIR](./paper_MMARL/LIIR.md)
+
+## 名词总结
+* [总述](./glossary/index.md)
+    * [ML](./glossary/ml.md)
+    * [DL](./glossary/dl.md)
+    * [RL](./glossary/rl.md)
+    * [MARL](./glossary/marl.md)
+    * [Meta-RL](./glossary/mrl.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
