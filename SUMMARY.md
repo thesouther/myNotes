@@ -21,8 +21,9 @@
 
 ## 论文翻译
 * [RL](./paper_RL/index.md)
-    * [1 深度神经进化](./paper_RL/deep_neuroecolution.md)
-    * [2 进化策略](./paper_RL/ES.md)
+    * [1.1 深度神经进化](./paper_RL/deep_neuroecolution.md)
+    * [1.2 进化策略](./paper_RL/ES.md)
+    * [2.1 分层强化学习-MAXQ](./paper_RL/MAXQ.md)
 * [MARL](./paper_MARL/index.md)
     * [0.1 遗传模糊树](./paper_MARL/gft.md)
     * [0.2 遗传模糊树训练](./paper_MARL/gft_train.md)
