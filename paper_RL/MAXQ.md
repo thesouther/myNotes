@@ -27,3 +27,14 @@ paper[The MAXQ Method for Hierarchical Reinforcement Learning](http://axon.cs.by
 动作空间(7):North ,South, East, West, Pickup, Putdown, Fillup
 状态空间: 8750
 
+MAXQ graph: MAX节点和Q节点。叶子的MAX节点代表动作空间; 中间的MAX节点代表子任务. 注意导航子任务被其他任务共享.Q节点代表完成任务相应的一个动作.
+
+**Max节点和Q节点之间的区别确保子任务可以被共享和重用**.
+- MAX节点学习上下文无关的任务期望总回报, 例如MaxNavigate(t) 会估计到五个目标点的期望回报.
+- 每个Q节点学习上下文相关的子任务回报, 例如, QNavigateForGet(t)学习的是导航到位置t, 然后完成get任务的累积回报; QNavigateForPut(t)学习的是到达位置t,然后完成Put任务的累积回报.
+- Q节点会问MaxNavigate(t)到达位置t的cost, 并使用该信息计算Q值.
+- 同时, MaxNavigate计算的Q值上下文无关, 并可以被三个父亲节点共享.
+
+| ![](img/2020-11-12-20-02-21.png) |
+| :------------------------------: |
+|              fig 2               |
