@@ -8,6 +8,7 @@ Multi-Agent Reinforcement Learning](http://papers.nips.cc/paper/8691-liir-learni
 ## 总述
 
 传统MARL是在团队视角下最大化奖励函数. 通过一个中央控制器根据全局状态进行控制, 多智能体主要解决通信方案问题.
+
 本文焦点: 当没有通信时, 智能体只根据自己局部观察进行预测, 如何通过全局奖励,让多智能体动作具有多样性.
 
 以前方法:
