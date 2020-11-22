@@ -41,6 +41,7 @@
     * [2.9 交流-I2C](./paper_MARL/I2C.md)
 * [Meta MARL](./paper_MMARL/index.md)
     * [1.1 LIIR](./paper_MMARL/LIIR.md)
+    * [1.2 learning to reinforcement learn](./paper_MMARL/learn_RL.md)
 
 ## 名词总结
 * [总述](./glossary/index.md)
