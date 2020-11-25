@@ -2,7 +2,10 @@
 
 paper: [Learning to Reinforcement Learn](https://arxiv.org/pdf/1611.05763v1.pdf)
 
-**核心思想:**提出元强化学习, 解决RL任务迁移问题, 提高数据利用效率.
+**核心思想:**提出元强化学习, 解决RL任务迁移问题, 提高数据利用效率. 
+
+==**简单的说就是将上一个step的reward，action等信息也输入当前的RNN中进行决策（这里由于是recurrent的关系，可以认为是把之前的所有历史轨迹trajectory（state,action,reward）都输入到神经网络中），这样通过训练神经网络可以使得其自动学习去判断task层面的信息（也就是meta层面的信息），从而加快新task的训练过程。这也就是从RL到Meta RL最基本的变化。**==
+**同时基于episode训练, 每个新的episode训练不同的task, 并重新初始化参数.**
 
 以前工作证明, RNN可以在**完全监督**条件下支持meta-Learning. ==What emerges is a system that is trained using one RL algorithm, but whose recurrent dynamics implement a second, quite separate RL procedure.This second, learned RL algorithm can differ from the original one in arbitrary ways.== 因为该算法是学习到的, 所以它可以在训练域中更好地利用结构信息
 
@@ -40,5 +43,46 @@ meta-learning标准设置: 学习智能体需要面对多个各不相同的任�
 
 ### 1.3 Formalism
 
+令$$\mathcal{D}$$表示(先验的)MDP分布. 本文目的是要展示meta-RL可以学习到基于先验的RL算法, 也就是说它能够在从$$\mathcal{D}$$或其微调的分布中提取的MDPs上表现良好. 
+一个包含RNN的结构良好的智能体, 通过在一系列MDP环境(task)上进行交互式的回合制(episode)训练. 
+- 在新episode的开始阶段, **抽样**得到一个新的MDP任务$$m\sim \mathcal{D}$$和一个当前任务的初始状态, 同时智能体内部状态(其循环单元的激活模块)被重置.  
+- 然后, 智能体执行固定离散步长的动作选择阶段. 在当前episode的每个时间步$$t$$, 智能体在MDP环境 $$m $$中根据历史$$\mathcal{H}_t = \{x_0, a_0, r_0, ..., x_{t-1}, a_{t-1}, r_{t-1}, x_t \} $$数据执行动作 $$a_t\in A $$
+- 网络权重使用最大化所有episode的所有时间步的观察**奖励和**进行训练.
 
+训练步骤之后, 固定智能体策略(权重固定, 但由于输入和循环层的隐藏状态，激活值会变化). 并且在一个从分布$$\mathcal{D}$$及其微调的分布中抽样的MDP集合中进行估计.(**测试模型泛化能力**). 智能体内部状态在评估阶段每个新的episode都重置. 由于智能体学习到的策略是基于历史经验的, 当在新的MDP环境中, 可以调整策略优化任务奖励. 
 
+## 2 实验
+
+关注点:
+- **meta-RL是否可以学会和成熟RL算法一样的自适应的探索-利用的均衡**.
+- **meta-RL是否可以通过利用任务结构来提高学习效率.**
+- **实验目的是用通用的方法验证meta-RL方法.**
+
+实验设置:
+- 四个关注bandit任务, 两个关注MDP问题.
+- 智能体结构:LSTM+soft-max输出离散动作.
+- 环境设置与之前文章一样, 训练和测试使用固定长度的episode, 每个episode包含一个从预定义的任务分布中随机抽样的任务, LSTM隐状态在每个episode都重新初始化. 每一步的输出包含当前步的reward标量和one-hot动作.
+- **所有算法使用Advantage AC框架. 把上一步的reward,动作, 时间步都作为输入.**
+
+在bandit任务中:
+- 使用抽样的任务进行**训练和测试**.
+- 定义了一个**期望累积遗憾(regret)值**, $$R_R(b)=\sum_{t=1}^T \mu^*(b)-\mu_{a_t}(b) $$
+
+| ![](img/2020-11-25-15-12-05.png) |
+| :------------------------------: |
+|              fig 1               |
+
+## 3 总结与评价
+
+Deep meta-RL 包含三个主要部分:
+  1. 使用RL算法训练RNN
+  2. 包含一系列相关任务的训练集
+  3. 网络输入包含前一步的选择的动作和奖励信息.
+
+网络可以学到适应不同任务的结构.从这个意义上说, 学习算法建立了域适应的偏差, 这使得它比一般算法效率更高.
+
+还证明了使用无模型RL算法训练的系统可以模仿基于模型的控制动作. 也就是说网络选择行为的方法反映出一些基于模型或这树搜索的性质.
+
+本文认为deep meta-RL产生了一种学习型RL算法，该算法利用了任务结构的不变性. 结果，当面对千差万别但仍然结构化的环境时, meta-RL似乎会生成RL过程, 该过程占据了无模型RL与基于模型RL之间的灰色区域。
+
+元学习可有调整标量超参数，例如learning rate 或者 softmax inverse temperature.
