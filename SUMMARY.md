@@ -42,6 +42,7 @@
 * [Meta MARL](./paper_MMARL/index.md)
     * [1.1 LIIR](./paper_MMARL/LIIR.md)
     * [1.2 learning to reinforcement learn](./paper_MMARL/learn_RL.md)
+    * [1.3 RL2](./paper_MMARL/RL2.md)
 
 ## 名词总结
 * [总述](./glossary/index.md)
