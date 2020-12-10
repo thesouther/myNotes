@@ -55,7 +55,29 @@ actor对公式(2)使用随机梯度上升,更新随机策略$$\pi_\theta(s)$$的
 - 条件i的意思是, compatible的函数逼近器在随机策略的“特征”中是线性的;
 - 条件ii要求, 参数是根据这些特种估计$$Q^\pi$$的线性回归问题的解. 实际问题中该限制可以放松, 保证TD等算法可以更有效地进行策略评估. 当条件i和ii都满足, 整个算法等价于不使用critic.
 
-### 2.4 off-policy AC
+### 2.4 off-policy AC(offPAC)
+
+用off-policy 评估策略梯度, $$\beta(a|s) \ne \pi_\theta(a|s)$$, 性能函数改为:
+
+
+<table>
+    <tr>
+         <th><img src="img/2020-12-10-22-20-12.png" ></th>
+        <th>  </th>
+    </tr>
+</table>
+
+对其进行微分得:
+
+
+<table>
+    <tr>
+         <th><img src="img/2020-12-10-22-21-15.png" ></th>
+        <th> (4,5) </th>
+    </tr>
+</table>
+
+offPAC 使用off-policy $$\beta(a|s)$$生成trajectory. critic用off-policy TD估计状态值函数$$V^v(s)\approx V^\pi(s)$$.actor使用公式(5)off-policy 随机梯度上升更新策略参数$$\theta$$. actor和critic都使用重要性采样,采样率为$$\frac{\pi_\theta}{\beta_\theta}$$(因为使用策略$$\pi$$选择动作.)
 
 
 ## 讨论
