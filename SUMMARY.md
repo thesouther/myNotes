@@ -52,6 +52,7 @@
     * [RL](./glossary/rl.md)
     * [MARL](./glossary/marl.md)
     * [Meta-RL](./glossary/mrl.md)
+    * [Questions](./glossary/questions.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
