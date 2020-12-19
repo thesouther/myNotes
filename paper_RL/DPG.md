@@ -215,7 +215,7 @@ DPG存在探索性问题, 可能收敛到次优解. 但是如果环境有足够�
 
 **一般上式中第一项用于估计advantage $$A^w(s,a) $$, 第二项$$V^v(s) $$为价值函数.** 
 
-advatage函数可以看作线性逼近器,  <img src="img/2020-12-19-16-05-51.png" height="24px"> , 其中, 特征表示为<img src="img/2020-12-19-16-06-39.png" height="24px">. 注意, 如果由m维动作和n个策略参数, 那么 $$\triangledown _\theta \mu_\theta(s) $$是 $$你\times m $$的Jacobian 矩阵. 所以特征向量和参数向量$$w$$都是$$n\times 1$$的. 该形式的函数逼近器满足Theorem 3的条件1.
+advatage函数可以看作线性逼近器,  <img src="img/2020-12-19-16-05-51.png" height="24px"> , 其中, 特征表示为<img src="img/2020-12-19-16-06-39.png" height="24px">. 注意, 如果由m维动作和n个策略参数, 那么 $$\triangledown _\theta \mu_\theta(s) $$是 $$n\times m $$的Jacobian 矩阵. 所以特征向量和参数向量$$w$$都是$$n\times 1$$的. 该形式的函数逼近器满足Theorem 3的条件1.
 
 当动作空间很大时, 线性逼近器效果不好, 动作值会发散到无穷. 但把它作为local critic也有用. 实践中, 它表示偏离当前策略得local advantage,  <img src="img/2020-12-19-16-15-34.png" height="24px"> 其中, $$\delta $$表示对确定性策略的小偏差. 因此, 线性函数逼近器足以选择actor应该调整其策略参数的方向.
 
