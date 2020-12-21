@@ -22,6 +22,7 @@
 ## 论文翻译
 * [RL](./paper_RL/index.md)
     * [0.1 强化学习-DPG](./paper_RL/DPG.md)
+    * [0.2 强化学习-DDPG](./paper_RL/DDPG.md)
     * [1.1 深度神经进化](./paper_RL/deep_neuroecolution.md)
     * [1.2 进化策略](./paper_RL/ES.md)
     * [2.1 分层强化学习-MAXQ](./paper_RL/MAXQ.md)
@@ -53,6 +54,7 @@
     * [MARL](./glossary/marl.md)
     * [Meta-RL](./glossary/mrl.md)
     * [Questions](./glossary/questions.md)
+    * [Sequences](./glossary/sequences.md)
 
 ## 竞赛
 * [智能博弈挑战赛](./AICombat/index.md)
