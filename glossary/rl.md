@@ -15,7 +15,7 @@
   - Pure Planning. [MBMF](https://sites.google.com/view/mbmf) 算法;
   - Expert Iteration.  [ExIt](https://arxiv.org/abs/1705.08439) algorithm, [AlphaZero](https://arxiv.org/pdf/1712.01815.pdf)
   - 对model-free算法进行数据增强. [MBVE](https://arxiv.org/abs/1803.00101)使用虚构experiences增强真实experiences, [World Models](https://worldmodels.github.io/)使用纯粹虚拟经验进行训练.
-  - Embedding Planning Loops into Policies. 规划算法作为策略的子程序, 然后使用标准model-free算法训练策略. 解决了模型bias带来的问题, 因为如果模型不好, 那就直接忽略.
+  - Embedding Planning Loops into Policies. 规划算法作为策略的子程序, 然后使用标准model-free算法训练策略. 解决了模型bias带来的问题, 因为如果模型不好, 那就直接忽略.  [I2A](https://arxiv.org/abs/1707.06203)
 
 ## 2 RL分类
 
