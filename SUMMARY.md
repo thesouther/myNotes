@@ -66,4 +66,11 @@
     * [! [rejected]master -> master (non-fast-forward)](./problems/git2.md)
 * [ubuntu](./problems/index.md)
     * [ssr环境搭建](./problems/ssr.md)
+    * [ubuntu自动更新导致nvidia驱动不能用](./problems/ubuntu_update.md)
+    * [ubuntu删除系统内核](./problems/ubuntu_del_core.md)
+* [Windows](./problems/index.md)
+    * [Windows安装gym box2d不能用](./problems/windows_gym_box2d.md)
+* [Python](./problems/index.md)
+    * [ModuleNotFoundError: No module named 'pip._internal'](./problems/pip_removed.md)
+
 

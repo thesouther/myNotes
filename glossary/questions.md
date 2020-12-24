@@ -4,4 +4,5 @@
 3. DDPG->TD3->SAC, 使用off-policy, 这些算法样本效率高, 但是不稳定.
 4. 强化学习是什么? 
    RL研究通过试错法对智能体进行训练, 通过奖励信号引导智能体, 使其可以重复执行有用的动作, 放弃无用的动作.
-5. 
+5. **为什么Q-learning不稳定**? 
+   [这篇论文](http://web.mit.edu/jnt/www/Papers/J063-97-bvr-td.pdf)还有suttonRLbook11.3节讨论了, function approximation, bootstrapping, off-policy data, 这三者结合造成了值函数学习算法的不稳定性.
