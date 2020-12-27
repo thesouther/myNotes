@@ -7,7 +7,7 @@
     * [1.1 遗传算法-基本原理](./AL_ML/BasicGA.md)
     * [1.2 遗传算法-自适应策略](./AL_ML/AdaptiveGA.md)
     * [1.3 遗传算法-精英保留](./AL_ML/ElitistPreservationGA.md)
-* [RL](./AL_RL/index.md)
+* [RL算法](./AL_RL/index.md)
     * [1 深度神经进化](./AL_RL/DeepNeuro.md)
     * [2 遗传模糊树](./AL_RL/GFT.md)
 * [MARL](./AL_MARL/index.md)
