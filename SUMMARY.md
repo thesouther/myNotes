@@ -10,6 +10,8 @@
 * [RL算法](./AL_RL/index.md)
     * [1 深度神经进化](./AL_RL/DeepNeuro.md)
     * [2 遗传模糊树](./AL_RL/GFT.md)
+* [RL基础](./AL_RL/index.md)
+    * [1 深度神经进化](./AL_RL/DeepNeuro.md)
 * [MARL](./AL_MARL/index.md)
     * [1.1 协作MARL：QMIX](./AL_MARL/QMIX.md)
     * [1.2 协作MARL：QTRAN](./AL_MARL/QTRAN.md)
