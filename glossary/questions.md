@@ -28,5 +28,5 @@
 12. 
 13. 
 14. 
-15. 
-16. 
+15. 下一步整理, RL基本概念spinningup
+16. 下一步即将整理: PG-PPO https://zhuanlan.zhihu.com/p/43114711
