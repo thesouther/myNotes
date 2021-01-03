@@ -1,4 +1,4 @@
-# 3.6 游戏 AI-绝悟 2-NIPS
+# 3.6 游戏 AI-绝悟2(5v5)-NIPS
 
 paper:[Towards Playing Full MOBA Games with Deep Reinforcement Learning](https://arxiv.org/abs/2011.12692)
 

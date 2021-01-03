@@ -1,4 +1,4 @@
-# 3.5 游戏 AI-绝悟 1-NIPS
+# 3.5 游戏 AI-绝悟-SOLO-NIPS
 
 paper: [Mastering Complex Control in MOBA Games with Deep Reinforcement Learning](https://arxiv.org/abs/1912.09729)
 
