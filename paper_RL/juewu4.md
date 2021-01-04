@@ -86,15 +86,84 @@ PUCT包含四个过程:
 
 其中, 均值$$Q(s_t)=W(s_t)/C(s_t)$$. $$s_{t, a}$$表示志雄动作a之后的新动作, $$s_{t, a} := s_{t+1}$$. 对于并行搜索, 应该增加所选节点的虚拟损失, 以避免不同的线程搜索树的同一分支: <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_54_52.png"></span>, 其中$$c_{vl}$$是虚拟损失的超参数. $$c_{puct}$$是balancing hyperparameter.
 
-**Evaluation**. 当算法到达叶子节点, 
+|<img src="img/2021_01_04_22_20_52.png">|
+|:-:|
+|<img src="img/2021_01_04_22_21_33.png"> |
 
-**Expansion**.
+**Evaluation**. 当算法到达叶子节点, 算法停止选择过程进入Evaluation过程. 通过策略和值网络推断得到预测的策略$$\pi(\cdot|s_T)$$和值$$f_\theta(s)$$.
+围棋结束的时候有明确输赢. 但是drafting过程只是选出了英雄组合. 这里用胜率预测器$$\phi(s)$$预测的获胜率, 并将其作为估计值.
+注意, 上面只在最后一轮替换值, 为了考虑长期信息. 但是每一轮都会用胜率预测器预测胜率.
 
-**Back-propagation**.
+**Expansion**. 在叶子节点, 首先去掉所有不合法动作, 并重新正则化策略向量; 
+然后根据新的策略向量$$\pi(\cdot|s_T)$$, 对每一个合法动作生成一个新节点$$n(s_{T+1})$$; 
+除了 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_04_22_12_23.png"></span> , 节点内其他统计值都设为0.
+
+**Back-propagation**. 从当前叶子节点$$n(s_T)$$回溯到根节点, 更新路径上的节点值. $$C(s) = C(s) + 1, \  VL(s) = VL(s) − c_{vl}, \ Q(s) = W(s)/C(s)$$.
+对于值更新, 一般使用$$W(s) = W(s) + v(s_T)$$, 但是在多轮博弈里, 前几轮的节点会影响会面回合的节点. 因此本文设计了一个long-term value 机制, 在下面 **Long-term Value Propagation**部分介绍.
 
 #### 3) Policy and Value Network Training.
 
+网络用统一的结构, 输出为value和oracle策略. 用同一组参数同时预测$$v_\theta(s), p_\theta(s)$$. 在训练的时候, 看作是监督学习, 总的损失函数为MSE和CE损失的和:
+
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100px; ">
+<p>(3)</p>
+</div>
+<div style="float: right; width:80%; height:100px; ">
+<img src="img/2021_01_04_22_38_00.png">
+</div>
+</div>
+
+其中, $$\pi$$是图3中MCTS返回的概率. $$c_p$$是L2惩罚常数, $$z$$是多轮游戏的目标输出.
+
+最后因为胜率预测器给出了胜率$$\phi(s)\in [0, 1]$$, 可以映射到[-1, 1]之间作为奖励信号:
+
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100px; ">
+<p>(4)</p>
+</div>
+<div style="float: right; width:80%; height:100px; ">
+<img src="img/2021_01_04_22_41_43.png">
+</div>
+</div>
+
+其中, $$z_d$$表示第d轮变换后的胜率. 由于多轮选择中, 已经选择的英雄不能再选了, 所以z得好好设计, 如下一部分所示.
+
 #### 4) Long-term Value Propagation.
+
+前几轮的选择会影响后面选择. 直觉方法是把前面的输出加起来作为当前步的值. 在long-term value propagation中有两个cases:
+
+**(1) For the Back-propagation step in MCTS**. 节点更新的过程为:
+
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100px; ">
+<p>(5)</p>
+</div>
+<div style="float: right; width:80%; height:100px; ">
+<img src="img/2021_01_04_22_50_35.png">
+</div>
+</div>
+
+其中$$z_i$$为第i论的转换后胜率. 前两项分别为当前节点值和叶子节点值. 如图4所示. $$v(s^D_T)$$只关注第D轮及以后的value. 因此上式第三项的求和表示了第d轮到D-1轮的动作的影响.
+
+**(2) For the target label of the value network**. 第d轮的时间步的target label设计为
+
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100px; ">
+<p>(6)</p>
+</div>
+<div style="float: right; width:80%; height:100px; ">
+<img src="img/2021_01_04_22_56_19.png">
+</div>
+</div>
+
+上式的意思是, 第d轮某一步的ground-truth值与当前和以后的轮中有关. 同一回合中同一玩家的每个步骤都具有相同的目标值. 同一轮中不同的时间步用同一个标签.
+
+|<img src="img/2021_01_04_22_59_49.png">|
+|:-:|
+|Fig. 4: Value propagation |
+
+图4中注意玩家1和2的back-propagation值符号相反.
 
 #### 5) Network Structure and State Reconstruction.
 
@@ -102,4 +171,4 @@ PUCT包含四个过程:
 
 ## 相关论文
 
-* 使用MCTS选择英雄. <a id="DraftArtist" href="http://web.cs.ucla.edu/~yzsun/papers/2018_recsys_drafting.pdf"> The art of drafting: a team-oriented hero recommendation system for multiplayer online battle arena games</a> 
+* 使用MCTS选择英雄. <a id="DraftArtist" href="http://web.cs.ucla.edu/~yzsun/papers/2018_recsys_drafting.pdf"> The art of drafting: a team-oriented hero recommendation system for multiplayer online battle arena games</a> .
