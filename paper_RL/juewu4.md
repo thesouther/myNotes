@@ -84,7 +84,7 @@ PUCT包含四个过程:
 </div>
 </div>
 
-其中, 均值$$Q(s_t)=W(s_t)/C(s_t)$$. $$s_{t, a}$$表示志雄动作a之后的新动作, $$s_{t, a} := s_{t+1}$$. 对于并行搜索, 应该增加所选节点的虚拟损失, 以避免不同的线程搜索树的同一分支: <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_54_52.png"></span>, 其中$$c_{vl}$$是虚拟损失的超参数. $$c_{puct}$$是balancing hyperparameter.
+其中, 均值$$Q(s_t)=W(s_t)/C(s_t)$$. $$s_{t, a}$$表示执行动作a之后的新动作, $$s_{t, a} := s_{t+1}$$. 对于并行搜索, 应该增加所选节点的虚拟损失, 以避免不同的线程搜索树的同一分支: <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_54_52.png"></span>, 其中$$c_{vl}$$是虚拟损失的超参数. $$c_{puct}$$是balancing hyperparameter.
 
 |<img src="img/2021_01_04_22_20_52.png">|
 |:-:|
@@ -167,8 +167,67 @@ PUCT包含四个过程:
 
 #### 5) Network Structure and State Reconstruction.
 
-### 2.2. 胜率预测器
+本multi-round draft game中, 状态是$$L\times D$$的向量, 为了使训练更高效, 需要重建状态结构.
+
+|<img src="img/2021_01_07_20_35_54.png">|
+|:-:|
+|Fig. 5: State vector configuration. |
+
+重构后的状态信息包括三部分: 当前draft, 历史draft, 辅助信息, 这里使用的是英雄索引.
+
+网络结构:3层MLP如图6(b)所示. 输入状态向量, 输出两个头: FC+sotmax的策略头输出动作概率; FC+tanh的值函数输出[-1, 1].
+
+|<img src="img/2021_01_07_20_46_53.png">|
+|:-:|
+|Fig. 6: Network Architecture for (a) the winning rate predictor and (b) the policy and value network. |
+
+### 2.3. 胜率预测器
+
+胜率预测器使用比赛数据训练阵容的胜率. 输入是10个英雄的索引, 输入3层FC+sigmoid, 输出camp1视角的胜率值.
+
+## 3. 实验
+
+### 3.1. 胜率预测器
+
+数据集: 训练胜率预测器的数据包括人类比赛数据((3000万局, 共95个英雄)), 还有JueWu-5v5自博弈的数据(3000万局, 共95个英雄). 表现如图7.
+
+|<img src="img/2021_01_07_21_07_02.png">|
+|:-:|
+|fig7, 8 胜率预测器在AI和人类比赛数据集上的预测表现 |
+
+### 3.2. 实现细节
+
+训练:2400CPU+单GPU, minibatch size=400; Adam优化器lr=0.0001, $$c_{vl}=3, c_{puct}=1, \tau=1, c_p=0.0001$$.
+
+single-round game: 40万局比赛(400万个样本), 对每个MCTS做3200次迭代. 用2小时loss收敛.
+
+3-round game:40万局比赛(1200万个样本), 对每个MCTS做6400次迭代. 用24小时loss收敛.
+
+5-round game:30万局比赛(1500万个样本), 对每个MCTS做9600次迭代. 用32小时loss收敛.
+
+### 3.3. 测试细节
+
+JueWuDraft与DraftArtist(纯MCTS方法), Highest winning rate (HWR), Random (RD)对比.
+
+|<img src="img/2021_01_07_21_22_59.png">|
+|:-:|
+| 测试结果  |
+
+平均选英雄的处理时间, 人类玩家是30秒.
+|<img src="img/2021_01_07_21_24_33.png">|
+|:-:|
+|TABLE VII: Average process time of picking a hero for all methods (in seconds). |
+
+消融实验
+
+|<img src="img/2021_01_07_21_26_46.png">|
+|:-:|
+|Fig. 9: Ablation study for key components. These experiments use a specific setup: 3-round game on Human Dataset, taking HWR as a comparison method. |
 
 ## 相关论文
 
 * 使用MCTS选择英雄. <a id="DraftArtist" href="http://web.cs.ucla.edu/~yzsun/papers/2018_recsys_drafting.pdf"> The art of drafting: a team-oriented hero recommendation system for multiplayer online battle arena games</a> .
+
+## 讨论
+
+如何考虑长时的决策.
