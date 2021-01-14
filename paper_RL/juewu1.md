@@ -1,10 +1,10 @@
-# 3.5 游戏 AI-绝悟-SOLO-NIPS
+# 3.5 游戏 AI-绝悟-SOLO-AAAI
 
 paper: [Mastering Complex Control in MOBA Games with Deep Reinforcement Learning](https://arxiv.org/abs/1912.09729)
 
 核心: MOBA 游戏的动作空间和状态空间都巨大, 绝悟从系统和算法层面进行解决.
 
-* 系统层面: 通过低耦合性和高可扩展性架构进行高效探索.
+* 系统层面: 通过低耦合性和高可扩展性架构进行**高效探索.**
 * 算法层面: 结合控制依赖解耦, 动作掩码, 目标 attention, dual-clip PPO 等算法(control dependency decoupling, action mask, target attention, and dualclip PPO, ), 使用 AC 架构进行高效训练.
 
 ## 1. 前言
@@ -38,7 +38,7 @@ MOBA 1v1 是 RTS(real-time strategy)游戏, 复杂度比围棋高几个量级,
 
 ## 2 系统设计
 
-首先, 复杂游戏中使用随机梯度方差很大, 要使用大 batch 的数据加速训练. 所以本文使用松耦合, 可扩展性架构并行化使用数据. 系统分为四部分: RL lerner, AI server, 调度模块(Dispatch Module), 记忆池(Memory Pool).
+首先, 复杂游戏中使用**随机梯度方差很大, 要使用大 batch 的数据加速训练**. 所以本文使用松耦合, 可扩展性架构并行化使用数据. 系统分为四部分: RL lerner, AI server, 调度模块(Dispatch Module), 记忆池(Memory Pool).
 
 |  ![](img/2020_12_28_23_09_32.png)   |
 | :---------------------------------: |
@@ -70,7 +70,7 @@ MOBA 1v1 是 RTS(real-time strategy)游戏, 复杂度比围棋高几个量级,
 1. **状态编码部分**, 图像特征($$f_i \times conv \rightarrow h_i$$), 向量特征($$f_u\times [FC/ReLu] \rightarrow h_u$$), 可观察的游戏状态信息($$f_g \times [FC/ReLu] \rightarrow h_g$$).
 
    - 之后$$f_u$$被分成两个部分: 实体表示和 attention 的 key(the representation of the unit and the attention keys of our target.)
-   - 处理不同数量的实体, 同一类型的实体被 max-pooling 到一个固定长度的特征向量.
+   - 处理不同数量的实体, 同一类型的实体被 max-pooling 到一个**固定长度的特征向量**.
 
 2. **LSTM 部分**, 把$$h_i, h_u, h_g$$拼接到一起, 表示游戏 state 观察. 输入到一个 LSTM, 考虑进时间信息, 得到最终表示$$h_{HTML}$$.再输入到一个 FC 层, 预测动作$$a$$.
 3. **target attention 机制**, 用于预测动作$$a$$的目标$$t$$, 该部分把$$h_{HTML}$$经过 FC 的输出作为 query, 拼接后的实体信息作为 key, $$h_{keys}$$, 计算公式为

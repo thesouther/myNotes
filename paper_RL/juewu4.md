@@ -10,7 +10,7 @@ paper: [Which Heroes to Pick? Learning to Draft in MOBA Games with Neural Networ
 
 用一个策略网络和值网络补充MCTS过程. 策略网络用来抽样选择动作(选择英雄); 值网络用来直接预测当前状态的值, 舍弃随机执行获得reward的步骤; 另外由于选完英雄游戏并没有结束, 所以使用一个单独的网络预测胜率, 该胜率作为reward进行MCTS的回溯过程和训练值网络.
 
-另外, 当前回合的阵容会影响后面回合的效果(每个英雄在整个过程中只能用一次), 所以本文把drafting过程设计为多轮组合博弈问题, 并设计了一个长期的价值机制, 在考虑当前状态的价值是考虑后面回合的影响.
+另外, 当前回合的阵容会影响后面回合的效果(每个英雄在整个过程中只能用一次), 所以本文把drafting过程设计为多轮组合博弈问题, 并设计了一个长期的价值机制, 在考虑当前状态的价值时考虑后面回合的影响.
 
 ## 1. 相关工作
 
@@ -56,7 +56,7 @@ paper: [Which Heroes to Pick? Learning to Draft in MOBA Games with Neural Networ
 
    - data sampler, 由2个玩家和1个gamecore组成, 游戏核心通过模拟比赛生成样本; 
    - samples pool, 样本存储到样本池进行训练; 
-   - neural network trainer, 使用监督学习训练策略网络和值网络.
+   - neural network trainer, 使用**监督学习**训练策略网络和值网络.
    - model pool, 上一步训练好的模型传输到模型池, 模型池将训练好的模型同步到数据采样器, 用于继续生成数据.
 
 #### 2)Parallel MCTS with Deep Neural Networks. 

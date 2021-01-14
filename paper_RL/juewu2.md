@@ -129,7 +129,7 @@ AC 架构+ off-policy 训练.
 
 本文使用 MCTS 方法. MCTS 用来估计每种组合的长期值, 选择最大值的英雄. 本文使用 UCT(Upper Confidence bounds applied to Trees)版本. 在选择时, 迭代构建搜索树, 每个结点代表状态(已经选择的英雄), 边代表动作(选择哪个英雄).
 
-UCT 包含四个步骤:selection, expansion, simulation, backpropagation, 其中 simulation 步骤最费时间, 要随机执行动作获取 reward 进行回传, 为了加速, 本文使用 value network 预测当前状态的值(类似 AlphaGo Zero). 训练数据仍然通过蒙特卡洛模拟过程得到的. 在训练值网络时, 仍然要模拟到 terminal 状态. 注意, 对于棋类游戏, 终止状态是分出输赢, 而 drafting 过程的终止状态却不是游戏结束, 所以不能得到游戏输赢结果, 所以, 
+UCT 包含四个步骤:selection, expansion, simulation, backpropagation, 其中 simulation 步骤最费时间, 要随机执行动作获取 reward 进行回传, 为了加速, 本文使用 value network 预测当前状态的值(类似 AlphaGo Zero). 训练数据仍然通过蒙特卡洛模拟过程得到的. **在训练值网络时, 仍然要模拟到 terminal 状态**. 注意, 对于棋类游戏, 终止状态是分出输赢, 而 drafting 过程的终止状态却不是游戏结束, 所以不能得到游戏输赢结果, 所以, 
 
 * 首先用 3.3 节训练的 RL 模型通过 self-play 建立比赛数据.
 * 然后, 用神经网络训练每个阵容的胜率. 预测的终止状态胜率作为监督信号训练值网络.
@@ -152,7 +152,7 @@ UCT 包含四个步骤:selection, expansion, simulation, backpropagation, 其中
 * RL 模型:
 
   + 每个 GPU 的 mini-batch size 是 8192.
-  + 用了 9227 个标量特征(可观察实体属性和游戏内部统计数据), 6 通道的空间特征(6*17*17).
+  + 用了 9227 个标量特征(可观察实体属性和游戏内部统计数据), 6 通道的空间特征(6\*17\*17).
   + 每个 teacher 模型有 900 万个参数, 最终模型有 1700 万个参数, . LSTM, 所有模型 time-step=16, unit-size(teacher 512, final models 1024).
   + 对于 teacher 模型, 使用 half resource unit 训练, 因为其 unit-size 相对较小.
   + 优化使用 Adam, 初始 lr=0.0001, 
@@ -257,4 +257,4 @@ multi-teacher policy distillation. [策略蒸馏方法](https://arxiv.org/pdf/15
 
 应该是用单智能体方法训练的, 每个智能体都用一个 PPO 训练.
 
-注意, death 也是+1 的奖励, 可能是为了鼓励对抗.
+注意, kill 也是+1 的奖励, 可能是为了鼓励对抗.

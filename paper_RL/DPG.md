@@ -61,7 +61,7 @@ actor对公式(2)使用随机梯度上升, 更新随机策略$$\pi_\theta(s)$$�
 |              fig 1               |
 
 * 条件i的意思是, compatible的函数逼近器在随机策略的"特征"中是线性的; 
-* 条件ii要求, 参数是根据这些特种估计$$Q^\pi$$的线性回归问题的解. 实际问题中该限制可以放松, 保证TD等算法可以更有效地进行策略评估. 当条件i和ii都满足, 整个算法等价于不使用critic.
+* 条件ii要求, 参数是根据这些特征估计$$Q^\pi$$的线性回归问题的解. 实际问题中该限制可以放松, 保证TD等算法可以更有效地进行策略评估. 当条件i和ii都满足, 整个算法等价于不使用critic.
 
 ### 2.4 off-policy AC(offPAC)
 
@@ -125,13 +125,9 @@ model-free RL大多基于**广义策略迭代**: 交替进行策略评估与策�
 确定性证明:
 
 <table>
-
-``` html
 <tr>
-    <th><img src="img/2020-12-19-13-36-07.png"></th>
+<th><img src="img/2020-12-19-13-36-07.png"></th>
 </tr>
-```
-
 </table>
 
 ### 3.3 SPG的极限情况
@@ -190,7 +186,7 @@ DPG存在探索性问题, 可能收敛到次优解. 但是如果环境有足够�
 </tr>
 </table>
 
-在随机off-policy AC算法中, 对actor和critic都使用重要性采样. 在DPG-AC中, 因为DPG消除了在行动上的积分, 所有actor可以不用重要性采样, 同时使用Q-learning算法, 可以避免对critic使用重要性采样.
+在随机off-policy AC算法中, 对actor和critic都使用重要性采样. **在DPG-AC中, 因为DPG消除了在行动上的积分, 所有actor可以不用重要性采样, 同时使用Q-learning算法, 可以避免对critic使用重要性采样.**
 
 ### 4.3. Compatible Function Approximation
 
@@ -216,7 +212,7 @@ DPG存在探索性问题, 可能收敛到次优解. 但是如果环境有足够�
 
 advatage函数可以看作线性逼近器, <img src="img/2020-12-19-16-05-51.png" height="24px"> , 其中, 特征表示为<img src="img/2020-12-19-16-06-39.png" height="24px">. 注意, 如果由m维动作和n个策略参数, 那么 $$\triangledown _\theta \mu_\theta(s) $$是 $$n\times m $$的Jacobian 矩阵. 所以特征向量和参数向量$$w$$都是$$n\times 1$$的. 该形式的函数逼近器满足Theorem 3的条件1.
 
-当动作空间很大时, 线性逼近器效果不好, 动作值会发散到无穷. 但把它作为local critic也有用. 实践中, 它表示偏离当前策略得local advantage, <img src="img/2020-12-19-16-15-34.png" height="24px"> 其中, $$\delta $$表示对确定性策略的小偏差. 因此, 线性函数逼近器足以选择actor应该调整其策略参数的方向.
+当动作空间很大时, 线性逼近器效果不好, 动作值会发散到无穷. 但把它作为local critic也有用. 实践中, 它表示偏离当前策略的local advantage, <img src="img/2020-12-19-16-15-34.png" height="24px"> 其中, $$\delta $$表示对确定性策略的小偏差. 因此, 线性函数逼近器足以选择actor应该调整其策略参数的方向.
 
 为了满足条件2, 需要找到最小化真实梯度和$$Q^w$$梯度之间MSE的 $$w $$. 该问题可以看作"feature" $$\phi(s, a)$$和"target" $$\triangledown_a Q^\mu (s, a)|_{a=\mu_\theta(s)}$$线性回归问题. 即, 策略特征用于在s预测真实梯度$$\triangledown_a Q^\mu (s, a)$$. 但是对真是梯度进行无偏采样很难. 实践中, 使用线性逼近器  <img src="img/2020_12_19_16_27_33.png" height="24px"> 满足条件1, 同时通过标准策略估计方法(例如SARSA或Q-learning或off-PAC)学习 $$w $$, 而不用满足条件2. 最后, 策略估计问题将会找到一个$$Q^w \approx Q^\mu$$, 同时近似满足条件  <img src="img/2020_12_19_16_32_30.png" height="24px">. 
 
