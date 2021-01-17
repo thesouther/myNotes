@@ -8,7 +8,8 @@ paper: [Mastering the game of Go with deep neural networks and tree search](http
 2. 存在降低树搜索复杂度的方法: 1)通过状态估计减少搜索深度; 2)通过行动策略抽样减少搜索的宽度. alphaGo也是从这两方面想办法, 使用了MCTS算法.
 3. MCTS算法思想: 通过MC展开计算状态值. 经过模拟对战, 树越来越大,估计值也越来越准, 在搜索时选择动作的策略也可以通过选择价值高的动作得到提升.最终策略和值函数都会收敛到最优.
 4. MCTS方法本质是两次近似. <span style="display:inline-block; height: 24px;"><img src="img/2021_01_16_22_47_12.png"></span>.先用MC模拟近似模拟策略的值, 然后用模拟策略近似minimax optimal actions.
-5. alphaGo使用value network和policy network减少MCTS树的宽度和深度.  
+5. alphaGo使用value network和policy network减少MCTS树的宽度和深度. 
+6. 策略网络本质是一个policy-gradient reinforcement learning方法.
 
 ## 1. 整体结构
 
