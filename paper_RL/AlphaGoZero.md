@@ -38,7 +38,7 @@ paper:[Mastering the game of Go without human knowledge](https://www.gwern.net/d
 **网络训练:** 
 
 1. 随机初始化网络参数$$\theta_0$$, 之后每一次迭代$$i\ge 1$$都通过自博弈生成自博弈游戏.
-2. 在每个时间步, 使用前一次迭代的圣经网络参数$$f_{\theta_{i-1}}$$执行MCTS搜索 $$\pi_t=\alpha_{\theta_{i-1}}(s_t)$$.从中抽样动作执行.
+2. 在每个时间步, 使用前一次迭代的神经网络参数$$f_{\theta_{i-1}}$$执行MCTS搜索 $$\pi_t=\alpha_{\theta_{i-1}}(s_t)$$.从中抽样动作执行.
 3. 如此迭代直到终止状态得到奖励, $$r_T\in \{-1,+1\}$$,终止状态包括分出胜负, 搜索的值函数小于某个阈值(提前认输), 或者达到最大步长.
 4. 每个时间步存储训练数据, $$(s_t, \pi_t, z_t)$$, 其中$$z_t=\pm r_T$$.
 5. 最后, 网络从上一次迭代生成的所有时间步的数据$$(s,\pi,z)$$抽样进行训练. loss函数为MSE+cross-entropy
