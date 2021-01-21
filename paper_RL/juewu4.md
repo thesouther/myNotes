@@ -98,7 +98,7 @@ PUCT包含四个过程:
 然后根据新的策略向量$$\pi(\cdot|s_T)$$, 对每一个合法动作生成一个新节点$$n(s_{T+1})$$; 
 除了 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_04_22_12_23.png"></span> , 节点内其他统计值都设为0.
 
-**Back-propagation**. 从当前叶子节点$$n(s_T)$$回溯到根节点, 更新路径上的节点值. $$C(s) = C(s) + 1, \  VL(s) = VL(s) − c_{vl}, \ Q(s) = W(s)/C(s)$$.
+**Back-propagation**. 从当前叶子节点$$n(s_T)$$回溯到根节点, 更新路径上的节点值. $$C(s) = C(s) + 1, \  VL(s) = VL(s) - c_{vl}, \ Q(s) = W(s)/C(s)$$.
 对于值更新, 一般使用$$W(s) = W(s) + v(s_T)$$, 但是在多轮博弈里, 前几轮的节点会影响会面回合的节点. 因此本文设计了一个long-term value 机制, 在下面 **Long-term Value Propagation**部分介绍.
 
 #### 3) Policy and Value Network Training.
