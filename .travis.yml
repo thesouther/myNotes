@@ -10,10 +10,10 @@ notifications:
     on_success: change
     on_failure: always
 
-# install:
-#   - npm install -g gitbook-cli
-#   - npm install mathjax@2.7.7
-#   - gitbook install ./ 
+install:
+  - npm install -g gitbook-cli
+  - npm install mathjax@2.7.7
+  - gitbook install ./ 
 
 script:
   - gitbook build
