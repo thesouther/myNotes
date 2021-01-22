@@ -75,11 +75,11 @@ PUCT包含四个过程:
 
 **Selection**. 从当前状态根节点开始, 通过如下公式(1, 2)选择动作, 直到叶子节点.
 
-<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
-<div style="float: right; width:15%; height:100px; ">
+<div style="width: 100%; height:200px; line-height:200px; text-align: center; ">
+<div style="float: right; width:15%; height:200px; ">
 <p>(1, 2)</p>
 </div>
-<div style="float: right; width:80%; height:100px; ">
+<div style="float: right; width:80%; height:200px; ">
 <img src="img/2021_01_03_22_45_08.png">
 </div>
 </div>

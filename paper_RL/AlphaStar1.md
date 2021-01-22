@@ -8,15 +8,15 @@ paper:[Grandmaster level in StarCraft II using multi-agent reinforcement learnin
 
 * 群体博弈 -> League Learning
 * 不完全信息 -> LSTM
-* 长期规划/回报稀疏 -> TD(λ) & UGPO: 
+* 长期规划/回报稀疏 -> off-policy -> TD($$\lambda$$), clipped importance sampling (V-trace), self-imitation algorithm (UPGO).
 * 实时控制(APM有限值)-> Monitoring layer
 * 超大状态空间 -> self-attention & scatter connection
-* 超大动作空间 -> auto-regressive policy
+* 超大动作空间 -> auto-regressive policy, pointer network
 
 **算法层面**
 
-* 自博弈循环 ->PFSP: 自博弈训练会出现环(A打败B, B打败C, C打败A).
-* 自博弈偏移 ->baseline condition (z): 纯自博弈学习到的策略可能不能有效对抗人类策略.
+* 自博弈循环, (A打败B, B打败C, C打败A). ->PFSP(prioritized fictitious self-playprioritized fictitious self-play), 得到好的对手.
+* 自博弈偏移, 纯自博弈学习到的策略可能不能有效对抗人类策略. -> 加入人类数据设计的伪奖励; 
 
 整个控制过程如图1所示
 
@@ -35,7 +35,7 @@ paper:[Grandmaster level in StarCraft II using multi-agent reinforcement learnin
 
    1. 输入: LSTM输出的历史观测信息, z称为statistic vector. 从代码来看应该是从不同人类玩家历史数据中抽取出来的建造顺序, 以及单位、建筑、升级的顺序等信息.
    2. 从结果分析可以看出, 加入观测的对手信息效果提升明显.
-   3. Baseline feature意思应该是以人类数据为基础学习.
+   3. Baseline feature意思应该是对手信息.
 
 3. 策略网络: 只输入小地图, 不看主屏幕.
 
@@ -103,6 +103,7 @@ AlphaStar根据**小地图数据 $$o_t$$ 和建造操作数据$$z_t$$行学习, 
 ### 2.3 联盟学习(群强化学习)
 
 整个训练过程如图4所示
+
 |<img src="img/2021_01_18_16_11_13.png">|
 |:-:|
 |fig 6. 联盟学习训练过程 |
@@ -222,7 +223,7 @@ UPGO是策略更新的一种方法, 在该方法中, 策略更新的方向为
 
 其中
 
-<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="width: 100%; height:200px; line-height:200px; text-align: center; ">
 <div style="float: right; width:15%; height:100%; ">
 <p>(5)</p>
 </div>
