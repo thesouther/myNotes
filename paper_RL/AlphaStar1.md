@@ -9,7 +9,7 @@ paper:[Grandmaster level in StarCraft II using multi-agent reinforcement learnin
 * 群体博弈 -> League Learning
 * 不完全信息 -> LSTM
 * 长期规划/回报稀疏 -> off-policy -> TD($$\lambda$$), clipped importance sampling (V-trace), self-imitation algorithm (UPGO).
-* 实时控制(APM有限值)-> Monitoring layer
+* 实时控制(APM有限值)-> Monitoring layer+action delay
 * 超大状态空间 -> self-attention & scatter connection
 * 超大动作空间 -> auto-regressive policy, pointer network
 
