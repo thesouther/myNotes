@@ -16,7 +16,7 @@
     "anchor-navigation-ex",
     "page-footer-ex",
     "splitter",
-    "todo",
+    "-todo",
     "copy-code-button",
     "expandable-chapters",
     "chapter-fold",
@@ -29,24 +29,28 @@
     "katex"
   ],
   "pluginsConfig": {
-    "mathjax-pro":{
+    "mathjax-pro": {
       "version": "2.7.7"
     },
     "search-pro": {
       "cutWordLib": "nodejieba",
-      "defineWord": ["Gitbook Use"]
+      "defineWord": [
+        "Gitbook Use"
+      ]
     },
     "anchor-navigation-ex": {
       "showLevel": false
     },
     "github-buttons": {
-      "buttons": [{
-        "user": "thesouther",
-        "repo": "myNotes",
-        "type": "star",
-        "size": "small",
-        "count": true
-      }]
+      "buttons": [
+        {
+          "user": "thesouther",
+          "repo": "myNotes",
+          "type": "star",
+          "size": "small",
+          "count": true
+        }
+      ]
     },
     "editlink": {
       "base": "https://github.com/thesouther/myNotes/blob/master/README.md",
