@@ -17,7 +17,7 @@ paper: [Counterfactual Multi-Agent Policy Gradients](https://arxiv.org/abs/1705.
 * 智能体共享参数. **输入各自观察和编号**, critic使用各自局部观察, 输出各自局部Q值, 不用全局信息.
 * 考虑两个变体:
   1. 每个智能体critic估计$$V(\tau^a)$$,然后使用基于TD-error的梯度训练.
-  2. 每个智能体critic估计$$Q(\tau^a, u^a)$$, 后面使用优势函数计算梯度: <span style="display:inline-block; height: 24px;"><img src="img/2021_01_26_15_17_37.png"></span> ,其中 <span style="display:inline-block; height: 24px;"><img src="img/2021_01_26_15_18_28.png"></span> 
+  2. 每个智能体critic估计$$Q(\tau^a, u^a)$$, 后面使用优势函数计算梯度: <span style="display:inline-block; height: 24px;"><img height="24px"  src="img/2021_01_26_15_17_37.png"></span> ,其中 <span style="display:inline-block; height: 24px;"><img height="24px"  src="img/2021_01_26_15_18_28.png"></span> 
 * 无法解决信用分配问题.
 
 ### 1.2 Counterfactual Multi-Agent Policy Gradients
@@ -41,7 +41,7 @@ paper: [Counterfactual Multi-Agent Policy Gradients](https://arxiv.org/abs/1705.
 
 本文使用 **counterfactual baseline**解决该问题. 
 
-* 启发工作: **difference rewards**. 为每个智能体构造一个奖励函数 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_26_15_30_49.png"></span> , 把全局奖励和把智能体a的动作使用一个default action $$c^a$$代替时的奖励作比较. 智能体a improve $$D^a$$的动作也可以improve 真实奖励$$r(a, u)$$, 因为 $$r(s, (u^{-a}, c^a))$$不依赖于智能体a的动作.
+* 启发工作: **difference rewards**. 为每个智能体构造一个奖励函数 <span style="display:inline-block; height: 24px; "><img height="24px"  src="img/2021_01_26_15_30_49.png"></span> , 把全局奖励和把智能体a的动作使用一个default action $$c^a$$代替时的奖励作比较. 智能体a improve $$D^a$$的动作也可以improve 真实奖励$$r(a, u)$$, 因为 $$r(s, (u^{-a}, c^a))$$不依赖于智能体a的动作.
 * difference rewards可以解决信用分配, 但是**每个**智能体都需要单独进行模拟估计$$r(s, (u^{-a}, c^a))$$. 另外$$c^a$$如何选择也不清楚.
 * COMA使用全局状态s和联合动作u学习集中式critic, $$Q(s, u)$$. 对于每个智能体来说, 都可以计算advantage function, 用来当前动作$$u^a$$的Q值和边缘化$$u^a$$的counterfactual baseline进行比较.
 
@@ -62,9 +62,11 @@ paper: [Counterfactual Multi-Agent Policy Gradients](https://arxiv.org/abs/1705.
 * 然后, 通过一次前向传播就可以为每个智能体计算counterfactual advantage.
 * 另外, 输出只有$$|U|$$.
 
-|<img src="img/2021_01_26_16_23_01.png">|
-|:-:|
-|Figure 1: In (a), information flow between the decentralised actors, the environment and the centralised critic in COMA; red arrows and components are only required during centralised learning. In (b) and (c), architectures of the actor and critic. |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_01_26_16_23_01.png">
+</div>
+
+Figure 1: In (a), information flow between the decentralised actors, the environment and the centralised critic in COMA; red arrows and components are only required during centralised learning. In (b) and (c), architectures of the actor and critic. 
 
 ## 2. 实验
 
@@ -76,6 +78,6 @@ paper: [Counterfactual Multi-Agent Policy Gradients](https://arxiv.org/abs/1705.
 
 ## 算法伪代码
 
-|<img src="img/2021_01_26_16_52_43.png">|
-|:-:|
-|fig 伪代码|
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_01_26_16_52_43.png">
+</div>

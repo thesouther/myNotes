@@ -59,7 +59,9 @@ Prioritized relay 改变随机更新时的分布, 尤其时训练最后阶段. �
 
 ## 伪代码
 
+<div style="text-align: center; width: 90%; margin: auto; ">
 <img src="img/2021_04_10_17_00_49.png">
+</div>
 
 **参考**
 

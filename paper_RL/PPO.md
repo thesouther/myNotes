@@ -160,9 +160,13 @@ PPO算法使用固定长度trajectory片段, 每次迭代中, 每N个并行Actor
 5. **策略函数和值函数不共享参数**, 所以参数$$c_1$$无关, 也不使用entropy bonus项;
 6. 每个算法都在7个环境中测试, 使用最后100 episodes的平均总回报作为比较, 
 
-| <img src="img/2020_12_28_11_21_56.png">  | <img src="img/2020_12_28_11_22_39.png">|<img src="img/2020_12_28_11_23_09.png">|
-| :-----: | :------: | :----: |
-| Table 3: PPO hyperparameters used for the Mujoco 1 million timestep benchmark | Table 4: PPO hyperparameters used for the Roboschool experiments. Adam stepsize was adjusted based on the target value of the KL divergence. | Table 5: PPO hyperparameters used in Atari experiments. α is linearly annealed from 1 to 0 over the course of learning. |
+| <img src="img/2020_12_28_11_21_56.png"> |
+| :-----: |
+| Table 3: PPO hyperparameters used for the Mujoco 1 million timestep benchmark |
+| <img src="img/2020_12_28_11_22_39.png">|
+|Table 4: PPO hyperparameters used for the Roboschool experiments. Adam stepsize was adjusted based on the target value of the KL divergence. | 
+|<img src="img/2020_12_28_11_23_09.png">|
+|Table 5: PPO hyperparameters used in Atari experiments. α is linearly annealed from 1 to 0 over the course of learning. |
 
 ## 讨论
 

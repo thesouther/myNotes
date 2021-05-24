@@ -125,7 +125,7 @@ $$\psi_g, \psi_l, \phi_g, \phi_l$$分别是编码全局/局部feature的CNN参�
 </div>
 </div>
 
-之后, 用m+1个函数  <img src="img/2021_01_03_00_13_43.png" height="24px"> 生成预测$$p=(p^0, ..., p^{m+2})$$, 其中<span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_00_26_54.png"></span>. 
+之后, 用m+1个函数  <img src="img/2021_01_03_00_13_43.png" height="24px"> 生成预测$$p=(p^0, ..., p^{m+2})$$, 其中<img height="24px" src="img/2021_01_03_00_26_54.png">. 
 为了使预测fit预处理的人工数据, 使用以下loss的加权和组成一个多任务loss函数
 
 <div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
@@ -150,7 +150,7 @@ $$\psi_g, \psi_l, \phi_g, \phi_l$$分别是编码全局/局部feature的CNN参�
 </div>
 </div>
 
-其中 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_00_44_45.png"></span>和$$\lambda$$是正则化的参数(防止过拟合). 用Adam求解.
+其中 <span style="display:inline-block; height: 24px; "><img height="24px" src="img/2021_01_03_00_44_45.png"></span>和$$\lambda$$是正则化的参数(防止过拟合). 用Adam求解.
 
 ### 2.6. Data Preprocessing
 

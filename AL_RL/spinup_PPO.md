@@ -56,6 +56,6 @@ $$
 
 PPO是一种on-policy算法, 也就是说算法根据最新版本的策略版本进行动作抽样. 动作随机性来自初始化和训练过程, 但是随着训练更新, 动作随机性会降低, 容易陷入局部最优.
 
-|<img src="img/2021_01_25_15_22_53.png">|
-|:-:|
-|fig 1. 伪代码 |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_01_25_15_22_53.png">
+</div>

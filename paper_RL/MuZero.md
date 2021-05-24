@@ -65,9 +65,11 @@ paper:[Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model](ht
 
 ### 2.4 函数汇总
 
-|<img src="img/2021_01_20_11_35_20.png">|
-|:-:|
-|Figure S2. Equations summarising the MuZero algorithm. Here, $$\phi(x)$$ refers to the representation of a real number x through a linear combination of its adjacent integers, as described in the Network Architecture section.|
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_01_20_11_35_20.png">
+</div>
+
+Figure S2. Equations summarising the MuZero algorithm. Here, $$\phi(x)$$ refers to the representation of a real number x through a linear combination of its adjacent integers, as described in the Network Architecture section.
 
 ## 3. 实验和分析
 

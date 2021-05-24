@@ -37,9 +37,9 @@ paper: [Which Heroes to Pick? Learning to Draft in MOBA Games with Neural Networ
 * 转换函数$$\rho:t\rightarrow \{player1, player2\}$$, 给出时间t时, 哪个玩家应该进行选择. 该函数基于$$\mathcal{O}_{round}, \mathcal{O}_{first} $$. 
 * 游戏状态$$s\in S \subset[0, N_{classes}]^{L\times D}$$. 游戏状态是正整数向量, 其长度为$$L\times D$$. 其中$$s_i\in s$$表示第i步玩家已经选了i个英雄, 此时剩下的部分用$$N_{classes}$$填充, 其表示英雄池大小.
 * 动作$$a\in A \subset [0, N_{classes}-1] \cap \mathbb{N}$$. 表示选择的英雄, 但是注意并不是每个英雄都是合法的, 不允许选择之前回合自己已经选过的, 和当前回合被双方选过的.
-* 转移函数 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_17_05.png"></span> .
+* 转移函数 <span style="display:inline-block; height: 24px; "><img height="24px" src="img/2021_01_03_22_17_05.png"></span> .
 * 单回合胜率预测器$$\phi$$. 每轮的胜率仅由当前英雄阵容预测.
-* 奖励$$r$$. 双方奖励为$$\{r, -r\}$$. <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_20_20.png"></span> 
+* 奖励$$r$$. 双方奖励为$$\{r, -r\}$$. <span style="display:inline-block; height: 24px; "><img height="24px" src="img/2021_01_03_22_20_20.png"></span> 
 * 游戏目标, 获取正的奖励r.
 
 ### 2.2. MCTS+NN
@@ -63,7 +63,7 @@ paper: [Which Heroes to Pick? Learning to Draft in MOBA Games with Neural Networ
 
 本文使用**PUCT**方法.
 
-树结构: **节点表示状态**, **边代表动作**. 节点包含统计信息 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_35_09.png"></span>, 分别表示
+树结构: **节点表示状态**, **边代表动作**. 节点包含统计信息 <span style="display:inline-block; height: 24px; "><img height="24px" src="img/2021_01_03_22_35_09.png"></span>, 分别表示
 
 * 访问次数, 
 * 总价值, 
@@ -84,7 +84,7 @@ PUCT包含四个过程:
 </div>
 </div>
 
-其中, 均值$$Q(s_t)=W(s_t)/C(s_t)$$. $$s_{t, a}$$表示执行动作a之后的新动作, $$s_{t, a} := s_{t+1}$$. 对于并行搜索, 应该增加所选节点的虚拟损失, 以避免不同的线程搜索树的同一分支: <span style="display:inline-block; height: 24px; "><img src="img/2021_01_03_22_54_52.png"></span>, 其中$$c_{vl}$$是虚拟损失的超参数. $$c_{puct}$$是balancing hyperparameter.
+其中, 均值$$Q(s_t)=W(s_t)/C(s_t)$$. $$s_{t, a}$$表示执行动作a之后的新动作, $$s_{t, a} := s_{t+1}$$. 对于并行搜索, 应该增加所选节点的虚拟损失, 以避免不同的线程搜索树的同一分支: <span style="display:inline-block; height: 24px; "><img height="24px"  src="img/2021_01_03_22_54_52.png"></span>, 其中$$c_{vl}$$是虚拟损失的超参数. $$c_{puct}$$是balancing hyperparameter.
 
 |<img src="img/2021_01_04_22_20_52.png">|
 |:-:|
@@ -96,7 +96,7 @@ PUCT包含四个过程:
 
 **Expansion**. 在叶子节点, 首先去掉所有不合法动作, 并重新正则化策略向量; 
 然后根据新的策略向量$$\pi(\cdot|s_T)$$, 对每一个合法动作生成一个新节点$$n(s_{T+1})$$; 
-除了 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_04_22_12_23.png"></span> , 节点内其他统计值都设为0.
+除了 <span style="display:inline-block; height: 24px; "><img height="24px"  src="img/2021_01_04_22_12_23.png"></span> , 节点内其他统计值都设为0.
 
 **Back-propagation**. 从当前叶子节点$$n(s_T)$$回溯到根节点, 更新路径上的节点值. $$C(s) = C(s) + 1, \  VL(s) = VL(s) - c_{vl}, \ Q(s) = W(s)/C(s)$$.
 对于值更新, 一般使用$$W(s) = W(s) + v(s_T)$$, 但是在多轮博弈里, 前几轮的节点会影响会面回合的节点. 因此本文设计了一个long-term value 机制, 在下面 **Long-term Value Propagation**部分介绍.

@@ -21,6 +21,7 @@
     * [1 经典-double dqn](./AL_RL/double_dqn.md)
     * [1 经典-dueling dqn](./AL_RL/dueling_dqn.md)
     * [1 经典-Prioritized experience](./AL_RL/prio_experience.md)
+    * [1 经典-A3C](./AL_RL/a3c.md)
     * [2 spinup-PG](./AL_RL/spinup_PG.md)
     * [2 spinup-VPG](./AL_RL/spinup_VPG.md)
     * [2 spinup-TRPO](./AL_RL/spinup_TRPO.md)

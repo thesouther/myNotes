@@ -40,9 +40,9 @@ VPG使用on-policy训练. 意味着它基于最新随机策略抽样动作进行
 
 这使得算法收敛速度比较快, 但是容易陷入局部最优.
 
-|<img src="img/2021_01_19_21_24_58.png">|
-|:-:|
-|伪代码|
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_01_19_21_24_58.png">
+</div>
 
 ## 参考文献
 

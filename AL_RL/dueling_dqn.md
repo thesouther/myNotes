@@ -6,9 +6,19 @@ dueling结构可以结合之前的RL架构训练.
 
 ## 优势函数
 
-<span style="display:inline-block; "><img src="img/2021_04_07_16_55_03.png"></span> 
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
 
-<span style="display:inline-block; "><img src="img/2021_04_07_16_56_07.png"></span> 
+<div style="float: right; width:80%; height:100%; ">
+<img src="img/2021_04_07_16_55_03.png">
+</div>
+</div>
+
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+
+<div style="float: right; width:80%; height:100%; ">
+<img src="img/2021_04_07_16_56_07.png">
+</div>
+</div>
 
 V评估在特定state的好坏程度; Q函数评估在该state选择特定action的价值. A表示每个action相对重要性的评估, **一个动作相对与其他动作有多好**.
 
@@ -16,11 +26,15 @@ V评估在特定state的好坏程度; Q函数评估在该state选择特定action
 
 ### 1 基本方法
 
-<span style="display:inline-block; "><img src="img/2021_04_07_16_58_33.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_16_58_33.png">
+</div>
 
 则 
 
-<span style="display:inline-block; "><img src="img/2021_04_07_16_59_45.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_16_59_45.png">
+</div>
 
 * V是标量, A是$$|A|$$维向量. 
 * 上式适用于所有(s, a). 在矩阵形式计算时, 要用广播, 把V重复|A|次计算.
@@ -35,15 +49,21 @@ V评估在特定state的好坏程度; Q函数评估在该state选择特定action
 
 2. 改进1: **强制选定的动作优势为0**.
 
-   <span style="display:inline-block; "><img src="img/2021_04_07_17_06_20.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_17_06_20.png">
+</div>
 
-   <span style="display:inline-block; "><img src="img/2021_04_07_17_10_30.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_17_10_30.png">
+</div>
 
    这样就能得到唯一的值函数.
 
-3. 改进2: **使用优势均值**
+1. 改进2: **使用优势均值**
 
-   <span style="display:inline-block; "><img src="img/2021_04_07_17_11_21.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_17_11_21.png">
+</div>
 
    - 劣: 失去V和A的语义性
    - 优: 提升稳定性. 优势函数只需要随着均值改变, 而不用像公式8那样对最优动作优势的任何变动都进行补偿.
@@ -66,10 +86,18 @@ V评估在特定state的好坏程度; Q函数评估在该state选择特定action
 
 ## 网络结构
 
-|<img src="img/2021_04_07_16_51_38.png">|
-|:-:|
-|V和A可以自动反向传播计算, 不用额外监督信号. **当学习问题中加入冗余或类似的动作时, dueling架构在策略评估时可以更快识别出正确动作**|
+<div style="text-align: center; width: 90%; margin: auto; ">
+
+</div>
+
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_16_51_38.png">
+</div>
+
+V和A可以自动反向传播计算, 不用额外监督信号. **当学习问题中加入冗余或类似的动作时, dueling架构在策略评估时可以更快识别出正确动作**
 
 ## 伪代码
 
-<span style="display:inline-block; "><img src="img/2021_04_07_17_07_42.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_17_07_42.png">
+</div>

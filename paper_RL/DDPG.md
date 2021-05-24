@@ -1,11 +1,3 @@
-<style>
-
-``` html
-p{line-height:25.5px;}
-```
-
-</style>
-
 # 0.2 强化学习-DDPG
 
 paper: [Continuous Control with Deep Reinforcement Learning](https://arxiv.org/pdf/1509.02971.pdf)
@@ -31,41 +23,49 @@ DQN:
 
 贝尔曼方程:
 
-<table>
-<tr>
-<th><img src="img/2020_12_21_10_42_04.png"></th>
-<th> (2) </th>
-</tr>
-</table>
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100%; ">
+<p>(2)</p>
+</div>
+<div style="float: right; width:80%; height:100%; ">
+<img src="img/2020_12_21_10_42_04.png">
+</div>
+</div>
 
 当使用确定性策略时, 
 
-<table>
-<tr>
-<th><img src="img/2020_12_21_10_43_00.png"></th>
-<th> (3) </th>
-</tr>
-</table>
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100%; ">
+<p>(3)</p>
+</div>
+<div style="float: right; width:80%; height:100%; ">
+<img src="img/2020_12_21_10_43_00.png">
+</div>
+</div>
 
 Q-learning, 使用贪婪策略  <img src="img/2020_12_21_10_44_08.png" height="24px"> 
 
-<table>
-<tr>
-<th><img src="img/2020_12_21_10_44_48.png"></th>
-<th> (4, 5) </th>
-</tr>
-</table>
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100%; ">
+<p>(4, 5)</p>
+</div>
+<div style="float: right; width:80%; height:100%; ">
+<img src="img/2020_12_21_10_44_48.png">
+</div>
+</div>
 
 ## 2 算法
 
 DPG算法使用AC架构, Actor使用确定性策略把状态映射到动作, critic使用Q-learning相同的贝尔曼方程计算Q值. 然后对初始分布的期望回报使用链式法则, 更新参数, 
 
-<table>
-<tr>
-<th><img src="img/2020_12_21_10_51_02.png"></th>
-<th> (6) </th>
-</tr>
-</table>
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100%; ">
+<p>(6)</p>
+</div>
+<div style="float: right; width:80%; height:100%; ">
+<img src="img/2020_12_21_10_51_02.png">
+</div>
+</div>
 
 下面说如何用DQN对其进行改进:
 

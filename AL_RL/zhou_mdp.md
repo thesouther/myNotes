@@ -22,7 +22,9 @@
 
 1. 状态的Bellman方程, $$V(s)=R(s)+\gamma \sum_{s'\in S} P(s'|s)V(s')$$
 
-   <img src="img/2021_05_10_21_43_13.png">
+<div style="text-align: center; width: 80%; margin: auto; ">
+   <img style=" width:100%; clear: both; display: block; margin:auto; " src="img/2021_05_10_21_43_13.png">
+</div>
 
 2. 计算MRP值函数方法:
 
@@ -32,8 +34,13 @@
 
 3. 例子
 
-   <img src="img/2021_05_10_21_45_10.png">
-   <img src="img/2021_05_10_21_45_24.png">
+<div style="text-align: center; width: 80%; margin: auto; ">
+   <img style=" width:100%; clear: both; display: block; margin:auto; " src="img/2021_05_10_21_45_10.png">
+</div>
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+   <img style=" width:100%; clear: both; display: block; margin:auto; " src="img/2021_05_10_21_45_24.png">
+</div>
 
 ## MDP
 
@@ -42,11 +49,16 @@
 3. 预测和控制
 4. 策略迭代, 策略估计-策略提升
 
-   <img src="img/2021_05_10_22_31_42.png">
+<div style="text-align: center; width: 80%; margin: auto; ">
+   <img style=" width:100%; clear: both; display: block; margin:auto; " src="img/2021_05_10_22_31_42.png">
+</div>
 
 5. 值迭代
 
-   <img src="img/2021_05_10_22_23_50.png">
+6. 
+<div style="text-align: center; width: 80%; margin: auto; ">
+   <img width=100% src="img/2021_05_10_22_23_50.png">
+</div>
 
 ## 总结
 

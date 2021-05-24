@@ -57,8 +57,10 @@
 
 ## 伪代码
 
-<span style="display:inline-block; height: px; "><img src="img/2021_04_06_15_20_59.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_06_15_20_59.png">
+</div>
 
-|<img src="img/2021_04_06_15_13_47.png">|
-|:-:|
-|fig |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_06_15_13_47.png">
+</div>

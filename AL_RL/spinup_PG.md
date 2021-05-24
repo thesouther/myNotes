@@ -189,9 +189,11 @@ EGLP lemma说明任何只依赖状态的函数$$b$$的期望log梯度为0
 
 **为什么加入baseline**? 如果r总是正的, 可以通过log概率调整动作分布. 但是因为是sampling, 有些动作没有抽样到, 其概率分布会变小. 一般 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_17_23_13_30.png"></span> 
 
-|<img src="img/2021_01_17_22_57_27.png">|
-|:-:|
-|动作a因为没被抽样到, 概率会变小, 但a可能是个好动作|
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_01_17_22_57_27.png">
+</div>
+
+动作a因为没被抽样到, 概率会变小, 但a可能是个好动作
 
 **常用的baseline是 on-policy value function $$V^{\pi}(s_t)$$. 该值是从状态s出发根据策略$$\pi$$行动的平均回报.**
 

@@ -1,10 +1,12 @@
 # 1 经典-double dqn
 
-<span style="display:inline-block; "><img src="img/2021_04_07_15_04_24.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_15_04_24.png">
+</div>
 
-|<img src="img/2021_04_07_15_06_07.png">|
-|:-:|
-|fig |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_15_06_07.png">
+</div>
 
 ## Q-learning过估计问题
 
@@ -26,9 +28,9 @@
    - 随着动作数m的增大下限减小, 但这仅仅代表的是下限, 真正取到下限是要满足特定条件的, 而实际操作中, 随着m的增大, overestimation整体上在不断增加.
    - 为什么Double Q-learning能够减少overestimation, 就是在评估动作时使用了新的$$Q^{'}$$函数, 不受已知条件限制.
 
-|<img src="img/2021_04_07_14_39_33.png">|
-|:-:|
-|fig |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_14_39_33.png">
+</div>
 
 1. 对于函数逼近的过估计分析
 
@@ -40,10 +42,12 @@
 
 1. Double Q-learning, 把动作选择和估计进行解耦
 
-|<img src="img/2021_04_07_14_40_37.png">|
-|:-:|
-|fig |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_14_40_37.png">
+</div>
 
-2. Double DQN思想就是将目标中的max操作分解为使用不同的网络来进行动作选择和动作评估, 以此来减少overestimation. 而DQN中本来就使用了policy network和target network两个网络, 所以无需再引入新的网络, 只需改进DQN算法中的目标设计.
+1. Double DQN思想就是将目标中的max操作分解为使用不同的网络来进行动作选择和动作评估, 以此来减少overestimation. 而DQN中本来就使用了policy network和target network两个网络, 所以无需再引入新的网络, 只需改进DQN算法中的目标设计.
 
-<span style="display:inline-block; "><img src="img/2021_04_07_14_41_36.png"></span> 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_07_14_41_36.png">
+</div>

@@ -2,9 +2,13 @@
 
 RL由 model, policy, value组成
 
-|<img src="img/2021_04_27_21_00_22.png">|
-|:-:|
-|<img src="img/2021_04_27_21_12_15.png">|
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_27_21_00_22.png">
+</div>
+
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2021_04_27_21_12_15.png">
+</div>
 
 ## 链接
 
