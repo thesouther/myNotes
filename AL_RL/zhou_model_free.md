@@ -2,8 +2,6 @@
 
 ## MC 方法
 
-<a href="#imsamp">123</a>
-
 ### 1. MC增量迭代公式
 
 <div style="text-align: center; width: 80%; margin: auto; ">
