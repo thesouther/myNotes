@@ -10,14 +10,16 @@
 
    - TD($$\lambda$$)
 
-## off-policy重要性采样相关
+## on/off-policy
 
-### 1. 重要性采样推导: 
+### on/off-policy 对比
+
+### 重要性采样推导: 
 
 [4 周博磊RL-3-model_free](./zhou_model_free.md#imsamp)
 <a href="./zhou_model_free.md#imsamp">重要性采样部分</a>
 
-### 2. 为什么Q-learning 不用重要性采样?
+### 为什么Q-learning 不用重要性采样?
 
 简单来说, Qlearning没有在**策略分布上**对值函数的期望值进行估计.
 他是采样版本的值迭代方法, 使用贝尔曼最优方程, 而不是贝尔曼期望方程.
