@@ -16,8 +16,7 @@
 
 ### 重要性采样推导: 
 
-[4 周博磊RL-3-model_free](./zhou_model_free.md#imsamp)
-<a href="./zhou_model_free.md#imsamp">重要性采样部分</a>
+<a href="./zhou_model_free.md#imsamp">周博磊RL-3-model_free 重要性采样部分</a>
 
 ### 为什么Q-learning 不用重要性采样?
 
