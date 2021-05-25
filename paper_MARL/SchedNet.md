@@ -44,15 +44,15 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
 
 我们提出了一个新的具有调度通信能力的deep MARL框架, 称为**SchedNet**, 其总体架构如图1所示. SchedNet由以下三个组件组成:(i) actor网络, (ii) scheduler和(iii)Critic网络. 本节仅介绍体系结构, 其详细信息将在后面的部分中介绍. 
 
-| ![](img/2020-10-14-16-01-31.png) |
-| :------------------------------: |
-|               图1                |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-14-16-01-31.png">
+</div>
 
 **NN**: actor网络是n个智能体网络的集合, 其中每个智能体$$i$$的个体actor网络由以下三个网络组成: 消息编码器, 动作选择器和权重生成器, 由以下指定:
 
-| ![](img/2020-10-14-16-04-29.png) |
-| :------------------------------: |
-|                                  |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-14-16-04-29.png">
+</div>
 
 其中, $$m_i $$表示消息编码, $$c_i\in \{0, 1\} $$代表调度信息, 用于调度所有智能体发送消息, 例如, $$m=[010, 111, 101], c=[110], m\otimes c=010111 $$. 
 
@@ -69,9 +69,9 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
 
 #### 3.3.1集中式训练
 
-| ![](img/2020-10-14-16-23-54.png) |
-| :------------------------------: |
-|                                  |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-14-16-23-54.png">
+</div>
 
 **Centralized critic**: ==**由于WSA不可微分**, 因此很难通过一次反向传播来更新两个部分, 训练时Actor分为两个部分:(i)消息编码器和动作选择器, (ii)权重生成器.== 
 
@@ -84,9 +84,9 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
 
 我们使用单个神经网络$$\mu_{\theta_{wg}}(o)$$, 把所有智能体的WG的集合从$$o$$到$$w$$. 注意$$w_i$$是一个连续值, ==我们应用DDPG算法, 其中WG集合的整个策略梯度由下式给出==:
 
-| ![](img/2020-10-14-16-36-27.png) |
-| :------------------------------: |
-|                                  |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-14-16-36-27.png">
+</div>
 
 为了在所有调度配置文件集中获得足够的经验, 我们对策略梯度进行采样Q_, $$\mathcal{C}=\{c|\sum_{c_i} \le  k\} $$. $$Q_{\theta_c}(s, w) $$的值使用集中化critic估计.
 
@@ -94,9 +94,9 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
 
 进行编码和动作选择, 同样是一种聚合网络$$\pi_{\theta_\mu}(\mu|o, c) $$. 使用$$\theta_\mu = \{ \theta_{enc}, \theta_{as} \}$$参数化, 通过Actor-Critic策略梯度进行训练.
 
-| ![](img/2020-10-14-16-38-12.png) |
-| :------------------------------: |
-|                                  |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-14-16-38-12.png">
+</div>
 
 其中, $$\theta_{\mu} $$使用梯度上升训练. 
 
@@ -121,9 +121,9 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
 
 局部观察: 自己位置, 相对于猎物的位置(如果能观察到). 结果如图3所示.
 
-| ![](img/2020-10-14-16-45-47.png) |
-| :------------------------------: |
-|               图3                |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-14-16-45-47.png">
+</div>
 
 * **PP结果(3a)**:
   + FC. 由于智能体可以使用全部状态信息, 性能最好.
@@ -140,13 +140,13 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
   + 当智能体观察到猎物时(红x), 消息方差很大.
   + 这是因为, 智能体应该发送更有信息量的消息.
 
-| 
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-18-20-09-46.png">
+</div>
 
-![](img/2020-10-18-20-09-46.png) | ![](img/2020-10-18-20-10-29.png)
-
- |
-| :------------------------------: | :------------------------------: |
-|               图4                |               图5                |
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-18-20-10-29.png">
+</div>
 
 ### 4.2 协作交流导航
 
@@ -183,14 +183,18 @@ paper:[Learning to Schedule Communication in Multi-agent Reinforcement Learning]
 
 ### 6.1 伪代码
 
-|                         ![](img/2020-10-18-12-37-35.png)                         |
-| :------------------------------------------------------------------------------: |
-| 伪代码, 其中使用简化, $$f^i_{as}(o^i, c)= f^i_{as}(o^i, f^i_{enc}(o^i)\otimes c) $$ |
+伪代码, 其中使用简化, $$f^i_{as}(o^i, c)= f^i_{as}(o^i, f^i_{enc}(o^i)\otimes c) $$ 
+
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-18-12-37-35.png">
+</div>
 
 ### 6.2 环境细节
 
-![](img/2020-10-18-20-33-14.png)
+<img src="img/2020-10-18-20-33-14.png">
 
 ### 7.3 实验细节
 
-![](img/2020-10-18-20-45-54.png)
+<div style="text-align: center; width: 90%; margin: auto; ">
+<img src="img/2020-10-18-20-45-54.png">
+</div>

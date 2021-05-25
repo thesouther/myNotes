@@ -9,3 +9,20 @@
 2. 计算状态值V
 
    - TD($$\lambda$$)
+
+## off-policy重要性采样相关
+
+### 1. 重要性采样推导: 
+
+[4 周博磊RL-3-model_free](./AL_RL/zhou_model_free.md)
+<a href="./AL_RL/zhou_model_free.md#imsamp">重要性采样部分</a>
+
+### 2. 为什么Q-learning 不用重要性采样?
+
+简单来说, Qlearning没有在**策略分布上**对值函数的期望值进行估计.
+他是采样版本的值迭代方法, 使用贝尔曼最优方程, 而不是贝尔曼期望方程.
+他是在transition分布上进行的, 而不是在策略分布上进行.
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2021_05_24_23_49_01.png">
+</div>
