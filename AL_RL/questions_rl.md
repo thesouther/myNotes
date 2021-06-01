@@ -14,6 +14,8 @@
 
 ### on/off-policy 对比
 
+<a href="./zhou_model_free.md#on_off_policy">周博磊RL-3-model_free on/off-policy</a>
+
 ### 重要性采样推导: 
 
 <a href="./zhou_model_free.md#imsamp">周博磊RL-3-model_free 重要性采样部分</a>
