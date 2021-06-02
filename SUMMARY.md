@@ -4,7 +4,12 @@
 ## 论文总结与算法学习
 
 * [ML](./AL_ML/index.md)
-    - [0 ML-集成学习](./AL_ML/bagging_boosting.md)
+    - [0 ML-经典面试题](./AL_ML/questions_ml.md)
+    - [1 百面ML-3经典算法](./AL_ML/baimian_alg.md)
+    - [1 百面ML-3降维/非监督学习](./AL_ML/baimian_jaingwei.md)
+    - [1 百面ML-3CNN/RNN](./AL_ML/baimian_cnn_rnn.md)
+    - [1 百面ML-3优化算法](./AL_ML/baimian_optimal.md)
+    - [1 百面ML-集成学习](./AL_ML/bagging_boosting.md)
     - [2 李宏毅ML-Optimization](./AL_ML/Li1_Optimization.md)
     - [10.1 遗传算法-基本原理](./AL_ML/BasicGA.md)
     - [10.2 遗传算法-自适应策略](./AL_ML/AdaptiveGA.md)
@@ -23,7 +28,6 @@
     - [0 面试-简历相关](./AL_RL/questions.md)
     - [0 面试-RL相关](./AL_RL/questions_rl.md)
     - [0 面试-DL相关](./AL_RL/questions_dl.md)
-    - [0 面试-ML相关](./AL_RL/questions_ml.md)
     - [1 RLBook-start](./AL_RL/rlbook_start.md)
     - [1 RLBook-表格型方法](./AL_RL/rlbook_part1.md)
     - [1 RLBook-函数近似](./AL_RL/rlbook_part2.md)
