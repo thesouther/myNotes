@@ -17,6 +17,7 @@
    <img width=100% src="img/2021_05_31_23_05_35.png">
    <img width=100% src="img/2021_05_31_23_06_06.png">
    </div>
+   
 3. score-function, $$\triangledown_\theta \log \pi_\theta(s,a) $$
    score function指的应该是每个样本会对应一个score, 这个score近似衡量了这个样本对于log likelihood的贡献. 最终的log likellihood就是每个样本的score加起来再加上一个常数. 因此, 当score的方差大的时候, 每个样本就提供了关于loglikelihood更多的信息, 所以用MLE估计参数的时候, 得到的参数估计的方差反而越小.
    
@@ -35,3 +36,22 @@
 <img width=100% src="img/2021_05_31_23_12_56.png">
 <img width=100% src="img/2021_05_31_23_13_13.png">
 </div>
+
+## 2 策略函数优化
+
+<a href="./spinup_PG.md#spinup_pg">spinup-PG</a>
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2021_06_03_23_27_10.png">
+<img width=100% src="img/2021_06_03_23_32_24.png">
+</div>
+
+### 参考链接
+
+1. [A very nice summary of policy graident algorithms](https://lilianweng.github.io/lil-log/2018/04/08/policy-gradient-algorithms.html)
+
+2. [REINFORCE code on CartPole:](https://github.com/cuhkrlcourse/RLexample/blob/master/policygradient/reinforce.py)
+
+3. [Policy Gradient on Pong](https://github.com/cuhkrlcourse/RLexample/blob/master/policygradient/pg-pong-pytorch.py)
+
+4. [Policy Gradient with Baseline on Pong](https://github.com/cuhkrlcourse/RLexample/blob/master/policygradient/pgb-pong-pytorch.py)

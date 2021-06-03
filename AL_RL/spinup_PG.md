@@ -1,6 +1,7 @@
 # 2 spinup-PG
 
 代码:[github]()
+<a name="spinup_pg" id="spinup_pg" href="#">spinup-PG </a> 
 
 ## 1. 策略梯度导出
 
@@ -65,6 +66,8 @@
 </div>
 </div>
 
+由此, 
+
 <div style="text-align: center; width: 90%; margin: auto; ">
 <div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
 <p style="color:white; margin-left: 10px; "><b>导出策略梯度</b></p>
@@ -123,6 +126,8 @@ RL中虽然定义了loss, 但是这里的loss函数和监督学习中是不一�
 </div>
 </div>
 
+证明
+
 <div style="text-align: center; width: 90%; margin: auto; ">
 <div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
 <p style="color:white; margin-left: 10px; "><b>Proof
@@ -133,7 +138,7 @@ RL中虽然定义了loss, 但是这里的loss函数和监督学习中是不一�
 </div>
 </div>
 
-## 4. 去除之前状态的影响
+## 4. 去除之前状态的影响--降低方差
 
 上一步的策略梯度为
 
@@ -163,7 +168,7 @@ RL中虽然定义了loss, 但是这里的loss函数和监督学习中是不一�
 
 **这本质也是解决了不同动作的信用分配问题**.
 
-## 5. Baselines in Policy Gradients
+## 5. Baselines in Policy Gradients--降低方差
 
 EGLP lemma说明任何只依赖状态的函数$$b$$的期望log梯度为0
 
