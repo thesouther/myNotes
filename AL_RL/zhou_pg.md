@@ -32,6 +32,8 @@
 
 ### 策略举例
 
+考虑离散和连续, 使用softmax和高斯, 其导数如下
+
 <div style="text-align: center; width: 50%; margin: auto; ">
 <img width=100% src="img/2021_05_31_23_12_56.png">
 <img width=100% src="img/2021_05_31_23_13_13.png">

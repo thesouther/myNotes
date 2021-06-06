@@ -41,6 +41,8 @@
 
 ## 3 IRL 改进
 
+### 3.1 基础改进
+
 改进方向:
 
 1. Multimodal behavior:对于一个状态可能有多个解
@@ -52,4 +54,9 @@
    <div style="text-align: center; width: 80%; margin:auto; ">
    <img width=100% src="img/2021_06_06_17_37_42.png">
    </div>
-   
+
+### 3.2 Learning from demonstration 
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2021_06_06_17_39_45.png">
+</div>
