@@ -47,7 +47,7 @@
     - [4 周博磊RL-7-model_based](./AL_RL/zhou_model_based.md)
     - [4 周博磊RL-8-IRL](./AL_RL/zhou_IRL.md)
     - [4 周博磊RL-9-分布式](./AL_RL/zhou_distributed.md)
-    - [4 周博磊RL-10-model_free](./AL_RL/zhou_model_free.md)
+    - [4 周博磊RL-10-总结](./AL_RL/zhou_summary.md)
 * [MARL](./AL_MARL/index.md)
     - [1.1 协作 MARL：QMIX](./AL_MARL/QMIX.md)
     - [1.2 协作 MARL：QTRAN](./AL_MARL/QTRAN.md)
