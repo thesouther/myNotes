@@ -2,6 +2,8 @@
 
 paper:[Grandmaster level in StarCraft II using multi-agent reinforcement learning](https://www.gwern.net/docs/rl/2019-vinyals.pdf)
 
+监督学习+环境设计+联盟训练+RL
+
 **星际的挑战**: 
 
 游戏层面:
@@ -15,7 +17,7 @@ paper:[Grandmaster level in StarCraft II using multi-agent reinforcement learnin
 
 **算法层面**
 
-* 自博弈循环, (A打败B, B打败C, C打败A). ->PFSP(prioritized fictitious self-playprioritized fictitious self-play), 得到好的对手.
+* **自博弈循环**, (A打败B, B打败C, C打败A). ->PFSP(prioritized fictitious self-playprioritized fictitious self-play), 得到好的对手.
 * 自博弈偏移, 纯自博弈学习到的策略可能不能有效对抗人类策略. -> 加入人类数据设计的伪奖励; 
 
 整个控制过程如图1所示
@@ -31,24 +33,30 @@ paper:[Grandmaster level in StarCraft II using multi-agent reinforcement learnin
 |fig 2. Overview of the architecture of AlphaStar. |
 
 1. AC架构
-2. 值网络: $$V_\theta(s_t,z)$$.
-
+2. 输入: 
+   - 实体向量: N个⻓长度为K的向量
+   - 地图信息: 20个176乘200的矩阵
+   - 玩家数据
+   - 游戏统计
+3. 值网络: $$V_\theta(s_t,z)$$.
    1. 输入: LSTM输出的历史观测信息, z称为statistic vector. 从代码来看应该是从不同人类玩家历史数据中抽取出来的建造顺序, 以及单位、建筑、升级的顺序等信息.
    2. 从结果分析可以看出, 加入观测的对手信息效果提升明显.
    3. Baseline feature意思应该是对手信息.
 
-3. 策略网络: 只输入小地图, 不看主屏幕.
+4. 策略网络: 只输入小地图, 不看主屏幕.
 
    1. 在所有用到了entities list的地方, 利用该序列和句子序列的相似, 用NLP模型提取特征.
    2. 标量, 向量, 图像等不同的信息使用不同方法处理.
 
-4. 动作属性:
+5. 动作属性(**分层**):
 
-| <img src="img/2021_01_18_15_55_31.png"> |
-|:---------------------------------------:|
-|                fig 3. 动作属性               |
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img src="img/2021_01_18_15_55_31.png">
+</div>
 
-5. 控制输出:
+1. scatter connections: 这部分用于combine不同类型的特征e.g., images, lists, and sets. 但是该部分的结构细节在论文中似乎没有被提及
+
+2. auto-regressive policy: 处理结构化动作采样的问题，将一个state要做的一个N维动作决策，转化为N个1维的动作序列进行处理（e.g., 先选择单位，再选择该单位的目标位置）.控制输出:
 
    1. 选择action type(what)
    2. 通过MLP确定delay(when)
@@ -95,6 +103,20 @@ AlphaStar根据**小地图数据 $$o_t$$ 和建造操作数据$$z_t$$行学习, 
 |:-:|
 |<img src="img/2021_01_18_16_41_04.png">|
 
+难点
+1. 训练的模型不不是采样的模型(off-policy), 
+2. 动作空间⾼高度复杂, 
+3. 拟合价值函数很难
+
+做法:
+1. Actor-critic结构，主要基于IMPALA，利用V-trace来训策略略⽹网络，并提出UPGO技术帮助训练
+   - V-Trace限制重要性采样系数.
+   - UPGO则使⽤用Hard的形式 直接将未来乐观的step的信息纳⼊入Advantage.
+   - GAE和UPGO都关⼼心如何将多步以后未来的信息纳⼊入现在的 Advantage估计中. GAE使⽤用Soft的形式通过$$\lambda$$项控制未来信息和现 在信息的平衡(即偏差和⽅方差的平衡). 
+2. 利用TD($$\lambda$$)来训价值⽹网络，并同时输⼊入对⼿数据 
+3. **模仿学习**: 额外引⼊入Supervised Learning Loss和⼈人类统计量z
+4. 多智能体/自学习/League的⼤规模应⽤
+
 训练流程如下: AlphaStar会将自身观察的数据信息 $$o_t$$ 输入AC框架下的神经网络(**为了降低方差, 其也会将对手的信息 $$o_t'$$ 输入网络**), 输出策略和值函数.
 
 * 对于策略, 使用V-Trace和UPGO的方式更新.
@@ -115,7 +137,7 @@ AlphaStar根据**小地图数据 $$o_t$$ 和建造操作数据$$z_t$$行学习, 
    - 意义: 核心智能体, 输出为AlphaStar, 同时克服追逐循环的问题.
    - 对手: 全部Past Players, Main Exploiters, Main Agent
    - 定期存储自身参数为一个player并加入到​Past Players中, 
-   - 用prioritized fictitious self-play(PFSP)方式匹配对手. 优先找强的对手对战(胜率高).
+   - 用prioritized fictitious self-play(PFSP)方式匹配对手. 优先找比自己强一点水平差不多的对手对战(胜率高).
 
 2. **Main Exploiters**.
 
@@ -126,7 +148,7 @@ AlphaStar根据**小地图数据 $$o_t$$ 和建造操作数据$$z_t$$行学习, 
 
 3. **League Exploiters**.
 
-   - 意义: **用于寻找整个群体的弱点**.
+   - 意义: **用于寻找整个群体的弱点**, 它要打败联盟中所有对手.
    - 定期存储自身参数为一个player并加入到Past Players中.
    - 每存储一次自身参数, 就有25%概率将自己还原为监督学习的参数.
    - 对手: 全部Past Players
@@ -173,11 +195,15 @@ KL散度可以衡量两个分布的差异, 具有非负性, 所以我们可以�
 
 **根据累计统计量z和当前的游戏进行过程的累计统计量z的差异来计算pseudo-rewards, 具体包括:1) 建造顺序计算编辑距离(edit distance); 2) 累计数据计算汉明距离(Hamming distance)**.
 
-|<img src="img/2021_01_18_17_10_59.png">|
-|:-:|
-|fig 伪奖励|
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img src="img/2021_01_18_17_10_59.png">
+</div>
 
 如图所示, 智能体在状态St下选择了动作a(红色的那条线), 到达了后继状态St+1并获得回报Rt+1. 
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2021_06_07_20_07_26.png">
+</div>
 
 实际上从状态St可以转到**四个不同的后继状态**, 但是在一次试验中智能体只能转到这后继四个状态中的一个, 所以只能利用一个后继状态St+1和回报Rt+1去更新当前状态St. 从利用状态和回报的角度来看, **上述的只利用真实回报的更新方式似乎有些浪费, 没有充分利用上下文信息**. 从AlphaStar的角度来看, **缺少伪奖励的设置可能会使得智能体的神经网络参数偏离人类的大方向, 并且过早地收敛**. 如果可以通过某种方法, 使得智能体在一次实验中同时得到这四个后继状态的反馈, 岂不是能大大增加对状态和回报的利用效率? 这就是设置伪奖励的出发点: 在更新值函数v(St)时, 不仅利用真实的奖励, 同时为其他几个没有经过的状态设置伪奖励, 让真实奖励和伪奖励一起去更新值函数. **伪奖励的设置一般会稍大于真实的奖励, 从而鼓励探索, 避免过早的收敛**. 至于伪奖励的细节, 请参阅Pseudo-reward Algorithms for Contextual Bandits with Linear Payoffff Functions这篇论文.
 
@@ -192,6 +218,10 @@ AC中, 由于在 AC 架构中实际产生数据, 探索环境的乃是"实干家
 |fig IMPALA分布式架构|
 
 在学习过程中Actor和Learner的策略并不完全相同, 如何解决这种Off-policy的问题呢? 别急, 论文中的V-trace方法就是用来解决这个问题的, **即减小行为动作产生的时间与Learner估计渐变时间之间的误差**.
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2021_06_07_20_04_29.png">
+</div>
 
 个人觉得V-trace的主要特点是里面两个类似于重要性因子的选取, **其中一个决定收敛到什么样的值函数, 另外一个决定收敛的速度. 另外, 为了防止过早收敛**, V-trace方法里在Actor的梯度公式中加了一个熵作为惩罚, 
 
