@@ -5,7 +5,7 @@
 
 ## 1. 策略梯度导出
 
-首先考虑参数化的随机策略$$\pi_\theta$$, 我们的目标是基于该策略最大化期望奖励 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_17_20_11_53.png"></span>, 使用梯度上升算法优化策略.
+首先考虑参数化的随机策略$$\pi_\theta$$, 我们的目标是基于该策略最大化期望奖励 <span><img height=24px src="img/2021_01_17_20_11_53.png"></span>, 使用梯度上升算法优化策略.
 
 <div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
 <div style="float: right; width:15%; height:100%; ">
@@ -16,7 +16,7 @@
 </div>
 </div>
 
-策略性能函数的梯度 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_17_21_24_39.png"></span> 称为**策略梯度**. 一般PG算法需要两个步骤: 1) 导出策略performance的梯度, 表示成期望值的形式; 2) 构造期望值的抽样估计函数.
+策略性能函数的梯度 <span><img height=24px  src="img/2021_01_17_21_24_39.png"></span> 称为**策略梯度**. 一般PG算法需要两个步骤: 1) 导出策略performance的梯度, 表示成期望值的形式; 2) 构造期望值的抽样估计函数.
 
 首先介绍几个概念:
 
@@ -57,7 +57,7 @@
 
 2. **Grad-Log-Prob of a Trajectory**. 
 
-<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="width: 100%; height:120px; line-height:120px; text-align: center; ">
 <div style="float: right; width:15%; height:100%; ">
 <p>(5)</p>
 </div>
@@ -192,7 +192,7 @@ EGLP lemma说明任何只依赖状态的函数$$b$$的期望log梯度为0
 </div>
 </div>
 
-**为什么加入baseline**? 如果r总是正的, 可以通过log概率调整动作分布. 但是因为是sampling, 有些动作没有抽样到, 其概率分布会变小. 一般 <span style="display:inline-block; height: 24px; "><img src="img/2021_01_17_23_13_30.png"></span> 
+**为什么加入baseline**? 如果r总是正的, 可以通过log概率调整动作分布. 但是因为是sampling, 有些动作没有抽样到, 其概率分布会变小. 一般 <span><img height=24px src="img/2021_01_17_23_13_30.png"></span> 
 
 <div style="text-align: center; width: 90%; margin: auto; ">
 <img src="img/2021_01_17_22_57_27.png">
@@ -267,7 +267,7 @@ EGLP lemma说明任何只依赖状态的函数$$b$$的期望log梯度为0
 </div>
 </div>
 
-2. **The Advantage Function**. 优势函数定义为 <span style="display:inline-block; height: 24px;"><img src="img/2021_01_17_23_10_46.png"> </span> 
+1. **The Advantage Function**. 优势函数定义为 <span><img height=24px src="img/2021_01_17_23_10_46.png"> </span> 
 
 <div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
 <div style="float: right; width:15%; height:100%; ">

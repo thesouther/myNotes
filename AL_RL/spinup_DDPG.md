@@ -1,4 +1,8 @@
 # 2 spinup-DDPG
+
+连续动作空间, 确定性策略, off-policy算法
+使用polyak 平均, 相当于把目标的稳定性和bias做一个权衡. dqn的target比较稳定, 但bias会越来越大.
+
 1. off-policy, 用TD(0)更新critic Q函数, 用Q值更新策略
 2. DQN 在连续动作空间的扩展, 核心思想: 如果能得到Q* , 则通过求argmax可以得到最优动作.
 3. 解决的问题就是当动作空间巨大或者是连续动作空间, 通过穷举对Q求max操作不现实;
@@ -11,7 +15,7 @@
 
 $$
 \begin{aligned}
-Q^*(s, a) = \underset{s' \sim P}{{\mathrm E}}\left[r(s, a) + \gamma \max_{a'} Q^*(s', a')\right]
+Q^*(s, a) = E_{s' \sim P}\left[r(s, a) + \gamma \max_{a'} Q^*(s', a')\right]
 \end{aligned}
 $$
 
@@ -19,7 +23,7 @@ Q-Learning使用函数逼近+贝尔曼最优方程更新Q值. 使用mean-squared
 
 $$
 \begin{aligned}
-L(\phi, {\mathcal D}) = \underset{(s, a, r, s', d) \sim {\mathcal D}}{{\mathrm E}}\left[
+L(\phi, {\mathcal D}) = E_{(s, a, r, s', d) \sim {\mathcal D}} \left[
 \Bigg( Q_{\phi}(s, a) - \left(r + \gamma (1 - d) \max_{a'} Q_{\phi}(s', a') \right) \Bigg)^2
 \right]
 \end{aligned}
@@ -42,7 +46,7 @@ $$
 
 $$ 
 \begin{aligned}
-\max_{\theta} \underset{s \sim {\mathcal D}}{{\mathrm E}}\left[ Q_{\phi}(s, \mu_{\theta}(s)) \right].
+\max_{\theta} E_{s \sim {\mathcal D}}\left[ Q_{\phi}(s, \mu_{\theta}(s)) \right].
 \end{aligned}
 $$
 
@@ -58,7 +62,7 @@ DDPG通过在动作中添加噪声来鼓励探索.
 
 在测试时, 不添加噪声.
 
-<div style="text-align: center; width: 90%; margin: auto; ">
+<div style="width: 90%; margin: auto; ">
 <div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
 <p style="color:white; margin-left: 10px; "><b>本文实现时加了一个trick</b></p>
 </div>

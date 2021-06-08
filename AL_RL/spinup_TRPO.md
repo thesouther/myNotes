@@ -27,7 +27,7 @@ $$
 $$D_{KL}$$为平均KL散度.
 
 $$
-\mathcal{L}(\theta_k, \theta) = E_{s, a \sim \pi_{\theta_k}} \frac{\pi_{\theta}(a|s)}{\pi_{\theta_k}(a|s)} A^{\pi_{\theta_k}}(s, a)
+\mathcal{L}(\theta_k, \theta) = E_{s, a \sim \pi_{\theta_k}} \left[ \frac{\pi_{\theta}(a|s)}{\pi_{\theta_k}(a|s)} A^{\pi_{\theta_k}}(s, a)\right]
 $$
 
 <div style="width: 90%; margin: auto; ">
