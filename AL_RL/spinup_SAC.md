@@ -21,7 +21,7 @@ $$
 
 #### 熵正则化RL
 
-用熵作为正则化项, 策略公式变成:
+SAC通过熵正则化训练随机策略, 并以on-policy方式进行探索. 用熵作为正则化项, 策略公式变成:
 
 $$
 \pi^* = \arg \max_{\pi} E_{\tau \sim \pi}{\left[ \sum_{t=0}^{\infty} \gamma^t \bigg( R(s_t, a_t, s_{t+1}) + \alpha H\left(\pi(\cdot|s_t)\right) \bigg)\right]}, 
@@ -174,7 +174,9 @@ $$
 
 ### 3 探索与利用
 
-SAC使用熵正则化项明确控制探索, $$\alpha$$越大探索性越强
+SAC通过熵正则化训练随机策略, 并以on-policy方式进行探索.
+
+SAC使用熵正则化项明确控制探索性, $$\alpha$$越大探索性越强
 
 <div style="width: 90%; margin: auto; ">
 <div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
