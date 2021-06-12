@@ -29,3 +29,10 @@
 <div style="text-align: center; width: 80%; margin: auto; ">
 <img width=100% src="img/2021_05_24_23_49_01.png">
 </div>
+
+## 推荐系统
+
+### 为什么推荐系统不适用PG? 
+
+1. 推荐系统一般需要在线更新, 并且一般建模为持续性任务.而PG一般需要episode的return
+2. 样本连续性不如游戏中那么自然.
