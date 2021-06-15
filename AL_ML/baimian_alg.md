@@ -31,7 +31,7 @@ $$J(w) = \frac{1}{N} ln L(w)$$
 
 即在逻辑回归模型中, 我们最大化似然函数和最小化损失函数实际上是等价的.
 
-#### 随机梯度下降法求解
+**随机梯度下降法求解**
 
 <div style="text-align: center; width: 80%; margin: auto; ">
 <img width=100% src="img/2021_06_02_21_34_08.png">
