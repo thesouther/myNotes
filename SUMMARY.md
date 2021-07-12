@@ -11,6 +11,7 @@
     * [1 百面ML-3优化算法](./AL_ML/baimian_optimal.md)
     * [1 百面ML-集成学习](./AL_ML/bagging_boosting.md)
     * [2 李宏毅ML-Optimization](./AL_ML/Li1_Optimization.md)
+    * [3 Python经典问题](./AL_ML/python1.md)
     * [10.1 遗传算法-基本原理](./AL_ML/BasicGA.md)
     * [10.2 遗传算法-自适应策略](./AL_ML/AdaptiveGA.md)
     * [10.3 遗传算法-精英保留](./AL_ML/ElitistPreservationGA.md)
