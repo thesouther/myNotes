@@ -100,3 +100,38 @@ while True:
     except StopIteration:
         sys.exit()
 ```
+
+### 1.5 [修饰器](https://zhuanlan.zhihu.com/p/51035016)
+
+装饰器的作用就是为已经存在的函数或对象添加额外的功能。
+利用了python参数可以传递函数引用的特点. 用一个@符号修饰.
+自己定义修饰器的时候会将修饰器的函数替换自己的函数, 因此可以使用`functools.wraps`解决这个问题.
+
+如下是一个通用的带参数的修饰器
+```python
+from functools import wraps
+
+def aop(func):
+    """aop func"""
+    @wraps(func)
+    def wrap(*args, **kwargs):
+        print('before')
+        func(*args, **kwargs)
+        print('after')
+
+    return wrap
+
+@aop
+def hi(a, b, c):
+    """hi func"""
+    print('test hi: %s, %s, %s' % (a, b, c))
+
+@aop
+def hello(a, b):
+    """hello func"""
+    print('test hello: %s, %s' % (a, b))
+
+if __name__ == '__main__':
+    hi(1, 2, 3)
+    hello('a', 'b')
+``` 
