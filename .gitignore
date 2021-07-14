@@ -1,0 +1,5 @@
+node_modules
+_book
+.vscode
+run.sh
+gitbookbuild.bat
