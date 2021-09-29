@@ -3,8 +3,12 @@
 * [Introduction](README.md)
 
 ## 论文总结与算法学习
+* [CS](./CS/index.md)
+    * [0 CS-排序算法](./CS/alg.md)
 * [ML](./AL_ML/index.md)
     * [0 ML-经典面试题](./AL_ML/questions_ml.md)
+    * [0 ML-评估指标](./AL_ML/questions_pinggu.md)
+    * [0 ML-激活函数](./AL_ML/activation_funcs.md)
     * [1 百面 ML-3 经典算法](./AL_ML/baimian_alg.md)
     * [1 百面 ML-3 降维/非监督学习](./AL_ML/baimian_jaingwei.md)
     * [1 百面 ML-3CNN/RNN](./AL_ML/baimian_cnn_rnn.md)
