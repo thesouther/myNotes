@@ -177,6 +177,53 @@ $$D_{KL}(p||q) = \sum p(x)\log p(x) - \sum p(x) \log q(x) = \sum p(x) \log \frac
 - 不对称性
 - 非负性
 
+### 3.4 MSE 和 CE 的区别
+
+1. MSE 衡量两个距离的远近, 经常用来做回归任务.
+2. CE 作为 KL 散度的近似, 衡量两个分布的相似度, 经常用来做分类任务.
+3. 分类任务中一般不使用 MSE, 因为
+   - MSE 作为分类的损失函数会有梯度消失的问题.
+   - MSE 是非凸的，存在很多局部极小值点。
+
+举例, 以最简单的逻辑回归为例,
+
+<div style="width: 100%; height:100px; line-height:100px; text-align: center; ">
+<div style="float: right; width:15%; height:100%; ">
+<p>(1)</p>
+</div>
+<div style="float: right; width:80%; height:100%; ">
+<img width=100% src="img/2021_11_01_20_55_44.png">
+</div>
+</div>
+
+<div style="text-align: center; width: 90%; margin: auto; ">
+<div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
+<p style="color:white; margin-left: 10px; "><b>MSE</b></p>
+</div>
+<div style="width: 100%; background: #ddd;">
+<img width=100% src="img/2021_11_01_20_57_56.png">
+</div>
+</div>
+
+<div style="text-align: center; width: 90%; margin: auto; ">
+<div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
+<p style="color:white; margin-left: 10px; "><b>CE</b></p>
+</div>
+<div style="width: 100%; background: #ddd;">
+<img width=100% src="img/2021_11_01_20_58_28.png">
+</div>
+</div>
+
+<div style="text-align: center; width: 90%; margin: auto; ">
+<div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
+<p style="color:white; margin-left: 10px; "><b>关于MSE非凸问题</b></p>
+</div>
+<div style="width: 100%; background: #ddd;">
+<img width=100% src="img/2021_11_01_21_53_42.png">
+<img width=100% src="img/2021_11_01_21_53_54.png">
+</div>
+</div>
+
 ## 4. SVM
 
 ### 4.1 SVM 与 LDA 的区别和联系
