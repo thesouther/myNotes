@@ -31,6 +31,7 @@
     * [3 知识蒸馏简介](./AL_RL/kndis_intro.md)
     * [3 知识蒸馏](./AL_RL/kndis.md)
     * [3 策略蒸馏](./AL_RL/podis.md)
+    * [3 Distilling Policy Distillation](./AL_RL/dpd.md)
     * [3 Oracle Policy Distillation](./AL_RL/opd.md)
     * [10 深度神经进化](./AL_RL/DeepNeuro.md)
     * [10 遗传模糊树](./AL_RL/GFT.md)
