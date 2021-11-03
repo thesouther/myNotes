@@ -36,7 +36,7 @@
 <p>(1)</p>
 </div>
 <div style="float: right; width:80%; height:100%; ">
-<img width=100% src="img/2021_11_03_14_47_39.png">
+<img height=90% src="img/2021_11_03_14_47_39.png">
 </div>
 </div>
 
