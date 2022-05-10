@@ -80,7 +80,7 @@ paper: [Deep Reinforcement Learning with Knowledge Transfer for Online Rides Ord
 <img width=100% src="img/2022_04_27_09_56_42.png">
 </div>
 
-邻域用$$B(s,L)$$表示. 当$$\tilde{A}(s,L)$$非空的时候就返回, 并停止增加 L 大小. 否则返回$$B(s，L_{max})$$. $$L_{max}$$即控制了动作空间的大小. 该过程可以看作司机不接客时的等待时间或者空车引导过程.
+邻域用$$B(s,L)$$表示. 当$$\tilde{A}(s,L)$$非空的时候就返回, 并停止增加 L 大小. 否则返回$$B(s, L_{max})$$. $$L_{max}$$即控制了动作空间的大小. 该过程可以看作司机不接客时的等待时间或者空车引导过程.
 
 <div style="text-align: center; width: 80%; margin: auto; ">
 <img width=100% src="img/2022_04_27_09_57_01.png">
@@ -174,7 +174,7 @@ CFPT 的主要创新点为: 在 source city 训练阶段, 将网络分为并行�
 
 #### A. Single-agent evaluation environment
 
-从过去的行程数据(测试集)构建了一个 Single-agent evaluation environment，以便对从学习到的价值函数生成的策略进行直接和明确的评估。
+从过去的行程数据(测试集)构建了一个 Single-agent evaluation environment, 以便对从学习到的价值函数生成的策略进行直接和明确的评估。
 
 - 假设司机放下一个乘客之后, 将会得到目的地附近的新的请求, 通过 III-C 中的搜索策略可以覆盖没有历史数据的区域. 下一次移动位置由给定 action search 输出的策略选择, 可以是载客行程或者等待/重定位. reward 为行程收入或者 0.
 - 将该过程模拟多个 episodes (days), 计算平均的累积奖励.
