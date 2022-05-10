@@ -126,6 +126,7 @@
 * [打车](./Ridesourcing/index.md)
     * [0. 综述](./Ridesourcing/review.md)
     * [1. ETA-HetETA](./Ridesourcing/heteta.md)
+    * [2. 派单-滴滴 KDD17](./Ridesourcing/didikdd17.md)
     * [2. 派单-滴滴 KDD18](./Ridesourcing/didikdd18.md)
     * [2. 派单-滴滴 KDD19](./Ridesourcing/didikdd19.md)
     * [2. 派单-DRL-with-knowledge-transger](./Ridesourcing/dididrl_kt.md)
