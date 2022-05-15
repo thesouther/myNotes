@@ -166,4 +166,29 @@ $$
 
 ## 4 实验
 
+### 4.1 派单系统
+
+评估指标:
+|指标|英文|中文|
+|:-:|:-:|:-:|
+|SR|Percentage of served calls (Success Rate)| 总体订单成功率|
+|APT|Averaged pick up time|订单从接受到乘客上车的时间|
+|ADT|Averaged dispatch time|平均接单时间|
+|CR|Percentage of cancelled calls (Cancellation Rate)|订单取消率|
+|FU|Average total number of calls served by each cab (Fleet Utilization)|平均每辆车服务订单次数(车队利用率)|
+
+对比方法:
+
+- 一种是将订单分配给一个最合适的司机[3,10]. 通过最短驾驶时间计算和 A\*最短路径方法, 提出一种基于学习的排序模型. 根据排序分数分配.
+- 一种是一个订单给多个司机, 优化整体等待时间. [19]提出的一种基于多智能体的订单分配系统, 整体等待时间较少.
+
+**其他部分不详述了**
+
 ## 5 结论
+
+本文将派单问题形式化为一个组合优化问题, 其中重要的一环是使用 LR 模型预估订单接受率. 之后提出一种贝叶斯模型预测目的地.
+
+下一步工作:
+
+- 解决非凸问题导致的次优解. 计划找到一个凸的代理函数(convex surrogate), 进行快速求解.
+- 优化目的地预测方法.
