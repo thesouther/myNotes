@@ -39,11 +39,11 @@ $$
 
 比较
 
-|   名称   |                                                       比较                                                        | 123 |     |
-| :------: | :---------------------------------------------------------------------------------------------------------------: | :-: | :-: |
-| 仿射组合 |                 $$\forall \theta_{1}, \cdots, \theta_{k}, \quad \theta_{1}+\cdots+\theta_{k}=1$$                  |     |     |
-|  凸组合  | $$\forall \theta_{1}, \cdots, \theta_{k} \quad \theta_{1}+\cdots+\theta_{k}=1, \theta_{1}, \cdots, \theta_{k}>0$$ |     |
-| 凸锥组合 |               $$\forall \theta_{1}, \cdots, \theta_{k} \quad \theta_{1}+\cdots+\theta_{k} \geq 0$$                |     |
+|   名称   |                                                       比较                                                        |
+| :------: | :---------------------------------------------------------------------------------------------------------------: |
+| 仿射组合 |                 $$\forall \theta_{1}, \cdots, \theta_{k}, \quad \theta_{1}+\cdots+\theta_{k}=1$$                  |
+|  凸组合  | $$\forall \theta_{1}, \cdots, \theta_{k} \quad \theta_{1}+\cdots+\theta_{k}=1, \theta_{1}, \cdots, \theta_{k}>0$$ |
+| 凸锥组合 |               $$\forall \theta_{1}, \cdots, \theta_{k} \quad \theta_{1}+\cdots+\theta_{k} \geq 0$$                |
 
 ### 关键定理
 
