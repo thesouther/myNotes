@@ -3,6 +3,14 @@
 * [Introduction](README.md)
 
 ## 论文总结与算法学习
+* [基础概念汇总](./Basis/index.md)
+    * [0-线性代数/矩阵论](./Basis/la.md)
+    * [1-概率论](./Basis/introProb.md)
+    * [2-随机过程](./Basis/sp.md)
+    * [4-机器学习](./Basis/ml.md)
+    * [5-线性规划](./Basis/lp.md)
+    * [6-整数规划](./Basis/ip.md)
+    * [7-凸优化](./Basis/co.md)
 * [CS](./CS/index.md)
     * [0 CS-排序算法](./CS/alg.md)
     * [0 CS-TOP-K 问题](./CS/topk.md)
@@ -130,6 +138,9 @@
     * [2. 派单-滴滴 KDD18](./Ridesourcing/didikdd18.md)
     * [2. 派单-滴滴 KDD19](./Ridesourcing/didikdd19.md)
     * [2. 派单-DRL-with-knowledge-transger](./Ridesourcing/dididrl_kt.md)
+* [推荐系统](./RecSys/index.md)
+    * [0. 综述-图学习](./RecSys/graph_learning_review.md)
+    * [0. 综述-DL](./RecSys/dl_review.md)
 
 ## 名词总结
 * [总述](./glossary/index.md)
