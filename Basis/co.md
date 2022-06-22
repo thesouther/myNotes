@@ -7,7 +7,7 @@
 $$
 $$
 
-## 基础概念
+## 1 基础概念
 
 - 优化: 从⼀个可⾏解的集合中, 寻找最优的元素
   - 线性规划/非线性规划
@@ -45,7 +45,7 @@ $$
 |  凸组合  | $$\forall \theta_{1}, \cdots, \theta_{k} \quad \theta_{1}+\cdots+\theta_{k}=1, \theta_{1}, \cdots, \theta_{k}>0$$ |
 | 凸锥组合 |               $$\forall \theta_{1}, \cdots, \theta_{k} \quad \theta_{1}+\cdots+\theta_{k} \geq 0$$                |
 
-### 几种重要的凸函数
+### 几种重要的凸集
 
 - 仿射集
   - 任意线性方程组的解集都是仿射集
@@ -88,3 +88,81 @@ $$
 
 - $$\{x \mid x \leq 0\}$$是凸集，是多面体, 是单纯形
   - 单纯形证明, 取$$x_{0}=0, x_{1}=-\infty$$
+
+### 保凸变换
+
+- (多个)凸集的交集
+- 仿射变换
+  - 线性变换和仿射函数的区别.(f(x)=Ax // f(x)=Ax+b)
+  - **仿射变换逆运算也是保凸变换**
+  - **椭球是球的仿射变换**
+  - **缩放和移位**
+- 凸集的和
+- 线性矩阵不等式（LMI）
+  - 线性矩阵不等式的解集是凸集
+- 透视函数
+  - 任意凸集的反透视映射也是凸集
+- 线性分数函数
+  - 先进行仿射变换, 在进行透视变换, 是一种非线性变换
+- 两个随机变量的联合概率 --(映射)--> 条件概率
+  - 两个随机变量的联合概率是凸集
+  - 其实是贝叶斯公式
+
+## 3 凸函数
+
+f 是凸函数, -f 是凹函数
+大于号的时候严格凸
+
+### 定义
+
+##### 定义(1)
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_21_23_25_48.png">
+</div>
+
+##### 定义(2)
+
+f is convex if and only if for all $$x \in \mathbf{dom}  f$$ and all v, the function $$g(t) = f(x + tv)$$ is convex (on its domain, $$\{t | x + tv \in \mathbf{dom} f\}$$).
+
+- 通过把函数限制在一条直线上, 验证是否是凸的
+
+##### 定义(3) 一阶条件
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_22_15_45_32.png">
+</div>
+
+- f 的定义域一定是一个开集, 因为如果是闭集的话在边界上不可微
+- 切线在 y 处的值一定小于函数值
+
+##### 定义(4) 二阶条件
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_22_23_13_50.png">
+</div>
+
+一阶偏导单调不减
+
+### 重要的凸函数
+
+- 示性函数 (分情况讨论)
+  - 不在定义域的函数值为无穷或无定义时, 是凸的
+  - 如果不在定义域的的函数值为具体值时, 不是凸的
+- 二次函数
+  - 二阶导 $$f''(x) = P$$, 讨论 P 的(半)正(负)定, 得凹凸性
+- $$f(x) = 1/(x^2), x\ne 0, x\in R$$
+  - 不是凸函数, 定义域不是凸集
+- 仿射函数
+  - 既是凸的又是凹的
+- 指数函数
+  - 是凸函数, $$f(x)=e^{ax}, x\in R$$
+- 幂函数, 分情况讨论
+  - $$f(x)=x^{a}, x \in \mathbb{R}_{++}$$
+  - $$
+    \nabla^{2} f(x)\left\{\begin{array}{ll}
+    \geq 0 & a \geq 1 \text { or } a \leq 0 \\
+    \leq 0 & 0 \leq a \leq 1 \\
+    = 0 & a=0 { or } a=1
+    \end{array}\right.
+    $$
