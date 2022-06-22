@@ -161,8 +161,15 @@ f is convex if and only if for all $$x \in \mathbf{dom}  f$$ and all v, the func
   - $$f(x)=x^{a}, x \in \mathbb{R}_{++}$$
   - $$
     \nabla^{2} f(x)\left\{\begin{array}{ll}
-    \geq 0 & a \geq 1 \text { or } a \leq 0 \\
+    \geq 0 & a \geq 1 \text{ or } a \leq 0 \\
     \leq 0 & 0 \leq a \leq 1 \\
-    = 0 & a=0 { or } a=1
+    = 0 & a=0 \text{ or } a=1
     \end{array}\right.
     $$
+- 绝对值的幂函数 (分情况讨论, P16)
+- 对数函数 -- 严格凹函数
+- 负熵 -- 严格凸函数
+- $$R^n$$空间的范数 $$P(x), x \in R^n$$
+- 零范数
+  - 非零元素数目（不是凸函数）
+- 极大值函数
