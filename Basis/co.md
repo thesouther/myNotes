@@ -17,25 +17,31 @@ $$
 - 凸优化: 如果一个问题是凸优化问题, 那么其目标函数是凸函数, 约束为凸集(约束由若干个凸函数组成)
   - 线性规划一定是一个凸规划
 
-|       名称        |        英文        |                                                                                                定义                                                                                                |                                                                                           解释                                                                                           |
-| :---------------: | :----------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| 过任意两点的直线  |                    |                                                                     $$ f({x}) = \theta x_1 + (1 - \theta) x_2 ,\theta \in R $$                                                                     |                                                                                                                                                                                          |
-| 过任意两点的线段  |                    |                                                                   $$ f({x}) = \theta x_1 + (1 - \theta) x_2 ,\theta \in [0,1] $$                                                                   |                                                                                                                                                                                          |
-| n 维空间的子空间  |                    |                                                 $$\alpha, \beta\in V, k\in R\Rightarrow \alpha+\beta\in V, k\alpha \in V$$, 则 V 为$$R^n$$的子空间                                                 | 子空间: $$R^n$$的非空子集 V, 且对加法和数乘运算封闭. 对减法肯定也封闭. <br>n 维空间的子空间一定包含零向量 (过原点). <br> 过原点的平面或直线, 以原点为起点的所有向量为$$R^3$$空间的子空间 |
-|     线性函数      |                    |                                                                          $$f(\alpha x+\beta y) = \alpha f(x)+\beta f(y)$$                                                                          |                                                                                                                                                                                          |
-|      凸函数       |                    |                                                                        $$f(\alpha x+\beta y) \leq \alpha f(x)+\beta f(y)$$                                                                         |                                                                                                                                                                                          |
-|      仿射集       |    Affine Sets     |                                                                  一个集合 C 中，连接任意两点的直线也在该集合中，则该集合为仿射集                                                                   |                                                                   直线/二维空间都是仿射集; 线段、闭合图形不是仿射集。                                                                    |
-|     仿射组合      | affine combination | 设集合 C 中的 k 个点, $$x_{1}, \cdots, x_{k} \in C; \theta_{1}, \cdots, \theta_{k} \in \mathbb{R}, \theta+\cdots+\theta_{k}=1$$, 则$$\theta_{1} x_{1}+\cdots+\theta_{k} x_{k}$$为 k 个点的仿射组合 |                                                                 **若集合 C 中 k 个点的仿射组合也在 C 中, 则 C 为仿射集**                                                                 |
-|      仿射包       |    affine hull     |                            $$\text { aff } C=\left\{\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \mid x_{1}, \ldots, x_{k} \in C, \theta_{1}+\cdots+\theta_{k}=1\right\}$$                             |                                                          集合 C 中元素的所有仿射组合, (包含集合 C 的最小仿射集)称为 C 的仿射包                                                           |
-| 与 C 相关的子空间 |                    |                                                                C 是仿射集,$$ V = C-x_0 = \{x-x_0 \| x \in C\}, \forall x_0 \in C $$                                                                |        该式表示对仿射集 C 的平移, 过原点, 具有更好的性质. <br> $$\forall V_{1}, V_{2} \in V ,   \forall \alpha, \beta \in \mathbb{R} $$, 使得 $$\alpha V_{1}+\beta V_{2} \in V $$        |
-|       凸集        |     Convex Set     |                        $$C \text { is a Convex Set } \Leftrightarrow \forall \theta x_{1}+(1-\theta) x_{2} \in C, x_{1}, x_{2} \in C \forall \theta \quad \theta \in[0,1]$$                        |                                                  一个集合是凸集，当属于该集合的任意两点之间的线段仍然在该集合内。 <br>仿射集一定是凸集                                                   |
-|      凸组合       | convex combination |                                             $$\theta_{1} x_{1}+\cdots+\theta_{k} x_{k},  \theta_{1}+\cdots+\theta_{k}=1, \theta_{i} \ge 0, i=1,...k $$                                             |                                                               $$C$$ 为凸集 $$\Leftrightarrow$$ 任意元素凸组合 $$ \in C $$                                                                |
-|       凸包        |    convex hull     |                           $$Conv  C=\left\{\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \mid x_i \in C, \theta_i \ge 0, i=1,...k,  \theta_{1}+\cdots+\theta_{k}=1\right\}$$                            |                                                      集合 C (不一定是凸集) 中元素的所有凸组合, (包含集合 C 的最小凸集)称为 C 的凸包                                                      |
-|        锥         |                    |                                                    $$C$$ 是锥 $$\Leftrightarrow \quad \forall x \in C, \theta \geq 0 $$, 有 $$\theta x \in C $$                                                    |                                                                                   锥一定是过原点的集合                                                                                   |
-|       凸锥        |    Convex Cone     |                         $$C$$ 是凸锥 $$\Leftrightarrow \quad \forall x_{1}, x_{2} \in C, \theta_{1}, \theta_{2} \geq 0 $$, 有 $$\theta_{1} x_{1}+\theta_{2} x_{2} \in C$$                          |                                                                                                                                                                                          |
-|      锥组合       | conic combination  |                                                     $$\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \quad \theta_{1}, \cdots, \theta_{k} \geq 0 $$                                                      |                                                                                                                                                                                          |
-|      凸锥包       |     conic hull     |                                      $$\{\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \mid x_{1}, \cdots, x_{k} \in C, \theta_{1}, \cdots, \theta_{k} \geq 0\}$$                                       |                                                                                                                                                                                          |
-|                   |                    |                                                                                                                                                                                                    |                                                                                                                                                                                          |
+|       名称       | 英文 |                                                定义                                                |                                                                                           解释                                                                                           |
+| :--------------: | :--: | :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| 过任意两点的直线 |      |                     $$ f({x}) = \theta x_1 + (1 - \theta) x_2 ,\theta \in R $$                     |                                                                                                                                                                                          |
+| 过任意两点的线段 |      |                   $$ f({x}) = \theta x_1 + (1 - \theta) x_2 ,\theta \in [0,1] $$                   |                                                                                                                                                                                          |
+| n 维空间的子空间 |      | $$\alpha, \beta\in V, k\in R\Rightarrow \alpha+\beta\in V, k\alpha \in V$$, 则 V 为$$R^n$$的子空间 | 子空间: $$R^n$$的非空子集 V, 且对加法和数乘运算封闭. 对减法肯定也封闭. <br>n 维空间的子空间一定包含零向量 (过原点). <br> 过原点的平面或直线, 以原点为起点的所有向量为$$R^3$$空间的子空间 |
+|     线性函数     |      |                          $$f(\alpha x+\beta y) = \alpha f(x)+\beta f(y)$$                          |                                                                                                                                                                                          |
+|      凸函数      |      |                        $$f(\alpha x+\beta y) \leq \alpha f(x)+\beta f(y)$$                         |                                                                                                                                                                                          |
+
+|       名称        |        英文        |                                                                                                定义                                                                                                |                                                                                    解释                                                                                    |
+| :---------------: | :----------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|      仿射集       |    Affine Sets     |                                                                  一个集合 C 中，连接任意两点的直线也在该集合中，则该集合为仿射集                                                                   |                                                            直线/二维空间都是仿射集; 线段、闭合图形不是仿射集。                                                             |
+|     仿射组合      | affine combination | 设集合 C 中的 k 个点, $$x_{1}, \cdots, x_{k} \in C; \theta_{1}, \cdots, \theta_{k} \in \mathbb{R}, \theta+\cdots+\theta_{k}=1$$, 则$$\theta_{1} x_{1}+\cdots+\theta_{k} x_{k}$$为 k 个点的仿射组合 |                                                          **若集合 C 中 k 个点的仿射组合也在 C 中, 则 C 为仿射集**                                                          |
+|      仿射包       |    affine hull     |                            $$\text { aff } C=\left\{\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \mid x_{1}, \ldots, x_{k} \in C, \theta_{1}+\cdots+\theta_{k}=1\right\}$$                             |                                                   集合 C 中元素的所有仿射组合, (包含集合 C 的最小仿射集)称为 C 的仿射包                                                    |
+| 与 C 相关的子空间 |                    |                                                                C 是仿射集,$$ V = C-x_0 = \{x-x_0 \| x \in C\}, \forall x_0 \in C $$                                                                | 该式表示对仿射集 C 的平移, 过原点, 具有更好的性质. <br> $$\forall V_{1}, V_{2} \in V ,   \forall \alpha, \beta \in \mathbb{R} $$, 使得 $$\alpha V_{1}+\beta V_{2} \in V $$ |
+|       凸集        |     Convex Set     |                        $$C \text { is a Convex Set } \Leftrightarrow \forall \theta x_{1}+(1-\theta) x_{2} \in C, x_{1}, x_{2} \in C \forall \theta \quad \theta \in[0,1]$$                        |                                           一个集合是凸集，当属于该集合的任意两点之间的线段仍然在该集合内。 <br>仿射集一定是凸集                                            |
+|      凸组合       | convex combination |                                             $$\theta_{1} x_{1}+\cdots+\theta_{k} x_{k},  \theta_{1}+\cdots+\theta_{k}=1, \theta_{i} \ge 0, i=1,...k $$                                             |                                                        $$C$$ 为凸集 $$\Leftrightarrow$$ 任意元素凸组合 $$ \in C $$                                                         |
+|       凸包        |    convex hull     |                           $$Conv  C=\left\{\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \mid x_i \in C, \theta_i \ge 0, i=1,...k,  \theta_{1}+\cdots+\theta_{k}=1\right\}$$                            |                                               集合 C (不一定是凸集) 中元素的所有凸组合, (包含集合 C 的最小凸集)称为 C 的凸包                                               |
+
+|  名称  |       英文        |                                                                       定义                                                                        |         解释         |
+| :----: | :---------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------: | :------------------: |
+|   锥   |                   |                           $$C$$ 是锥 $$\Leftrightarrow \quad \forall x \in C, \theta \geq 0 $$, 有 $$\theta x \in C $$                            | 锥一定是过原点的集合 |
+|  凸锥  |    Convex Cone    | $$C$$ 是凸锥 $$\Leftrightarrow \quad \forall x_{1}, x_{2} \in C, \theta_{1}, \theta_{2} \geq 0 $$, 有 $$\theta_{1} x_{1}+\theta_{2} x_{2} \in C$$ |                      |
+| 锥组合 | conic combination |                             $$\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \quad \theta_{1}, \cdots, \theta_{k} \geq 0 $$                             |                      |
+| 凸锥包 |    conic hull     |              $$\{\theta_{1} x_{1}+\cdots+\theta_{k} x_{k} \mid x_{1}, \cdots, x_{k} \in C, \theta_{1}, \cdots, \theta_{k} \geq 0\}$$              |                      |
+|        |                   |                                                                                                                                                   |                      |
 
 比较
 
@@ -64,23 +70,26 @@ $$
 <img width=100% src="img/2022_06_20_20_51_59.png">
 </div>
 
-|          集合           |    仿射集    | 凸集 |   凸锥集    |                                                                                                                定义                                                                                                                 |
-| :---------------------: | :----------: | :--: | :---------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    N 维($$R^n$$)空间    |      √       |  √   |      √      |                                                                                                                                                                                                                                     |
-|   $$R^n$$空间的子空间   |      √       |  √   |      √      |                                                                                                                                                                                                                                     |
-|        任意直线         |      √       |  √   |  (过原点)   |                                                                                                                                                                                                                                     |
-|        任意线段         |     (点)     |  √   |   (原点)    |                                                                                                                                                                                                                                     |
-|         (射线)          |    (v=0)     |  √   | ($$x_0=0$$) |                                                                                   $$\{x_0+\theta v \| \theta\ge 0\}, x_0, v\in R^n, \theta\in R$$                                                                                   |
-|         超平面          |      √       |  √   |  (过原点)   |                                                                    $$\left\{x \mid a^{T} x=b\right\} \quad x, a \in \mathbb{R}^{n}, b \in \mathbb{R}, a \neq 0$$                                                                    |
-|         半空间          |     不是     |  √   |  (过原点)   |                                                                                           空间中被超平面分割的($$\ge b , \le b$$)两个部分                                                                                           |
-|      球 (欧氏空间)      | (半径等于 0) |  √   |   (原点)    |                                 $$B\left(x_{c}, r\right)=\left\{x \mid\left\|x-x_{c}\right\|_{2} \leq r\right\}=\left\{x \mid \sqrt{\left(x-x_{c}\right)^{T}\left(x-x_{c}\right)} \leq r\right\}$$                                  |
-|     椭球 (欧氏空间)     | (半径等于 0) |  √   |   (原点)    | $$\varepsilon\left(x_{c}, P\right)=\left\{x \mid\left(x-x_{c}\right)^{T} P^{-1}\left(x-x_{c}\right) \leq 1\right\} \quad P \in S_{++}^{n} $$ (n \* n 对称正定矩阵, 奇异值>=0) <br> P 矩阵的每个特征值对应着椭球一个维度上半径的长度 |
-| (此处考虑有界的) 多面体 |              |  √   |             |                                     $$P=\left\{x \mid a_{j}^{T} x \leq b_{j} j=1, \cdots, m, c_{j}^{T} x=d_{j} j=1, \cdots, r\right\}$$ <br>(本质是一些超平面和半空间的交集) <br>可能是没有界的                                     |
-|    单纯形（Simplex）    |              |  √   |             |                                                                                            单纯形是一种特殊的多面体. <br> 定义看笔记 P8                                                                                             |
-|           --            |      --      |  --  |     --      |                                                                                                                 --                                                                                                                  |
-|      对称矩阵集合       |              |  √   |      √      |                                                                                   $$S^{n}=\left\{x \in \mathbb{R}^{n * n} \mid x=x^{T}\right\}$$                                                                                    |
-|   对称半正定矩阵集合    |              |  √   |      √      |                                                                           $$S_{+}^{n}=\left\{x \in \mathbb{R}^{n * n} \mid x=x^{T}, x \succeq 0\right\}$$                                                                           |
-|    对称正定矩阵集合     |              |      |      ×      | $$S_{++}^{n}=\left\{x \in \mathbb{R}^{n * n} \mid x=x^{T}, x \succ 0\right\}$$ <br> 如何证明不是凸锥? <br>令 n=1, 则 $$S_{+}^{n}=\mathbb{R}_{+}, S_{++}^{n}=\mathbb{R}_{++} , S^{n}=\mathbb{R}$$, 正定矩阵不含 0 矩阵, 因此不是凸锥 |
+|        集合         | 仿射集 | 凸集 |   凸锥集    |                                             定义                                              |
+| :-----------------: | :----: | :--: | :---------: | :-------------------------------------------------------------------------------------------: |
+|  N 维($$R^n$$)空间  |   √    |  √   |      √      |                                                                                               |
+| $$R^n$$空间的子空间 |   √    |  √   |      √      |                                                                                               |
+|      任意直线       |   √    |  √   |  (过原点)   |                                                                                               |
+|      任意线段       |  (点)  |  √   |   (原点)    |                                                                                               |
+|       (射线)        | (v=0)  |  √   | ($$x_0=0$$) |                $$\{x_0+\theta v \| \theta\ge 0\}, x_0, v\in R^n, \theta\in R$$                |
+|       超平面        |   √    |  √   |  (过原点)   | $$\left\{x \mid a^{T} x=b\right\} \quad x, a \in \mathbb{R}^{n}, b \in \mathbb{R}, a \neq 0$$ |
+|       半空间        |  不是  |  √   |  (过原点)   |                        空间中被超平面分割的($$\ge b , \le b$$)两个部分                        |
+
+|          集合           |    仿射集    | 凸集 | 凸锥集 |                                                                                                                定义                                                                                                                 |
+| :---------------------: | :----------: | :--: | :----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|      球 (欧氏空间)      | (半径等于 0) |  √   | (原点) |                                 $$B\left(x_{c}, r\right)=\left\{x \mid\left\|x-x_{c}\right\|_{2} \leq r\right\}=\left\{x \mid \sqrt{\left(x-x_{c}\right)^{T}\left(x-x_{c}\right)} \leq r\right\}$$                                  |
+|     椭球 (欧氏空间)     | (半径等于 0) |  √   | (原点) | $$\varepsilon\left(x_{c}, P\right)=\left\{x \mid\left(x-x_{c}\right)^{T} P^{-1}\left(x-x_{c}\right) \leq 1\right\} \quad P \in S_{++}^{n} $$ (n \* n 对称正定矩阵, 奇异值>=0) <br> P 矩阵的每个特征值对应着椭球一个维度上半径的长度 |
+| (此处考虑有界的) 多面体 |              |  √   |        |                                     $$P=\left\{x \mid a_{j}^{T} x \leq b_{j} j=1, \cdots, m, c_{j}^{T} x=d_{j} j=1, \cdots, r\right\}$$ <br>(本质是一些超平面和半空间的交集) <br>可能是没有界的                                     |
+|    单纯形（Simplex）    |              |  √   |        |                                                                                            单纯形是一种特殊的多面体. <br> 定义看笔记 P8                                                                                             |
+|           --            |      --      |  --  |   --   |                                                                                                                 --                                                                                                                  |
+|      对称矩阵集合       |              |  √   |   √    |                                                                                   $$S^{n}=\left\{x \in \mathbb{R}^{n * n} \mid x=x^{T}\right\}$$                                                                                    |
+|   对称半正定矩阵集合    |              |  √   |   √    |                                                                           $$S_{+}^{n}=\left\{x \in \mathbb{R}^{n * n} \mid x=x^{T}, x \succeq 0\right\}$$                                                                           |
+|    对称正定矩阵集合     |              |      |   ×    | $$S_{++}^{n}=\left\{x \in \mathbb{R}^{n * n} \mid x=x^{T}, x \succ 0\right\}$$ <br> 如何证明不是凸锥? <br>令 n=1, 则 $$S_{+}^{n}=\mathbb{R}_{+}, S_{++}^{n}=\mathbb{R}_{++} , S^{n}=\mathbb{R}$$, 正定矩阵不含 0 矩阵, 因此不是凸锥 |
 
 <div style="text-align: center; width: 80%; margin: auto; ">
 <img width=100% src="img/2022_06_20_22_44_41.png">
@@ -161,15 +170,30 @@ f is convex if and only if for all $$x \in \mathbf{dom}  f$$ and all v, the func
   - $$f(x)=x^{a}, x \in \mathbb{R}_{++}$$
   - $$
     \nabla^{2} f(x)\left\{\begin{array}{ll}
-    \geq 0 & a \geq 1 \text{ or } a \leq 0 \\
-    \leq 0 & 0 \leq a \leq 1 \\
-    = 0 & a=0 \text{ or } a=1
+    \geq 0 & a \geq 1 \text{ or } a \leq 0  \text{ -- convex}\\
+    \leq 0 & 0 \leq a \leq 1 \text{ -- concave}\\
+    = 0 & a=0 \text{ or } a=1 \text{ -- concave and convex }
     \end{array}\right.
     $$
 - 绝对值的幂函数 (分情况讨论, P16)
 - 对数函数 -- 严格凹函数
 - 负熵 -- 严格凸函数
 - $$R^n$$空间的范数 $$P(x), x \in R^n$$
-- 零范数
+- 空间范数, 是凸函数
+- 零范数-不是范数
   - 非零元素数目（不是凸函数）
-- 极大值函数
+- 极大值函数, 或者极小极大函数-- 凸函数
+  - $$max f(x)$$
+  - $$min_x \ \ max_y f(x,y)$$
+- 解析逼近(log-sum-exp), 凸函数
+  - 因为极大(极小)函数不可微, 所以可以通过解析逼近分析
+- 几何平均, (所有元素相乘再开 n 次根) -凹函数
+- 对称半正定矩阵的行列式的对数 (分情况讨论) -- 凹函数
+
+#### 保凸运算
+
+- 非负加权和(积分)
+- 仿射映射
+  - 先对变量仿射变换, 再经过 f, 是凸函数
+  - 变量不变, 对 f 进行仿射变换, A 如果非负, 是凸函数
+- 两个函数的极⼤值函数
