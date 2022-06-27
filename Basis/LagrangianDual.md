@@ -1,5 +1,7 @@
 # 8-拉格朗日对偶理论
 
+仿射集,仿射函数, 凸集, 凸函数, 凸优化问题相关定义, 可以查看[凸优化笔记 0](./co.md)
+
 ## 1. "松弛"与"界"
 
 我们面对数学规划问题中的约束项时, 有时可以很直观地感受到一些约束比较简单, 而另一些约束是比较复杂的.
@@ -248,7 +250,8 @@ d(\lambda, v) = inf_{x} L(x, \lambda, v)
 $$
 
 ```
-inf 符号表示取下确界。求解析式可先将 L 看成是关于 x 的函数，而将拉格朗日乘子看作常数，求出 L 的极小值点;
+inf 符号表示取下确界。 即一个集合最大的下界.  **考虑一个开区间(0,1)的下确界是什么?**
+求解析式可先将 L 看成是关于 x 的函数，而将拉格朗日乘子看作常数，求出 L 的极小值点;
 再将该点代入 L ，得到的关于 λ 和 v 的表达式就是对偶函数。
 ```
 
@@ -280,13 +283,188 @@ fig 2-3
 </div>
 <br>
 
-以上我们说明了拉格朗日对偶函数得由来, 使用拉格朗日乘子法带来的便利, 并证明了其是原始优化问题得下界.
+关于这个下界和后续对偶的关系,
+[知乎-李竞宜, 给出了更加通俗易懂的解释](https://www.zhihu.com/question/58584814/answer/1119054535)
 
-下面可以正式介绍对偶理论得思想.
+以上我们说明了拉格朗日对偶函数得由来, 并证明了其是原始优化问题得下界.
+
+下面可以正式介绍对偶理论.
 
 ## 2 拉格朗日对偶
 
-### 2.1
+### 2.1 拉格朗日对偶问题
+
+根据对偶函数的性质 2 ，对 $$\forall \lambda \geq 0, \forall v$$, 对偶函数 $$ d(\lambda, v)$$ 是原问题最优值 $$p^{*}$$ 的一个下界.
+
+**但是, 我们的目的是求原始问题的最优值.** 我们废了这么大力气构造了对偶函数有什么意义吗? 其实在数学中我们得到一个下界是很有意义的, 一个最广泛的应用方法是:我们得一个简单的下界函数, 然后通过最大化这个下界函数, 来逼近原问题的最优解.
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_27_19_24_42.png">
+</div>
+
+上图中$$d^*$$称为对偶间隙 (duality gap). 我们优化的目标其实是最小化这个间隙.
+
+原问题的**拉格朗日对偶(Dual)问题**, 记为 D, 定义如下:
+
+$$
+\begin{array}{lcl}
+\text{(D.)} &\quad\max_{\lambda, v} & d(\lambda, v) = min_x L(x, \lambda, v) \\
+&\text { s.t. } & \lambda \geq 0
+\end{array}
+$$
+
+由于对偶函数是凹函数，故拉格朗日对偶问题一定是凸优化问题，其对应的最优解为 $$\lambda^*, v^*$$ (最优拉格朗日乘子)，对应的最优值为 $$d^*$$, **有$$d^* \leq p^*$$**.
+
+### 2.2 强/弱对偶性
+
+**(1) 显然, 针对所有对偶问题, 如果有解, 则$$d^* \leq p^*$$, 称"弱对偶性"成立.**
+
+弱对偶性在有解时存在, 但是并不是我们想要的, 因此我们更希望$$d^* = p^*$$, 此时对偶问题的最优解就是原始问题的最优解.
+
+**(2) 如果$$d^* = p^*$$, 称"强对偶性"成立.**
+
+那么如何判断什么时候强对偶性成立呢?
+首先, 一般而言, 当原问题是凸优化问题时，强对偶性往往成立 (但并不总是); 否则，可以利用求解对偶问题求出原问题最优值的下界。.
+
+很遗憾, 没有通用的判断条件判断一个问题是否具有强对偶性, 但是很多成果给出了除凸性条件之外的强对偶性成立的条件.
+
+### 2.3 Slater 条件与 KKT 条件
+
+#### 2.3.1 Slater 条件
+
+Slater 条件用于判断什么情况下强对偶是成立的.
+
+当原始问题为凸优化问题时, 若$$\exists x \in \operatorname{relint}(D)$$, 使得如下约束条件满足, 则强对偶性成立:
+
+$$
+f_{i}(x)<0,  \quad i=1,2 \ldots, m ;  \\
+h_{j}(x)=0,  \quad j=1,2, \ldots, p
+$$
+
+<div style="text-align: left; width: 90%; margin: auto; ">
+<div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
+<p style="color:white; margin-left: 10px; "><b><font color="red"></font></b></p>
+</div>
+<div style="width: 100%; background: #ddd;">
+relint(D) 表示原始凸问题定义域的相对内部，即在定义域上除了边界点以外的所有点。只要能找到一个这样的点使原凸问题等式约束依然成立且不等式约束都严格小于 0 即可。
+
+幸运的是，对大多数一般的原凸问题，强对偶都是成立的。
+
+</div>
+<br>
+</div>
+
+Slater 条件是强对偶性成立的**充分不必要**条件.
+若满足 Slater 条件, 则强对偶一定成立, 不满足时强对偶也可能成立.
+
+#### 2.3.2 KKT 条件
+
+KKT 条件也是强对偶成立的**必要条件**, 但是某些情况下可以称为充要条件.
+
+##### (1) 首先介绍互补松弛条件.
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_27_21_26_45.png">
+</div>
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_27_21_27_33.png">
+</div>
+
+细节可以看
+[知乎-彭一洋的回答](https://www.zhihu.com/question/58584814/answer/159863739)
+
+##### (2) 下面先介绍必要性.
+
+在对偶间隙为 0 (强对偶成立), 且 $$L$$ 对 $$x$$ 可微的前提下，设 $$x^{*} ; \lambda^{*}, v^{*}$$ 分别是原问题和对偶问题的最优解，则以下四组 KKT 条件必定满足:
+
+$$
+\left\{\begin{array}{ll}
+\left.\frac{\partial L\left(x, \lambda^{*}, v^{*}\right)}{\partial x}\right|_{x=x^{*}}=0 & (\text { stationarity }) \\
+\lambda_{i}^{*} f_{i}\left(x^{*}\right)=0 & (\text { complementary slackness }) \\
+f_{i}\left(x^{*}\right) \leq 0, h_{j}\left(x^{*}\right)=0 & (\text { primal feasibility }) \\
+\lambda_{i}^{*} \geq 0 & (\text { dual feasibility })
+\end{array}\right.
+$$
+
+1. 稳定性条件（stationarity）
+   - 该条件是说, 最优值必在极值处取得, 此时$$L$$关于$$x=x^*$$的偏导为 0
+2. 互补松弛条件（complementary slackness）
+   - 互补松弛条件是说, 对于非等式约束而言, 严格不等式是无效的不等式, 需要去掉其影响, 即当$$f_{i}\left(x^{*}\right)<0$$时, $$\lambda_{i}^{*}=0 .$$.
+   - 而如果约束有效, 必在边界$$f_{i}\left(x^{*}\right)=0$$上取得, 即当$$\lambda_{i}^{*}>0, f_{i}\left(x^{*}\right)=0$$
+   - 同时表明, 在最优点处，原问题的不等式起作用时, 对偶问题对应的不等式不起作用, 反之亦然.
+3. 问题的可行性（primal feasibility）
+   - 原问题的最优解必然满足原问题的约束条件。
+4. 对偶问题的可行性（dual feasibility）
+   - 对偶问题的最优解必然满足对偶问题的约束条件.
+
+对一般的原问题，KKT 条件是$$x^{*} ; \lambda^{*}, v^{*}$$ 为最优解的必要条件，即只要 $$x^{*} ; \lambda^{*}, v^{*}$$为最优解，则一定满足 KKT 条件。
+
+##### (3) 何时时充要条件
+
+若某个凸优化问题具有可微的目标函数和约束函数，且满足 Slater 条件，那么 KKT 条件是最优性的充要条件。
+
+### 2.4 补充: 原始问题与对偶问题形式
+
+在学习时, 我们经常见到$$\min \max$$形式的原始问题, 和$$\max \min$$形式的对偶问题, 这是这么回事呢? 其实时拉格朗日函数的另一种描述方法.
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_27_23_06_09.png">
+<img width=100% src="img/2022_06_27_23_06_34.png">
+</div>
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_27_23_08_05.png">
+</div>
+
+以上就是我们在 SVM 算法里见到的原始问题的形式.
+
+### 2.5 补充: 拉格朗日对偶方法求解思路
+
+面对一个凸优化问题, 如何使用拉格朗日对偶方法进行求解?:
+
+1. 验证原问题比较难求解, 对偶问题可能会简单一些
+   - **要明白, 对偶问题不一定比原问题更简单, 要具体问题具体分析**
+2. 如果要求原问题最优解, 首先应该验证强对偶性, 说明原问题最优解与对偶问题最优解一致
+   - 通过 Convex+slater 条件验证强对偶性
+   - 对于 Convex + 可微 的问题, KKT 条件 $$ \Rightarrow$$ 强对偶 + 最优解
+3. 写出对偶问题
+4. 首先将$$\lambda,v$$看作常数, 对原始问题关于$$x$$求导置零, 得到 x 关于$$\lambda,v$$的表示, 带入对偶问题, 得到对偶函数.
+5. 求解对偶问题的最优解, 得到$$\lambda^*,v^*$$
+6. 由 KKT 条件, 倒推出$$x^*$$
+
+### 2.5 补充: 整数规划中的拉格朗日松弛方法
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width=100% src="img/2022_06_27_23_01_00.png">
+</div>
+
+一般过程为,
+
+- 首先求出松弛后的子问题, 并对其进行快速求解;
+- 注意此时对偶问题是一个非光滑(分段)凸优化问题, 可以使用次梯度法求解
+- 之后进行迭代优化.
+
+### 2.3 小结
+
+1. 至此, 我们总结一下使用拉格朗日对偶问题带来哪些便利呢?
+
+- 将原始困难的约束转为容易求解的问题.
+- 约束减少了，对偶问题只剩 n 个不等式约束
+- 基于上下界的方法可以很好地帮助分析原始问题的性质.
+- 主问题不一定是凸优化问题, 对偶问题一定是凸优化问题
+- 如果强对偶性成立, 则对偶问题的最优解等于原始问题的最优解.
+- 原问题是凸优化问题时，强对偶性往往成立 (并不总是); 否则，可以利用求解对偶问题求出原问题最优值的下界。
+
+2. 几种条件和强对偶的关系
+
+- 对于任意问题, 强对偶 + 最优解 $$\Rightarrow$$ KKT 条件
+- 对于 Convex + 可微 的问题, KKT 条件 $$ \Rightarrow$$ 强对偶 + 最优解
+- Convex + Slater $$\Rightarrow$$ 强对偶
+
+## 3 例子 SVM
+
+可以直接看《统计学习方法》第 7 章的内容
 
 ### 总结
 
@@ -299,24 +477,19 @@ fig 2-3
 
 ## 参考:
 
-- https://www.zhihu.com/question/58584814
+- https://www.zhihu.com/question/58584814/answer/159863739
+- https://zhuanlan.zhihu.com/p/103961917
+- [拉格朗日对偶性](https://www.zybuluo.com/dongxi/note/848084#:~:text=%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AF%B9%E5%81%B6%E6%80%A7%E6%98%AF%E4%B8%80%E7%A7%8D%E5%AF%BB%E6%89%BE%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%9C%A8%E5%85%B6%E8%87%AA%E5%8F%98%E9%87%8F%E5%8F%97%E5%88%B0%E4%B8%80%E4%B8%AA%E6%88%96%E8%80%85%E5%A4%9A%E4%B8%AA%E6%9D%A1%E4%BB%B6%E7%BA%A6%E6%9D%9F%E6%97%B6%E7%9A%84%E6%9E%81%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82%20%E8%BF%99%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%B0%86%E4%B8%80%E4%B8%AA%E6%9C%89,%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%20%E4%B8%AA%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%A7%A3%E6%9C%89%20%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E7%A8%8B%E7%BB%84%E9%97%AE%E9%A2%98%E3%80%82)
+- https://zhuanlan.zhihu.com/p/145944142
+- 孙小玲-整数规划
+- 李航- 统计学习方法
+
+<!-- - https://www.zhihu.com/question/58584814
 - https://www.cnblogs.com/massquantity/p/10807311.html
 - https://zhuanlan.zhihu.com/p/115745075
 - https://zhuanlan.zhihu.com/p/103961917
 - https://blog.csdn.net/Mr_KkTian/article/details/53750424
-- https://www.zybuluo.com/dongxi/note/848084#:~:text=%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AF%B9%E5%81%B6%E6%80%A7%E6%98%AF%E4%B8%80%E7%A7%8D%E5%AF%BB%E6%89%BE%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%9C%A8%E5%85%B6%E8%87%AA%E5%8F%98%E9%87%8F%E5%8F%97%E5%88%B0%E4%B8%80%E4%B8%AA%E6%88%96%E8%80%85%E5%A4%9A%E4%B8%AA%E6%9D%A1%E4%BB%B6%E7%BA%A6%E6%9D%9F%E6%97%B6%E7%9A%84%E6%9E%81%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82%20%E8%BF%99%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%B0%86%E4%B8%80%E4%B8%AA%E6%9C%89,%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%20%E4%B8%AA%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%9C%80%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%A7%A3%E6%9C%89%20%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E7%A8%8B%E7%BB%84%E9%97%AE%E9%A2%98%E3%80%82
+
 - https://blog.csdn.net/CloudInSky1/article/details/122297915
 - https://zhuanlan.zhihu.com/p/522590887
-- https://zhuanlan.zhihu.com/p/145944142
-
-- **松弛后的问题称为松弛问题(Primal,P)**
-
-此时, 我们选择松弛变量$$\lambda$$时, 由于$$Ax-b\le 0$$约束, 只需要满足$$\lambda\in R^m_+$$, 就可以达到"**price**"的目的.
-
-$$
-\begin{array}{lc}
-\min & g(x) = c^T x + \lambda^T (Ax- b),\\
-\text{s.t. } & x\ge 0 \\
-& \lambda\in R^m_+ \\
-\end{array}
-$$
+- https://zhuanlan.zhihu.com/p/145944142 -->
