@@ -270,7 +270,7 @@ fig 2-3
 前边使用不等式线性规划验证了$$\lambda$$的取值为非负值时, 原松弛问题才是有界的, 下面证明这个界确实是原问题的下界.
 
 <div style="text-align: center; width: 90%; margin: auto; ">
-<div style="background: #4cc; width: 100%; height: 60px; text-align: left; ">
+<div style="background: #4cc; width: 100%; height: 70px; text-align: left; ">
 <p style="color:white; margin-left: 10px; "><b><font color="red">2. 对于 ∀ λ ≥ 0, ∀ v（泛指向量中的每个分量），如果原问题最优解对应的目标函数值为p*, 则 g(λ,v)≤p* </font></b></p>
 </div>
 <div style="width: 100%; text-align: left; background: #ddd;">
