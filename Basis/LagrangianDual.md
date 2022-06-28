@@ -199,10 +199,6 @@ c \\
 \end{array}\right)
 \Rightarrow
 d(\lambda) = \left\{b^T\lambda |A^T \lambda \le c, \lambda \ge 0 \right\}
-% \left\{ \begin{array}{l}
-% A^T \lambda \le c \\
-% \lambda \ge 0
-% \end{array} \right.
 $$
 
 最终的松弛问题是一个关于$$\lambda$$的优化问题.
