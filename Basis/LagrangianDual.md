@@ -330,7 +330,7 @@ $$
 
 Slater 条件用于判断什么情况下强对偶是成立的.
 
-当原始问题为凸优化问题时, 若$$\exists x \in \operatorname{relint}(D)$$, 使得如下约束条件满足, 则强对偶性成立:
+当原始问题为凸优化问题时, 若$$\exists x \in \text{relint}(D)$$, 使得如下约束条件满足, 则强对偶性成立:
 
 $$
 f_{i}(x)<0,  \quad i=1,2 \ldots, m ;  \\
