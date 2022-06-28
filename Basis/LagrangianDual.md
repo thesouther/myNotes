@@ -132,7 +132,7 @@ $$
 
 $$
 \begin{array}{lc}
-\min & g(x) = c^T x + \lambda^T (b- Ax),\\
+\min &  c^T x + \lambda^T (b- Ax),\\
 \text{s.t. } & x\ge 0 \\
 & \lambda\in R^m \\
 \end{array}
@@ -142,7 +142,7 @@ $$
 
 $$
 \begin{array}{ll}
-d&= \min_{x\ge0} \{ b^T \lambda + (c-A^T \lambda)^T x \} \quad (1.3.1) \\
+d(\lambda) &= \min_{x\ge0} \{ b^T \lambda + (c-A^T \lambda)^T x \} \quad (1.3.1) \\
 &=  b^T \lambda +  \min_{x\ge0} \{(c-A^T \lambda)^T x \}  \quad (1.3.2)\\
 \end{array}
 $$
@@ -270,8 +270,8 @@ fig 2-3
 前边使用不等式线性规划验证了$$\lambda$$的取值为非负值时, 原松弛问题才是有界的, 下面证明这个界确实是原问题的下界.
 
 <div style="text-align: center; width: 90%; margin: auto; ">
-<div style="background: #4cc; width: 100%; height: 30px; text-align: left; ">
-<p style="color:white; margin-left: 10px; "><b><font color="red">2. 对于 ∀ λ ≥ 0, ∀ v（泛指向量中的每个分量），如果原问题最优解对应的目标函数值为p*, 则g(λ,v)≤p* </font></b></p>
+<div style="background: #4cc; width: 100%; height: 60px; text-align: left; ">
+<p style="color:white; margin-left: 10px; "><b><font color="red">2. 对于 ∀ λ ≥ 0, ∀ v（泛指向量中的每个分量），如果原问题最优解对应的目标函数值为p*, 则 g(λ,v)≤p* </font></b></p>
 </div>
 <div style="width: 100%; text-align: left; background: #ddd;">
 <img width=100% src="img/2022_06_27_18_53_29.png">
