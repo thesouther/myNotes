@@ -1,0 +1,2791 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>10.2 遗传算法-自适应策略 · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cicoa">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ElitistPreservationGA.html" />
+    
+    
+    <link rel="prev" href="BasicGA.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"thesouther","repo":"myNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">论文总结与算法学习</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Basis/">
+            
+                <a href="../Basis/">
+            
+                    
+                    基础概念汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Basis/la.html">
+            
+                <a href="../Basis/la.html">
+            
+                    
+                    1-线性代数/矩阵论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Basis/introProb.html">
+            
+                <a href="../Basis/introProb.html">
+            
+                    
+                    2-概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Basis/sp.html">
+            
+                <a href="../Basis/sp.html">
+            
+                    
+                    4-随机过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Basis/ml.html">
+            
+                <a href="../Basis/ml.html">
+            
+                    
+                    5-机器学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../Basis/lp.html">
+            
+                <a href="../Basis/lp.html">
+            
+                    
+                    6-线性规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Basis/ip.html">
+            
+                <a href="../Basis/ip.html">
+            
+                    
+                    7-整数规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../Basis/co.html">
+            
+                <a href="../Basis/co.html">
+            
+                    
+                    8-凸优化(0)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../Basis/LagrangianDual.html">
+            
+                <a href="../Basis/LagrangianDual.html">
+            
+                    
+                    8-拉格朗日对偶理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CS/">
+            
+                <a href="../CS/">
+            
+                    
+                    CS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CS/alg.html">
+            
+                <a href="../CS/alg.html">
+            
+                    
+                    0 CS-排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CS/topk.html">
+            
+                <a href="../CS/topk.html">
+            
+                    
+                    0 CS-TOP-K 问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="python1.html">
+            
+                <a href="python1.html">
+            
+                    
+                    3 Python 经典问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="questions_ml.html">
+            
+                <a href="questions_ml.html">
+            
+                    
+                    0 ML-经典面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="questions_pinggu.html">
+            
+                <a href="questions_pinggu.html">
+            
+                    
+                    0 ML-评估指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="activation_funcs.html">
+            
+                <a href="activation_funcs.html">
+            
+                    
+                    0 ML-激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="baimian_alg.html">
+            
+                <a href="baimian_alg.html">
+            
+                    
+                    1 百面 ML-3 经典算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="baimian_jaingwei.html">
+            
+                <a href="baimian_jaingwei.html">
+            
+                    
+                    1 百面 ML-3 降维/非监督学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="baimian_cnn_rnn.html">
+            
+                <a href="baimian_cnn_rnn.html">
+            
+                    
+                    1 百面 ML-3CNN/RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="baimian_optimal.html">
+            
+                <a href="baimian_optimal.html">
+            
+                    
+                    1 百面 ML-3 优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="bagging_boosting.html">
+            
+                <a href="bagging_boosting.html">
+            
+                    
+                    1 百面 ML-集成学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="Li1_Optimization.html">
+            
+                <a href="Li1_Optimization.html">
+            
+                    
+                    2 李宏毅 ML-Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="BasicGA.html">
+            
+                <a href="BasicGA.html">
+            
+                    
+                    10.1 遗传算法-基本原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.11" data-path="AdaptiveGA.html">
+            
+                <a href="AdaptiveGA.html">
+            
+                    
+                    10.2 遗传算法-自适应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="ElitistPreservationGA.html">
+            
+                <a href="ElitistPreservationGA.html">
+            
+                    
+                    10.3 遗传算法-精英保留
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../AL_RL/">
+            
+                <a href="../AL_RL/">
+            
+                    
+                    RL 算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../AL_RL/dqn.html">
+            
+                <a href="../AL_RL/dqn.html">
+            
+                    
+                    1 经典-DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../AL_RL/double_dqn.html">
+            
+                <a href="../AL_RL/double_dqn.html">
+            
+                    
+                    1 经典-double dqn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../AL_RL/dueling_dqn.html">
+            
+                <a href="../AL_RL/dueling_dqn.html">
+            
+                    
+                    1 经典-dueling dqn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../AL_RL/prio_experience.html">
+            
+                <a href="../AL_RL/prio_experience.html">
+            
+                    
+                    1 经典-Prioritized experience
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../AL_RL/a3c.html">
+            
+                <a href="../AL_RL/a3c.html">
+            
+                    
+                    1 经典-A3C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../AL_RL/hrl_hiro.html">
+            
+                <a href="../AL_RL/hrl_hiro.html">
+            
+                    
+                    2 HRL-HIRO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../AL_RL/hrl_fun.html">
+            
+                <a href="../AL_RL/hrl_fun.html">
+            
+                    
+                    2 HRL-FuN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../AL_RL/kndis_intro.html">
+            
+                <a href="../AL_RL/kndis_intro.html">
+            
+                    
+                    3 知识蒸馏简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../AL_RL/kndis.html">
+            
+                <a href="../AL_RL/kndis.html">
+            
+                    
+                    3 知识蒸馏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../AL_RL/podis.html">
+            
+                <a href="../AL_RL/podis.html">
+            
+                    
+                    3 策略蒸馏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../AL_RL/dpd.html">
+            
+                <a href="../AL_RL/dpd.html">
+            
+                    
+                    3 Distilling Policy Distillation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../AL_RL/opd.html">
+            
+                <a href="../AL_RL/opd.html">
+            
+                    
+                    3 Oracle Policy Distillation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.13" data-path="../AL_RL/DeepNeuro.html">
+            
+                <a href="../AL_RL/DeepNeuro.html">
+            
+                    
+                    10 深度神经进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.14" data-path="../AL_RL/GFT.html">
+            
+                <a href="../AL_RL/GFT.html">
+            
+                    
+                    10 遗传模糊树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../AL_RL/">
+            
+                <a href="../AL_RL/">
+            
+                    
+                    RL 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../AL_RL/questions.html">
+            
+                <a href="../AL_RL/questions.html">
+            
+                    
+                    0 面试-简历相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../AL_RL/questions_rl.html">
+            
+                <a href="../AL_RL/questions_rl.html">
+            
+                    
+                    0 面试-RL 相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../AL_RL/questions_dl.html">
+            
+                <a href="../AL_RL/questions_dl.html">
+            
+                    
+                    0 面试-DL 相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../AL_RL/rlbook_start.html">
+            
+                <a href="../AL_RL/rlbook_start.html">
+            
+                    
+                    1 RLBook-start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../AL_RL/rlbook_part1.html">
+            
+                <a href="../AL_RL/rlbook_part1.html">
+            
+                    
+                    1 RLBook-表格型方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../AL_RL/rlbook_part2.html">
+            
+                <a href="../AL_RL/rlbook_part2.html">
+            
+                    
+                    1 RLBook-函数近似
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../AL_RL/rlbook_part3.html">
+            
+                <a href="../AL_RL/rlbook_part3.html">
+            
+                    
+                    1 RLBook-应用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../AL_RL/spinup_PG.html">
+            
+                <a href="../AL_RL/spinup_PG.html">
+            
+                    
+                    2 spinup-PG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../AL_RL/spinup_VPG.html">
+            
+                <a href="../AL_RL/spinup_VPG.html">
+            
+                    
+                    2 spinup-VPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../AL_RL/spinup_TRPO.html">
+            
+                <a href="../AL_RL/spinup_TRPO.html">
+            
+                    
+                    2 spinup-TRPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../AL_RL/spinup_PPO.html">
+            
+                <a href="../AL_RL/spinup_PPO.html">
+            
+                    
+                    2 spinup-PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../AL_RL/spinup_DDPG.html">
+            
+                <a href="../AL_RL/spinup_DDPG.html">
+            
+                    
+                    2 spinup-DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../AL_RL/spinup_TD3.html">
+            
+                <a href="../AL_RL/spinup_TD3.html">
+            
+                    
+                    2 spinup-TD3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../AL_RL/spinup_SAC.html">
+            
+                <a href="../AL_RL/spinup_SAC.html">
+            
+                    
+                    2 spinup-SAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="../AL_RL/zhou_overview.html">
+            
+                <a href="../AL_RL/zhou_overview.html">
+            
+                    
+                    4 周博磊 RL-1-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="../AL_RL/zhou_mdp.html">
+            
+                <a href="../AL_RL/zhou_mdp.html">
+            
+                    
+                    4 周博磊 RL-2-MDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.17" data-path="../AL_RL/zhou_model_free.html">
+            
+                <a href="../AL_RL/zhou_model_free.html">
+            
+                    
+                    4 周博磊 RL-3-model_free
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.18" data-path="../AL_RL/zhou_func_approx.html">
+            
+                <a href="../AL_RL/zhou_func_approx.html">
+            
+                    
+                    4 周博磊 RL-4-值函数逼近
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.19" data-path="../AL_RL/zhou_pg.html">
+            
+                <a href="../AL_RL/zhou_pg.html">
+            
+                    
+                    4 周博磊 RL-56-策略优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.20" data-path="../AL_RL/zhou_model_based.html">
+            
+                <a href="../AL_RL/zhou_model_based.html">
+            
+                    
+                    4 周博磊 RL-7-model_based
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.21" data-path="../AL_RL/zhou_IRL.html">
+            
+                <a href="../AL_RL/zhou_IRL.html">
+            
+                    
+                    4 周博磊 RL-8-IRL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.22" data-path="../AL_RL/zhou_distributed.html">
+            
+                <a href="../AL_RL/zhou_distributed.html">
+            
+                    
+                    4 周博磊 RL-9-分布式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.23" data-path="../AL_RL/zhou_summary.html">
+            
+                <a href="../AL_RL/zhou_summary.html">
+            
+                    
+                    4 周博磊 RL-10-总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.24" data-path="../AL_RL/zhou_alphastar.html">
+            
+                <a href="../AL_RL/zhou_alphastar.html">
+            
+                    
+                    4 周博磊 RL-11-番外-AlphaStar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../AL_MARL/">
+            
+                <a href="../AL_MARL/">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../AL_MARL/QMIX.html">
+            
+                <a href="../AL_MARL/QMIX.html">
+            
+                    
+                    1.1 协作 MARL：QMIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../AL_MARL/QTRAN.html">
+            
+                <a href="../AL_MARL/QTRAN.html">
+            
+                    
+                    1.2 协作 MARL：QTRAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../AL_MARL/Qatten.html">
+            
+                <a href="../AL_MARL/Qatten.html">
+            
+                    
+                    1.3 协作 MARL：Qatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../AL_MARL/MAVEN.html">
+            
+                <a href="../AL_MARL/MAVEN.html">
+            
+                    
+                    1.4 协作 MARL：MAVEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../AL_MARL/NearlyDecomposableFunc.html">
+            
+                <a href="../AL_MARL/NearlyDecomposableFunc.html">
+            
+                    
+                    2.1 沟通 MARL：近似可分解函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../AL_Recommend/">
+            
+                <a href="../AL_Recommend/">
+            
+                    
+                    Recommend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../AL_Recommend/FM.html">
+            
+                <a href="../AL_Recommend/FM.html">
+            
+                    
+                    1 传统算法-FM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../AL_Recommend/CF.html">
+            
+                <a href="../AL_Recommend/CF.html">
+            
+                    
+                    1 传统算法-CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../AL_SC2/">
+            
+                <a href="../AL_SC2/">
+            
+                    
+                    SC2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../AL_SC2/env_build.html">
+            
+                <a href="../AL_SC2/env_build.html">
+            
+                    
+                    1 环境安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">论文翻译</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../paper_RL/">
+            
+                <a href="../paper_RL/">
+            
+                    
+                    RL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../paper_RL/GAE.html">
+            
+                <a href="../paper_RL/GAE.html">
+            
+                    
+                    0. 强化学习-GAE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../paper_RL/DPG.html">
+            
+                <a href="../paper_RL/DPG.html">
+            
+                    
+                    0. 强化学习-DPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../paper_RL/DDPG.html">
+            
+                <a href="../paper_RL/DDPG.html">
+            
+                    
+                    0. 强化学习-DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../paper_RL/PPO.html">
+            
+                <a href="../paper_RL/PPO.html">
+            
+                    
+                    0. 强化学习-PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../paper_RL/MAXQ.html">
+            
+                <a href="../paper_RL/MAXQ.html">
+            
+                    
+                    2. 分层强化学习-MAXQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../paper_RL/AlphaGoMaster.html">
+            
+                <a href="../paper_RL/AlphaGoMaster.html">
+            
+                    
+                    3. 游戏 AI-AlphaGoMaster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../paper_RL/AlphaGoZero.html">
+            
+                <a href="../paper_RL/AlphaGoZero.html">
+            
+                    
+                    3. 游戏 AI-AlphaGoZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../paper_RL/AlphaZero.html">
+            
+                <a href="../paper_RL/AlphaZero.html">
+            
+                    
+                    3. 游戏 AI-AlphaZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../paper_RL/MuZero.html">
+            
+                <a href="../paper_RL/MuZero.html">
+            
+                    
+                    3. 游戏 AI-MuZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../paper_RL/juewu1.html">
+            
+                <a href="../paper_RL/juewu1.html">
+            
+                    
+                    3. 游戏 AI-绝悟 1-AAAI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../paper_RL/juewu2.html">
+            
+                <a href="../paper_RL/juewu2.html">
+            
+                    
+                    3. 游戏 AI-绝悟 2-NIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../paper_RL/juewu3.html">
+            
+                <a href="../paper_RL/juewu3.html">
+            
+                    
+                    3. 游戏 AI-绝悟 3-TNNLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../paper_RL/juewu4.html">
+            
+                <a href="../paper_RL/juewu4.html">
+            
+                    
+                    3. 游戏 AI-绝悟 4-英雄选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../paper_RL/AlphaStar1.html">
+            
+                <a href="../paper_RL/AlphaStar1.html">
+            
+                    
+                    3. 游戏 AI-星际-AlphaStar1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../paper_RL/douzero.html">
+            
+                <a href="../paper_RL/douzero.html">
+            
+                    
+                    3. 游戏 AI-斗地主-DouZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../paper_RL/deltadou.html">
+            
+                <a href="../paper_RL/deltadou.html">
+            
+                    
+                    3. 游戏 AI-斗地主-DeltaDou
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../paper_RL/cql.html">
+            
+                <a href="../paper_RL/cql.html">
+            
+                    
+                    3. 游戏 AI-斗地主-CQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../paper_RL/EmergentComplexity.html">
+            
+                <a href="../paper_RL/EmergentComplexity.html">
+            
+                    
+                    4. 探索-自博弈-课程学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../paper_RL/deep_neuroecolution.html">
+            
+                <a href="../paper_RL/deep_neuroecolution.html">
+            
+                    
+                    10. 深度神经进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.20" data-path="../paper_RL/ES.html">
+            
+                <a href="../paper_RL/ES.html">
+            
+                    
+                    10. 进化策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../paper_MARL/">
+            
+                <a href="../paper_MARL/">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../paper_MARL/gft.html">
+            
+                <a href="../paper_MARL/gft.html">
+            
+                    
+                    0. 遗传模糊树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../paper_MARL/gft_train.html">
+            
+                <a href="../paper_MARL/gft_train.html">
+            
+                    
+                    0. 遗传模糊树训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../paper_MARL/IQL.html">
+            
+                <a href="../paper_MARL/IQL.html">
+            
+                    
+                    1. 值分解-IQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../paper_MARL/VDN.html">
+            
+                <a href="../paper_MARL/VDN.html">
+            
+                    
+                    1. 值分解-VDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../paper_MARL/QMIX.html">
+            
+                <a href="../paper_MARL/QMIX.html">
+            
+                    
+                    1. 值分解-QMIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../paper_MARL/QTRAN.html">
+            
+                <a href="../paper_MARL/QTRAN.html">
+            
+                    
+                    1. 值分解-QTRAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="../paper_MARL/Qatten.html">
+            
+                <a href="../paper_MARL/Qatten.html">
+            
+                    
+                    1. 值分解-Qatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.8" data-path="../paper_MARL/MADDPG.html">
+            
+                <a href="../paper_MARL/MADDPG.html">
+            
+                    
+                    1. 混合-MADDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.9" data-path="../paper_MARL/COMA.html">
+            
+                <a href="../paper_MARL/COMA.html">
+            
+                    
+                    1. 混合-COMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.10" data-path="../paper_MARL/commNet.html">
+            
+                <a href="../paper_MARL/commNet.html">
+            
+                    
+                    2. 交流-commNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.11" data-path="../paper_MARL/IC3Net.html">
+            
+                <a href="../paper_MARL/IC3Net.html">
+            
+                    
+                    2. 交流-IC3Net
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.12" data-path="../paper_MARL/BicNet.html">
+            
+                <a href="../paper_MARL/BicNet.html">
+            
+                    
+                    2. 交流-BicNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.13" data-path="../paper_MARL/RIAL_DIAL.html">
+            
+                <a href="../paper_MARL/RIAL_DIAL.html">
+            
+                    
+                    2. 交流-RIAL_DIAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.14" data-path="../paper_MARL/GatedMLAC.html">
+            
+                <a href="../paper_MARL/GatedMLAC.html">
+            
+                    
+                    2. 交流-GatedMLAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.15" data-path="../paper_MARL/SchedNet.html">
+            
+                <a href="../paper_MARL/SchedNet.html">
+            
+                    
+                    2. 交流-SchedNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.16" data-path="../paper_MARL/MAAC.html">
+            
+                <a href="../paper_MARL/MAAC.html">
+            
+                    
+                    2. 交流-MAAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.17" data-path="../paper_MARL/tarMAC.html">
+            
+                <a href="../paper_MARL/tarMAC.html">
+            
+                    
+                    2. 交流-tarMAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.18" data-path="../paper_MARL/ATOC.html">
+            
+                <a href="../paper_MARL/ATOC.html">
+            
+                    
+                    2. 交流-ATOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.19" data-path="../paper_MARL/NearlyDecomposableFunc.html">
+            
+                <a href="../paper_MARL/NearlyDecomposableFunc.html">
+            
+                    
+                    2. 基于交流最小化的近似可分解价值函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.20" data-path="../paper_MARL/I2C.html">
+            
+                <a href="../paper_MARL/I2C.html">
+            
+                    
+                    2. 交流-I2C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.21" data-path="../paper_MARL/MAVEN.html">
+            
+                <a href="../paper_MARL/MAVEN.html">
+            
+                    
+                    3. 探索-MAVEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../paper_MMARL/">
+            
+                <a href="../paper_MMARL/">
+            
+                    
+                    Meta MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../paper_MMARL/LIIR.html">
+            
+                <a href="../paper_MMARL/LIIR.html">
+            
+                    
+                    1. LIIR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../paper_MMARL/learn_RL.html">
+            
+                <a href="../paper_MMARL/learn_RL.html">
+            
+                    
+                    1. learning to reinforcement learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../paper_MMARL/RL2.html">
+            
+                <a href="../paper_MMARL/RL2.html">
+            
+                    
+                    1. RL2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../paper_IRL/">
+            
+                <a href="../paper_IRL/">
+            
+                    
+                    Inverse RL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../paper_IRL/GAIL.html">
+            
+                <a href="../paper_IRL/GAIL.html">
+            
+                    
+                    1. IRL-GAIL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../paper_IRL/OvercookedGame.html">
+            
+                <a href="../paper_IRL/OvercookedGame.html">
+            
+                    
+                    2. IMARL-OvercookedGame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Ridesourcing/">
+            
+                <a href="../Ridesourcing/">
+            
+                    
+                    打车
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../Ridesourcing/review.html">
+            
+                <a href="../Ridesourcing/review.html">
+            
+                    
+                    0. 综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../Ridesourcing/heteta.html">
+            
+                <a href="../Ridesourcing/heteta.html">
+            
+                    
+                    1. ETA-HetETA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../Ridesourcing/didikdd17.html">
+            
+                <a href="../Ridesourcing/didikdd17.html">
+            
+                    
+                    2. 派单-滴滴 KDD17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../Ridesourcing/didikdd18.html">
+            
+                <a href="../Ridesourcing/didikdd18.html">
+            
+                    
+                    2. 派单-滴滴 KDD18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../Ridesourcing/didikdd19.html">
+            
+                <a href="../Ridesourcing/didikdd19.html">
+            
+                    
+                    2. 派单-滴滴 KDD19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../Ridesourcing/dididrl_kt.html">
+            
+                <a href="../Ridesourcing/dididrl_kt.html">
+            
+                    
+                    2. 派单-DRL-with-knowledge-transger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../RecSys/">
+            
+                <a href="../RecSys/">
+            
+                    
+                    推荐系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../RecSys/graph_learning_review.html">
+            
+                <a href="../RecSys/graph_learning_review.html">
+            
+                    
+                    0. 综述-图学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../RecSys/dl_review.html">
+            
+                <a href="../RecSys/dl_review.html">
+            
+                    
+                    0. 综述-DL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">名词总结</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../glossary/">
+            
+                <a href="../glossary/">
+            
+                    
+                    总述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../glossary/ml.html">
+            
+                <a href="../glossary/ml.html">
+            
+                    
+                    ML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../glossary/dl.html">
+            
+                <a href="../glossary/dl.html">
+            
+                    
+                    DL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../glossary/rl.html">
+            
+                <a href="../glossary/rl.html">
+            
+                    
+                    RL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../glossary/marl.html">
+            
+                <a href="../glossary/marl.html">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../glossary/mrl.html">
+            
+                <a href="../glossary/mrl.html">
+            
+                    
+                    Meta-RL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../glossary/questions.html">
+            
+                <a href="../glossary/questions.html">
+            
+                    
+                    Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../glossary/sequences.html">
+            
+                <a href="../glossary/sequences.html">
+            
+                    
+                    Sequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">竞赛</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../AICombat/">
+            
+                <a href="../AICombat/">
+            
+                    
+                    智能博弈挑战赛
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../AICombat/questions.html">
+            
+                <a href="../AICombat/questions.html">
+            
+                    
+                    Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">问题整理</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../problems/git1.html">
+            
+                <a href="../problems/git1.html">
+            
+                    
+                    上传大文件出错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../problems/git2.html">
+            
+                <a href="../problems/git2.html">
+            
+                    
+                    ! [rejected]master -> master (non-fast-forward)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    ubuntu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../problems/ssr.html">
+            
+                <a href="../problems/ssr.html">
+            
+                    
+                    ssr 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../problems/ubuntu_update.html">
+            
+                <a href="../problems/ubuntu_update.html">
+            
+                    
+                    ubuntu 自动更新导致 nvidia 驱动不能用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../problems/ubuntu_del_core.html">
+            
+                <a href="../problems/ubuntu_del_core.html">
+            
+                    
+                    ubuntu 删除系统内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../problems/windows_gym_mujoco.html">
+            
+                <a href="../problems/windows_gym_mujoco.html">
+            
+                    
+                    Windows 安装 mujoco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../problems/windows_gym_box2d.html">
+            
+                <a href="../problems/windows_gym_box2d.html">
+            
+                    
+                    Windows 安装 gym box2d 不能用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="../problems/pip_removed.html">
+            
+                <a href="../problems/pip_removed.html">
+            
+                    
+                    ModuleNotFoundError: No module named 'pip._internal'
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >10.2 遗传算法-自适应策略</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#12-&#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;"><b></b>1.2 &#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;</a></li><ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF08;adaptive-genetic-algorithm&#xFF0C;-aga&#xFF09;"><b></b>&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF08;Adaptive Genetic Algorithm&#xFF0C; AGA&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x9002;&#x5E94;&#x4EA4;&#x53C9;&#x6982;&#x7387;"><b></b>&#x81EA;&#x9002;&#x5E94;&#x4EA4;&#x53C9;&#x6982;&#x7387;</a></li><li><span class="title-icon "></span><a href="#&#x53D8;&#x5F02;&#x5EA6;&#x81EA;&#x9002;&#x5E94;"><b></b>&#x53D8;&#x5F02;&#x5EA6;&#x81EA;&#x9002;&#x5E94;</a></li><li><span class="title-icon "></span><a href="#4-&#x6D4B;&#x8BD5;"><b></b>4 &#x6D4B;&#x8BD5;</a></li></ul></ul></ul></div><a href="#12-&#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="12-&#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;"><a name="12-&#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;" class="anchor-navigation-ex-anchor" href="#12-&#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 &#x9057;&#x4F20;&#x7B97;&#x6CD5;-&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;</h1>
+<h2 id="&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF08;adaptive-genetic-algorithm&#xFF0C;-aga&#xFF09;"><a name="&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF08;adaptive-genetic-algorithm&#xFF0C;-aga&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF08;adaptive-genetic-algorithm&#xFF0C;-aga&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF08;Adaptive Genetic Algorithm&#xFF0C; AGA&#xFF09;</h2>
+<p>&#x81EA;&#x9002;&#x5E94;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x7684;&#x6539;&#x8FDB;&#x70B9;&#x5728;&#x4E8E;&#x81EA;&#x9002;&#x5E94;&#x8C03;&#x6574;&#x9057;&#x4F20;&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x5F97;&#x4FDD;&#x6301;&#x7FA4;&#x4F53;&#x591A;&#x6837;&#x6027;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E86;&#x7B97;&#x6CD5;&#x7684;&#x6536;&#x655B;&#x6027;&#x3002;&#x4F8B;&#x5982;&#x5BF9;&#x4E8E;&#x57FA;&#x672C;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#xFF0C;&#x4EA4;&#x53C9;&#x3001;&#x53D8;&#x5F02;&#x7684;&#x6982;&#x7387;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;&#x5219;&#x8981;&#x6C42;&#x5728;&#x8FDB;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x8FDB;&#x884C;&#x81EA;&#x9002;&#x5E94;&#x8C03;&#x6574;&#xFF1A;&#x5F00;&#x59CB;&#x9636;&#x6BB5;&#x9009;&#x53D6;&#x8F83;&#x5927;&#x4EA4;&#x53C9;&#x3001;&#x53D8;&#x5F02;&#x6982;&#x7387;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x7C97;&#x7565;&#x641C;&#x7D22;&#x8FC7;&#x7A0B;&#x6709;&#x5229;&#x4E8E;&#x4FDD;&#x6301;&#x79CD;&#x7FA4;&#x591A;&#x6837;&#x6027;&#xFF0C;&#x540E;&#x671F;&#x5219;&#x8C03;&#x6574;&#x4E3A;&#x8F83;&#x5C0F;&#x503C;&#x4EE5;&#x8FDB;&#x884C;&#x7EC6;&#x81F4;&#x641C;&#x7D22;&#xFF0C;&#x9632;&#x6B62;&#x7834;&#x5316;&#x6700;&#x4F18;&#x89E3;&#xFF0C;&#x52A0;&#x5FEB;&#x6536;&#x655B;&#x901F;&#x5EA6;&#x3002;</p>
+<h3 id="&#x81EA;&#x9002;&#x5E94;&#x4EA4;&#x53C9;&#x6982;&#x7387;"><a name="&#x81EA;&#x9002;&#x5E94;&#x4EA4;&#x53C9;&#x6982;&#x7387;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x9002;&#x5E94;&#x4EA4;&#x53C9;&#x6982;&#x7387;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x9002;&#x5E94;&#x4EA4;&#x53C9;&#x6982;&#x7387;</h3>
+<p>&#x672C;&#x6587;&#x91C7;&#x7528;&#x7684;&#x81EA;&#x9002;&#x5E94;&#x7B56;&#x7565;&#x4E3A;&#x6839;&#x636E;&#x53C2;&#x4E0E;&#x4EA4;&#x53C9;&#x64CD;&#x4F5C;&#x7684;&#x4E24;&#x4E2A;&#x4E2A;&#x4F53;a&#x3001;b&#x7684;&#x9002;&#x5E94;&#x5EA6;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>a</mi></msub><mo separator="true">,</mo><msub><mi>f</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">f_a, f_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">a</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#x8C03;&#x6574;&#x4EA4;&#x53C9;&#x6982;&#x7387;&#xFF1A;&#x9002;&#x5E94;&#x5EA6;&#x8D8A;&#x5927;&#x4EA4;&#x53C9;&#x6982;&#x7387;&#x8D8A;&#x5C0F;&#xFF0C;&#x53CD;&#x4E4B;&#x540C;&#x7406;&#x3002;&#x9996;&#x5148;&#x8BBE;&#x5B9A;&#x4EA4;&#x53C9;&#x6982;&#x7387;&#x533A;&#x95F4;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo separator="true">,</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">[P_{min}, P_{max}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">[</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">]</span></span></span></span>&#xFF0C;&#x7136;&#x540E;&#x8BA1;&#x7B97;&#x79CD;&#x7FA4;&#x4E2A;&#x4F53;&#x9002;&#x5E94;&#x5EA6;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">f_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#xFF0C;&#x53CA;&#x5E73;&#x5747;&#x9002;&#x5E94;&#x5EA6;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{avg}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#x3001;&#x6700;&#x5927;&#x9002;&#x5E94;&#x5EA6;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{max}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#xFF0C;&#x90A3;&#x4E48;&#x4EA4;&#x53C9;&#x6982;&#x7387;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span></span>&#x7531;&#x4E0B;&#x5F0F;&#x786E;&#x5B9A;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mo>(</mo><mi>f</mi><mo>&lt;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">
+P = P_{max}\,\,\,(f &lt; f_{avg})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen"><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mopen">(</span></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">&lt;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x2212;</mo><mo>(</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x2212;</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo>)</mo><mfrac><mrow><mi>f</mi><mo>&#x2212;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub></mrow><mrow><msub><mi>f</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x2212;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub></mrow></mfrac><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mo>(</mo><mi>f</mi><mo>&#x2265;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">
+P = P_{max} - (P_{max}-P_{min}) \frac{f-f_{avg}}{f_{max}-f_{avg}} \,\,\,(f \geq f_{avg}) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.37144em;"></span><span class="strut bottom" style="height:2.343548em;vertical-align:-0.972108em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.6859999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mopen"><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mopen">(</span></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">&#x2265;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>&#x5176;&#x4E2D;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><msub><mi>f</mi><mi>a</mi></msub><mo separator="true">,</mo><msub><mi>f</mi><mi>b</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f=max(f_a, f_b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">a</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span>&#x4E3A;&#x53C2;&#x4E0E;&#x4EA4;&#x53C9;&#x64CD;&#x4F5C;&#x7684;&#x4E24;&#x4E2A;&#x4E2A;&#x4F53;&#x4E2D;&#x9002;&#x5E94;&#x5EA6;&#x8F83;&#x5927;&#x8005;&#x3002;</p>
+<p>&#x5F97;&#x76CA;&#x4E8E;&#x4E4B;&#x524D;&#x7A0B;&#x5E8F;&#x7684;&#x975E;&#x8026;&#x5408;&#x6027;&#xFF0C;&#x53EA;&#x9700;&#x4FEE;&#x6539;Crossover&#x7C7B;&#x5373;&#x53EF;&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> copy
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token keyword">class</span> <span class="token class-name">Individual</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> ranges<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        ranges: element range of solution, e.g. [(lb1, ub1), (lb2, ub2), ...]
+        validation of ranges is skipped...
+        &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>ranges <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>ranges<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>dimension <span class="token operator">=</span> self<span class="token punctuation">.</span>ranges<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+        <span class="token comment"># &#x521D;&#x59CB;&#x5316;&#x89E3;&#x5411;&#x91CF;</span>
+        seeds <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span>self<span class="token punctuation">.</span>dimension<span class="token punctuation">)</span>
+        lb <span class="token operator">=</span> self<span class="token punctuation">.</span>ranges<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        ub <span class="token operator">=</span> self<span class="token punctuation">.</span>ranges<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment">#         print(&quot;seeds&quot;,seeds)</span>
+        self<span class="token punctuation">.</span>_selution <span class="token operator">=</span> lb <span class="token operator">+</span> <span class="token punctuation">(</span>ub<span class="token operator">-</span>lb<span class="token punctuation">)</span><span class="token operator">*</span>seeds
+<span class="token comment">#         print(&quot;self._solution&quot;,self._selution)</span>
+
+        <span class="token comment"># &#x8BC4;&#x4F30;&#x4E0E;&#x9002;&#x5E94;&#x5EA6;</span>
+        self<span class="token punctuation">.</span>evaluation <span class="token operator">=</span> <span class="token boolean">None</span>
+        self<span class="token punctuation">.</span>fitness <span class="token operator">=</span> <span class="token boolean">None</span>
+
+    <span class="token decorator annotation punctuation">@property</span>
+    <span class="token keyword">def</span> <span class="token function">solution</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_selution
+
+    <span class="token decorator annotation punctuation">@solution<span class="token punctuation">.</span>setter</span>
+    <span class="token keyword">def</span> <span class="token function">solution</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> solution<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">assert</span> self<span class="token punctuation">.</span>dimension <span class="token operator">==</span> solution<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">assert</span> <span class="token punctuation">(</span>solution<span class="token operator">&gt;=</span>self<span class="token punctuation">.</span>ranges<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>solution<span class="token operator">&lt;=</span>self<span class="token punctuation">.</span>ranges<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>_selution <span class="token operator">=</span> solution
+
+<span class="token keyword">class</span> <span class="token class-name">Population</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> individual<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        individual: &#x4E2A;&#x4F53;
+        size: &#x4E2A;&#x4F53;&#x6570;&#x91CF;
+        &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>individual <span class="token operator">=</span> individual
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> size
+        self<span class="token punctuation">.</span>individuals <span class="token operator">=</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">initialize</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x521D;&#x59CB;&#x5316;&#x4E0B;&#x4E00;&#x4EE3;&apos;&apos;&apos;</span>
+        IndvClass <span class="token operator">=</span> self<span class="token punctuation">.</span>individual<span class="token punctuation">.</span>__class__
+        self<span class="token punctuation">.</span>individuals <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>IndvClass<span class="token punctuation">(</span>self<span class="token punctuation">.</span>individual<span class="token punctuation">.</span>ranges<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>size<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>IndvClass<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">best</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fun_evaluation<span class="token punctuation">,</span> fun_fitness<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x5F97;&#x5230;&#x6700;&#x597D;&#x7684;&#x4E2A;&#x4F53;&apos;&apos;&apos;</span>
+        _<span class="token punctuation">,</span> evaluation <span class="token operator">=</span> self<span class="token punctuation">.</span>fitness<span class="token punctuation">(</span>fun_evaluation<span class="token punctuation">,</span> fun_fitness<span class="token punctuation">)</span>
+        pos <span class="token operator">=</span> np<span class="token punctuation">.</span>argmin<span class="token punctuation">(</span>evaluation<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>individuals<span class="token punctuation">[</span>pos<span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">fitness</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fun_evaluation<span class="token punctuation">,</span> fun_fitness<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        &#x4E3A;&#x6BCF;&#x4E2A;&#x4E2A;&#x4F53;&#x8BA1;&#x7B97;&#x76EE;&#x6807;&#x503C;&#x548C;&#x9002;&#x5E94;&#x5EA6;
+        fun_evaluation: &#x76EE;&#x6807;&#x51FD;&#x6570; 
+        fun_fitness: &#x6709;&#x4F30;&#x8BA1;&#x503C;&#x8BA1;&#x7B97;&#x9002;&#x5E94;&#x5EA6; 
+        &apos;&apos;&apos;</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> fun_fitness<span class="token punctuation">:</span>
+            fun_fitness <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x 
+
+        evaluation <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>fun_evaluation<span class="token punctuation">(</span>I<span class="token punctuation">.</span>solution<span class="token punctuation">)</span> <span class="token keyword">if</span> I<span class="token punctuation">.</span>evaluation <span class="token keyword">is</span> <span class="token boolean">None</span> <span class="token keyword">else</span> I<span class="token punctuation">.</span>evaluation <span class="token keyword">for</span> I <span class="token keyword">in</span> self<span class="token punctuation">.</span>individuals<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">#         print(evaluation.shape)</span>
+
+        fitness <span class="token operator">=</span> fun_fitness<span class="token punctuation">(</span>evaluation<span class="token punctuation">)</span>
+        fitness <span class="token operator">/=</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>fitness<span class="token punctuation">)</span>
+<span class="token comment">#         print(fitness.shape)</span>
+
+        <span class="token keyword">for</span> I<span class="token punctuation">,</span>e<span class="token punctuation">,</span>f <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>individuals<span class="token punctuation">,</span> evaluation<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            I<span class="token punctuation">.</span>evaluation <span class="token operator">=</span> e 
+            I<span class="token punctuation">.</span>fitness <span class="token operator">=</span> f 
+
+        <span class="token keyword">return</span> fitness<span class="token punctuation">,</span> evaluation
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token comment">#=====================&#x9009;&#x62E9;==========================</span>
+<span class="token keyword">class</span> <span class="token class-name">Selection</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7684;&#x57FA;&#x7C7B;&apos;&apos;&apos;</span>
+    <span class="token keyword">def</span> <span class="token function">select</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> population<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> NotImplementedError
+
+<span class="token keyword">class</span> <span class="token class-name">RouletteWheelSelection</span><span class="token punctuation">(</span>Selection<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&apos;&apos;&apos;
+    &#x7528;&#x8F6E;&#x76D8;&#x8D4C;&#x9009;&#x62E9;&#x7FA4;&#x4F53;  
+    &#x7FA4;&#x4F53;&#x4E2D;&#x4F7F;&#x7528;&#x9002;&#x5E94;&#x5EA6;&#x51FD;&#x6570;&#x9009;&#x62E9;&#x4E2A;&#x4F53; 
+    &apos;&apos;&apos;</span>
+    <span class="token keyword">def</span> <span class="token function">select</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> population<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        selected_individuals <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>population<span class="token punctuation">.</span>individuals<span class="token punctuation">,</span> population<span class="token punctuation">.</span>size<span class="token punctuation">,</span> p<span class="token operator">=</span>fitness<span class="token punctuation">)</span>
+
+        population<span class="token punctuation">.</span>individuals <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>I<span class="token punctuation">)</span> <span class="token keyword">for</span> I <span class="token keyword">in</span> selected_individuals<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mo>(</mo><mi>f</mi><mo>&lt;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">
+P = P_{max}\,\,\,(f &lt; f_{avg})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen"><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mopen">(</span></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">&lt;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x2212;</mo><mo>(</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x2212;</mo><msub><mi>P</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo>)</mo><mfrac><mrow><mi>f</mi><mo>&#x2212;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub></mrow><mrow><msub><mi>f</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x2212;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub></mrow></mfrac><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mo>(</mo><mi>f</mi><mo>&#x2265;</mo><msub><mi>f</mi><mrow><mi>a</mi><mi>v</mi><mi>g</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">
+P = P_{max} - (P_{max}-P_{min}) \frac{f-f_{avg}}{f_{max}-f_{avg}} \,\,\,(f \geq f_{avg})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.37144em;"></span><span class="strut bottom" style="height:2.343548em;vertical-align:-0.972108em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.6859999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">m</span><span class="mord mathit mtight">a</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mopen"><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mopen">(</span></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mrel">&#x2265;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">a</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<pre class="language-"><code class="lang-python"><span class="token comment">#=====================&#x4EA4;&#x53C9;==========================</span>
+<span class="token keyword">class</span> <span class="token class-name">Crossover</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> rate<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        rate: &#x4EA4;&#x53C9;&#x6982;&#x7387; 
+        alpha: &apos;&apos;&apos;</span>
+        self<span class="token punctuation">.</span>rate <span class="token operator">=</span> rate
+        self<span class="token punctuation">.</span>alpha <span class="token operator">=</span> alpha
+
+    <span class="token decorator annotation punctuation">@staticmethod</span>
+    <span class="token keyword">def</span> <span class="token function">cross_individuals</span><span class="token punctuation">(</span>individual_a<span class="token punctuation">,</span> individual_b<span class="token punctuation">,</span> alpha<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;&#x4EA4;&#x53C9;&#x64CD;&#x4F5C;
+        alpha: &#x7EBF;&#x6027;&#x63D2;&#x503C;&#x94F6;&#x56E0;&#x5B50;&#xFF0C;&#x5F53;alpha=0.0&#xFF0C; &#x4E24;&#x4E2A;&#x57FA;&#x56E0;&#x7126;&#x4EA4;&#x6362;
+        &apos;&apos;&apos;</span>
+        pos <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>individual_a<span class="token punctuation">.</span>dimension<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">0.5</span>
+
+        temp <span class="token operator">=</span> <span class="token punctuation">(</span>individual_b<span class="token punctuation">.</span>solution <span class="token operator">-</span> individual_a<span class="token punctuation">.</span>solution<span class="token punctuation">)</span><span class="token operator">*</span>pos <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>alpha<span class="token punctuation">)</span>
+        new_value_a <span class="token operator">=</span> individual_a<span class="token punctuation">.</span>solution <span class="token operator">+</span> temp
+        new_value_b <span class="token operator">=</span> individual_b<span class="token punctuation">.</span>solution <span class="token operator">-</span> temp
+
+        new_individual_a <span class="token operator">=</span> Individual<span class="token punctuation">(</span>individual_a<span class="token punctuation">.</span>ranges<span class="token punctuation">)</span>
+        new_individual_b <span class="token operator">=</span> Individual<span class="token punctuation">(</span>individual_b<span class="token punctuation">.</span>ranges<span class="token punctuation">)</span>
+
+        new_individual_a<span class="token punctuation">.</span>solution <span class="token operator">=</span> new_value_a
+        new_individual_b<span class="token punctuation">.</span>solution <span class="token operator">=</span> new_value_b
+
+        <span class="token keyword">return</span> new_individual_a<span class="token punctuation">,</span> new_individual_b
+
+    <span class="token keyword">def</span> <span class="token function">cross</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> population<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        adaptive <span class="token operator">=</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>rate<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> adaptive<span class="token punctuation">:</span>
+            fitness <span class="token operator">=</span> <span class="token punctuation">[</span>I<span class="token punctuation">.</span>fitness <span class="token keyword">for</span> I <span class="token keyword">in</span> population<span class="token punctuation">.</span>individuals<span class="token punctuation">]</span>
+            fit_max<span class="token punctuation">,</span> fit_avg <span class="token operator">=</span> np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>fitness<span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>fitness<span class="token punctuation">)</span>
+
+        new_individuals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        random_population <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>permutation<span class="token punctuation">(</span>population<span class="token punctuation">.</span>individuals<span class="token punctuation">)</span>
+        num <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>population<span class="token punctuation">.</span>size<span class="token operator">/</span><span class="token number">2.0</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+
+        <span class="token keyword">for</span> individual_a<span class="token punctuation">,</span>individual_b <span class="token keyword">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>population<span class="token punctuation">.</span>individuals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> random_population<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> adaptive<span class="token punctuation">:</span>
+                fit <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>individual_a<span class="token punctuation">.</span>fitness<span class="token punctuation">,</span> individual_b<span class="token punctuation">.</span>fitness<span class="token punctuation">)</span>
+                <span class="token keyword">if</span> fit_max<span class="token operator">-</span>fit_avg<span class="token punctuation">:</span>
+                    i_rate <span class="token operator">=</span> self<span class="token punctuation">.</span>rate<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> fit<span class="token operator">&lt;</span>fit_avg <span class="token keyword">else</span> self<span class="token punctuation">.</span>rate<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>rate<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>self<span class="token punctuation">.</span>rate<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>fit<span class="token operator">-</span>fit_avg<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>fit_max<span class="token operator">-</span>fit_avg<span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    i_rate <span class="token operator">=</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>rate<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>self<span class="token punctuation">.</span>rate<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.0</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                i_rate <span class="token operator">=</span> self<span class="token punctuation">.</span>rate
+
+            <span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> i_rate<span class="token punctuation">:</span>
+                child_individuals <span class="token operator">=</span> self<span class="token punctuation">.</span>cross_individuals<span class="token punctuation">(</span>individual_a<span class="token punctuation">,</span> individual_b<span class="token punctuation">,</span> self<span class="token punctuation">.</span>alpha<span class="token punctuation">)</span>
+                new_individuals<span class="token punctuation">.</span>extend<span class="token punctuation">(</span>child_individuals<span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span> 
+                new_individuals<span class="token punctuation">.</span>append<span class="token punctuation">(</span>individual_a<span class="token punctuation">)</span>
+                new_individuals<span class="token punctuation">.</span>append<span class="token punctuation">(</span>individual_b<span class="token punctuation">)</span>
+
+        population<span class="token punctuation">.</span>individuals <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>new_individuals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span> population<span class="token punctuation">.</span>size<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">#         print(population.individuals)</span>
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    C <span class="token operator">=</span> Crossover<span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.75</span><span class="token punctuation">)</span>
+    C <span class="token operator">=</span> Crossover<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0.75</span><span class="token punctuation">)</span>
+test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token comment">#=====================&#x53D8;&#x5F02;==========================</span>
+<span class="token keyword">class</span> <span class="token class-name">Mutation</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> rate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>rate <span class="token operator">=</span> rate
+
+    <span class="token keyword">def</span> <span class="token function">mutate_individual</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> individual<span class="token punctuation">,</span> positions<span class="token punctuation">,</span> alpha<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;
+        positions: &#x53D8;&#x5F02;&#x4F4D;&#x7F6E;&#xFF0C; list 
+        alpha&#xFF1A; &#x53D8;&#x5F02;&#x91CF;
+        &apos;&apos;&apos;</span>
+        <span class="token keyword">for</span> pos <span class="token keyword">in</span> positions<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.5</span><span class="token punctuation">:</span>
+                individual<span class="token punctuation">.</span>solution<span class="token punctuation">[</span>pos<span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token punctuation">(</span>individual<span class="token punctuation">.</span>solution<span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token operator">-</span>individual<span class="token punctuation">.</span>ranges<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">*</span>alpha
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                individual<span class="token punctuation">.</span>solution<span class="token punctuation">[</span>pos<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token punctuation">(</span>individual<span class="token punctuation">.</span>ranges<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token operator">-</span>individual<span class="token punctuation">.</span>solution<span class="token punctuation">[</span>pos<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">*</span>alpha
+
+        individual<span class="token punctuation">.</span>evaluation <span class="token operator">=</span> <span class="token boolean">None</span>
+        individual<span class="token punctuation">.</span>fitness <span class="token operator">=</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">mutate</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> population<span class="token punctuation">,</span> alpha<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">&apos;&apos;&apos;alpha&#xFF1A; &#x53D8;&#x5F02;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="token keyword">for</span> individual <span class="token keyword">in</span> population<span class="token punctuation">.</span>individuals<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> self<span class="token punctuation">.</span>rate<span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+<span class="token comment">#             print(individual)</span>
+            num <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>individual<span class="token punctuation">.</span>dimension<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+            pos <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>individual<span class="token punctuation">.</span>dimension<span class="token punctuation">,</span> num<span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>mutate_individual<span class="token punctuation">(</span>individual<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> alpha<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x53D8;&#x5F02;&#x5EA6;&#x81EA;&#x9002;&#x5E94;"><a name="&#x53D8;&#x5F02;&#x5EA6;&#x81EA;&#x9002;&#x5E94;" class="anchor-navigation-ex-anchor" href="#&#x53D8;&#x5F02;&#x5EA6;&#x81EA;&#x9002;&#x5E94;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53D8;&#x5F02;&#x5EA6;&#x81EA;&#x9002;&#x5E94;</h3>
+<p>&#x524D;&#x6587;&#x7684;&#x53D8;&#x5F02;&#x64CD;&#x4F5C;&#x7531;&#x53D8;&#x5F02;&#x6982;&#x7387;&#x548C;&#x53D8;&#x5F02;&#x7A0B;&#x5EA6;&#xFF08;&#x4E0B;&#x5F0F;&#x4E2D;&#x7684;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span></span></span></span>&#xFF09;&#x5171;&#x540C;&#x51B3;&#x5B9A;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mi>g</mi><mo>&#x2212;</mo><mo>(</mo><mi>g</mi><mo>&#x2212;</mo><mi>L</mi><mo>)</mo><mi>&#x3B1;</mi><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mo>(</mo><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi><mo>(</mo><mo>)</mo><mo>&#x2264;</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">
+g = g - (g-L)\alpha\,\,\,(rand() \leq 0.5)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mbin">&#x2212;</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mbin">&#x2212;</span><span class="mord mathit">L</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mopen"><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mopen">(</span></span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">d</span><span class="mopen">(</span><span class="mclose">)</span><span class="mrel">&#x2264;</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span><span class="mclose">)</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mi>g</mi><mo>+</mo><mo>(</mo><mi>U</mi><mo>&#x2212;</mo><mi>g</mi><mo>)</mo><mi>&#x3B1;</mi><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mspace width="0.16667em"></mspace><mo>(</mo><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi><mo>(</mo><mo>)</mo><mo>&gt;</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">
+g = g + (U-g)\alpha\,\,\,(rand()&gt;0.5)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mbin">+</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10903em;">U</span><span class="mbin">&#x2212;</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mopen"><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mspace thinspace"></span><span class="mopen">(</span></span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">d</span><span class="mopen">(</span><span class="mclose">)</span><span class="mrel">&gt;</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span><span class="mclose">)</span></span></span></span></span></p>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x79CD;&#x7FA4;&#x5728;&#x8FDB;&#x5316;&#x7684;&#x540E;&#x671F;&#x8D8B;&#x4E8E;&#x7A33;&#x5B9A;&#xFF0C;&#x5E94;&#x51CF;&#x5C0F;&#x53D8;&#x5F02;&#x4F5C;&#x7528;&#x3002;&#x76F8;&#x5E94;&#x63AA;&#x65BD;&#x4E3A;&#x51CF;&#x5C0F;&#x53D8;&#x5F02;&#x6982;&#x7387;&#x6216;&#x8005;&#x53D8;&#x5F02;&#x7A0B;&#x5EA6;&#xFF0C;&#x672C;&#x6587;&#x91C7;&#x7528;&#x4E0E;&#x8FDB;&#x5316;&#x4EE3;&#x6570;&#x8D1F;&#x76F8;&#x5173;&#x7684;&#x53D8;&#x5F02;&#x7A0B;&#x5EA6;&#x503C;&#xFF0C;&#x5373;&#x8BBE;&#x7F6E;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span></span></span></span>&#x4E0E;&#x8FDB;&#x5316;&#x4EE3;&#x6570;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>&#xFF0C;&#x603B;&#x4EE3;&#x6570;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span>&#x7684;&#x5173;&#x7CFB;&#x4E3A;&#xFF1A;</p>
+<p>&#x76F8;&#x5E94;&#x5730;&#xFF0C;&#x4EC5;&#x9700;&#x4FEE;&#x6539;GA&#x6A21;&#x5757;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x7C7B;GA&#x7684;run()&#x51FD;&#x6570;&#xFF1A;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">class</span> <span class="token class-name">GA</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> population<span class="token punctuation">,</span> selection<span class="token punctuation">,</span> crossover<span class="token punctuation">,</span> mutation<span class="token punctuation">,</span> fun_fitness<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>population <span class="token operator">=</span> population
+        self<span class="token punctuation">.</span>selection <span class="token operator">=</span> selection
+        self<span class="token punctuation">.</span>crossover <span class="token operator">=</span> crossover
+        self<span class="token punctuation">.</span>mutation <span class="token operator">=</span> mutation
+        self<span class="token punctuation">.</span>fun_fitness <span class="token operator">=</span> fun_fitness <span class="token keyword">if</span> fun_fitness <span class="token keyword">else</span> <span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>np<span class="token punctuation">.</span>arctan<span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>pi<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fun_evaluation<span class="token punctuation">,</span> gen<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>population<span class="token punctuation">.</span>initialize<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> gen<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            fitness<span class="token punctuation">,</span> _ <span class="token operator">=</span> self<span class="token punctuation">.</span>population<span class="token punctuation">.</span>fitness<span class="token punctuation">(</span>fun_evaluation<span class="token punctuation">,</span> self<span class="token punctuation">.</span>fun_fitness<span class="token punctuation">)</span>
+
+            self<span class="token punctuation">.</span>selection<span class="token punctuation">.</span>select<span class="token punctuation">(</span>self<span class="token punctuation">.</span>population<span class="token punctuation">,</span> fitness<span class="token punctuation">)</span>
+
+            self<span class="token punctuation">.</span>crossover<span class="token punctuation">.</span>cross<span class="token punctuation">(</span>self<span class="token punctuation">.</span>population<span class="token punctuation">)</span>
+
+            <span class="token comment">#  self.mutation.mutate(self.population, np.random.rand())</span>
+            mutation_rate <span class="token operator">=</span> <span class="token number">1.0</span> <span class="token operator">-</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">-</span>n<span class="token operator">/</span>gen<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>mutation<span class="token punctuation">.</span>mutate<span class="token punctuation">(</span>self<span class="token punctuation">.</span>population<span class="token punctuation">,</span> mutation_rate<span class="token punctuation">)</span>
+
+
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>population<span class="token punctuation">.</span>best<span class="token punctuation">(</span>fun_evaluation<span class="token punctuation">,</span> self<span class="token punctuation">.</span>fun_fitness<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="4-&#x6D4B;&#x8BD5;"><a name="4-&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#4-&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>4 &#x6D4B;&#x8BD5;</h3>
+<p>&#x91C7;&#x7528;&#x4E8C;&#x5143;&#x51FD;&#x6570;<code>Schaffer_N4</code>&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x70B9;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>2</mn><mn>5</mn><mn>3</mn><mn>1</mn><mn>3</mn><mo>)</mo><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>2</mn><mn>9</mn><mn>2</mn><mn>5</mn><mn>7</mn><mn>9</mn></mrow><annotation encoding="application/x-tex">f(0,1.25313)=0.292579</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">.</span><span class="mord mathrm">2</span><span class="mord mathrm">5</span><span class="mord mathrm">3</span><span class="mord mathrm">1</span><span class="mord mathrm">3</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">2</span><span class="mord mathrm">9</span><span class="mord mathrm">2</span><span class="mord mathrm">5</span><span class="mord mathrm">7</span><span class="mord mathrm">9</span></span></span></span>&#x3002;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>+</mo><mfrac><mrow><mi>c</mi><mi>o</mi><msup><mi>s</mi><mn>2</mn></msup><mo>[</mo><mi>s</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi mathvariant="normal">&#x2223;</mi><msup><mi>x</mi><mn>2</mn></msup><mo>&#x2212;</mo><msup><mi>y</mi><mn>2</mn></msup><mi mathvariant="normal">&#x2223;</mi><mo>)</mo><mo>]</mo><mo>&#x2212;</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn></mrow><mrow><mo>[</mo><mn>1</mn><mo>+</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>0</mn><mn>1</mn><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>)</mo><msup><mo>]</mo><mn>2</mn></msup></mrow></mfrac><mo separator="true">,</mo><mo>(</mo><mo>&#x2212;</mo><mn>1</mn><mn>0</mn><mo>&lt;</mo><mo>=</mo><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>&lt;</mo><mo>=</mo><mn>1</mn><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">
+f(x,y) = 0.5+\frac{cos^2 [sin(|x^2-y^2|)] - 0.5}{[1+0.001(x^2+y^2)]^2} , (-10&lt;=(x,y)&lt;=10)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.491108em;"></span><span class="strut bottom" style="height:2.427108em;vertical-align:-0.936em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span><span class="mbin">+</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mopen">[</span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span><span class="mord mathrm">1</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span style="top:-0.2300000000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen">[</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathrm">&#x2223;</span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm">&#x2223;</span><span class="mclose">)</span><span class="mclose">]</span><span class="mbin">&#x2212;</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">5</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mpunct">,</span><span class="mopen">(</span><span class="mord">&#x2212;</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mrel">&lt;</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mrel">&lt;</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mclose">)</span></span></span></span></span></p>
+<p><img src="img/2020-08-04-20-42-08.png" alt=""></p>
+<pre class="language-"><code class="lang-python">schaffer_n4 <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token number">0.001</span><span class="token operator">*</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">**</span><span class="token number">2</span><span class="token operator">+</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span>  
+
+I <span class="token operator">=</span> Individual<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+P <span class="token operator">=</span> Population<span class="token punctuation">(</span>I<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span>
+S <span class="token operator">=</span> RouletteWheelSelection<span class="token punctuation">(</span><span class="token punctuation">)</span>
+C <span class="token operator">=</span> Crossover<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0.75</span><span class="token punctuation">)</span>
+M <span class="token operator">=</span> Mutation<span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span>
+g <span class="token operator">=</span> GA<span class="token punctuation">(</span>P<span class="token punctuation">,</span> S<span class="token punctuation">,</span> C<span class="token punctuation">,</span> M<span class="token punctuation">)</span>
+
+res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>g<span class="token punctuation">.</span>run<span class="token punctuation">(</span>schaffer_n4<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span>evaluation<span class="token punctuation">)</span>
+
+val <span class="token operator">=</span> schaffer_n4<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1.25313</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+val_ga <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">/</span><span class="token builtin">len</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;the minimum: {0}&apos;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;the GA minimum: {0}&apos;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>val_ga<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;error: %.3f%%&apos;</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>val_ga<span class="token operator">/</span>val<span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class="language-"><code>the minimum: 0.29257863204552975
+the GA minimum: 0.2940378004715706
+error: 0.499%
+</code></pre><footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> create By <a href="https://github.com/thesouther" target="_blank">cicoa</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2022-06-28 03:15:43 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="BasicGA.html" class="navigation navigation-prev " aria-label="Previous page: 10.1 遗传算法-基本原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ElitistPreservationGA.html" class="navigation navigation-next " aria-label="Next page: 10.3 遗传算法-精英保留">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"10.2 遗传算法-自适应策略","level":"2.3.11","depth":2,"next":{"title":"10.3 遗传算法-精英保留","level":"2.3.12","depth":2,"path":"AL_ML/ElitistPreservationGA.md","ref":"./AL_ML/ElitistPreservationGA.md","articles":[]},"previous":{"title":"10.1 遗传算法-基本原理","level":"2.3.10","depth":2,"path":"AL_ML/BasicGA.md","ref":"./AL_ML/BasicGA.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","-todo","copy-code-button","expandable-chapters","chapter-fold","-donate","-page-treeview","pageview-count","auto-scroll-table","-popup","-mathjax-pro","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/thesouther/myNotes/blob/master/README.md"},"page-footer-ex":{"copyright":"create By [cicoa](https://github.com/thesouther)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"auto-scroll-table":{},"donate":{"wechat":"https://gitee.com/cicoa/picgo/raw/master/img/image-20200716233015691.png","alipay":"https://gitee.com/cicoa/picgo/raw/master/img/image-20200716232207049.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"thesouther","repo":"myNotes","type":"star","size":"small","count":true}]},"mathjax-pro":{"version":"2.7.7"},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-131910384-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"cicoa","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"AL_ML/AdaptiveGA.md","mtime":"2022-06-28T03:15:43.027Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-28T03:17:43.556Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

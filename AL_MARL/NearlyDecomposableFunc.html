@@ -1,0 +1,2734 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1 沟通 MARL：近似可分解函数 · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cicoa">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../AL_Recommend/" />
+    
+    
+    <link rel="prev" href="MAVEN.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"thesouther","repo":"myNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">论文总结与算法学习</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Basis/">
+            
+                <a href="../Basis/">
+            
+                    
+                    基础概念汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Basis/la.html">
+            
+                <a href="../Basis/la.html">
+            
+                    
+                    1-线性代数/矩阵论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Basis/introProb.html">
+            
+                <a href="../Basis/introProb.html">
+            
+                    
+                    2-概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Basis/sp.html">
+            
+                <a href="../Basis/sp.html">
+            
+                    
+                    4-随机过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Basis/ml.html">
+            
+                <a href="../Basis/ml.html">
+            
+                    
+                    5-机器学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../Basis/lp.html">
+            
+                <a href="../Basis/lp.html">
+            
+                    
+                    6-线性规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Basis/ip.html">
+            
+                <a href="../Basis/ip.html">
+            
+                    
+                    7-整数规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../Basis/co.html">
+            
+                <a href="../Basis/co.html">
+            
+                    
+                    8-凸优化(0)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../Basis/LagrangianDual.html">
+            
+                <a href="../Basis/LagrangianDual.html">
+            
+                    
+                    8-拉格朗日对偶理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CS/">
+            
+                <a href="../CS/">
+            
+                    
+                    CS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CS/alg.html">
+            
+                <a href="../CS/alg.html">
+            
+                    
+                    0 CS-排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CS/topk.html">
+            
+                <a href="../CS/topk.html">
+            
+                    
+                    0 CS-TOP-K 问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../AL_ML/python1.html">
+            
+                <a href="../AL_ML/python1.html">
+            
+                    
+                    3 Python 经典问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../AL_ML/">
+            
+                <a href="../AL_ML/">
+            
+                    
+                    ML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../AL_ML/questions_ml.html">
+            
+                <a href="../AL_ML/questions_ml.html">
+            
+                    
+                    0 ML-经典面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../AL_ML/questions_pinggu.html">
+            
+                <a href="../AL_ML/questions_pinggu.html">
+            
+                    
+                    0 ML-评估指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../AL_ML/activation_funcs.html">
+            
+                <a href="../AL_ML/activation_funcs.html">
+            
+                    
+                    0 ML-激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../AL_ML/baimian_alg.html">
+            
+                <a href="../AL_ML/baimian_alg.html">
+            
+                    
+                    1 百面 ML-3 经典算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../AL_ML/baimian_jaingwei.html">
+            
+                <a href="../AL_ML/baimian_jaingwei.html">
+            
+                    
+                    1 百面 ML-3 降维/非监督学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../AL_ML/baimian_cnn_rnn.html">
+            
+                <a href="../AL_ML/baimian_cnn_rnn.html">
+            
+                    
+                    1 百面 ML-3CNN/RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../AL_ML/baimian_optimal.html">
+            
+                <a href="../AL_ML/baimian_optimal.html">
+            
+                    
+                    1 百面 ML-3 优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../AL_ML/bagging_boosting.html">
+            
+                <a href="../AL_ML/bagging_boosting.html">
+            
+                    
+                    1 百面 ML-集成学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../AL_ML/Li1_Optimization.html">
+            
+                <a href="../AL_ML/Li1_Optimization.html">
+            
+                    
+                    2 李宏毅 ML-Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../AL_ML/BasicGA.html">
+            
+                <a href="../AL_ML/BasicGA.html">
+            
+                    
+                    10.1 遗传算法-基本原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="../AL_ML/AdaptiveGA.html">
+            
+                <a href="../AL_ML/AdaptiveGA.html">
+            
+                    
+                    10.2 遗传算法-自适应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="../AL_ML/ElitistPreservationGA.html">
+            
+                <a href="../AL_ML/ElitistPreservationGA.html">
+            
+                    
+                    10.3 遗传算法-精英保留
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../AL_RL/">
+            
+                <a href="../AL_RL/">
+            
+                    
+                    RL 算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../AL_RL/dqn.html">
+            
+                <a href="../AL_RL/dqn.html">
+            
+                    
+                    1 经典-DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../AL_RL/double_dqn.html">
+            
+                <a href="../AL_RL/double_dqn.html">
+            
+                    
+                    1 经典-double dqn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../AL_RL/dueling_dqn.html">
+            
+                <a href="../AL_RL/dueling_dqn.html">
+            
+                    
+                    1 经典-dueling dqn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../AL_RL/prio_experience.html">
+            
+                <a href="../AL_RL/prio_experience.html">
+            
+                    
+                    1 经典-Prioritized experience
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../AL_RL/a3c.html">
+            
+                <a href="../AL_RL/a3c.html">
+            
+                    
+                    1 经典-A3C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../AL_RL/hrl_hiro.html">
+            
+                <a href="../AL_RL/hrl_hiro.html">
+            
+                    
+                    2 HRL-HIRO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../AL_RL/hrl_fun.html">
+            
+                <a href="../AL_RL/hrl_fun.html">
+            
+                    
+                    2 HRL-FuN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../AL_RL/kndis_intro.html">
+            
+                <a href="../AL_RL/kndis_intro.html">
+            
+                    
+                    3 知识蒸馏简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../AL_RL/kndis.html">
+            
+                <a href="../AL_RL/kndis.html">
+            
+                    
+                    3 知识蒸馏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../AL_RL/podis.html">
+            
+                <a href="../AL_RL/podis.html">
+            
+                    
+                    3 策略蒸馏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../AL_RL/dpd.html">
+            
+                <a href="../AL_RL/dpd.html">
+            
+                    
+                    3 Distilling Policy Distillation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../AL_RL/opd.html">
+            
+                <a href="../AL_RL/opd.html">
+            
+                    
+                    3 Oracle Policy Distillation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.13" data-path="../AL_RL/DeepNeuro.html">
+            
+                <a href="../AL_RL/DeepNeuro.html">
+            
+                    
+                    10 深度神经进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.14" data-path="../AL_RL/GFT.html">
+            
+                <a href="../AL_RL/GFT.html">
+            
+                    
+                    10 遗传模糊树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../AL_RL/">
+            
+                <a href="../AL_RL/">
+            
+                    
+                    RL 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../AL_RL/questions.html">
+            
+                <a href="../AL_RL/questions.html">
+            
+                    
+                    0 面试-简历相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../AL_RL/questions_rl.html">
+            
+                <a href="../AL_RL/questions_rl.html">
+            
+                    
+                    0 面试-RL 相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../AL_RL/questions_dl.html">
+            
+                <a href="../AL_RL/questions_dl.html">
+            
+                    
+                    0 面试-DL 相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../AL_RL/rlbook_start.html">
+            
+                <a href="../AL_RL/rlbook_start.html">
+            
+                    
+                    1 RLBook-start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../AL_RL/rlbook_part1.html">
+            
+                <a href="../AL_RL/rlbook_part1.html">
+            
+                    
+                    1 RLBook-表格型方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../AL_RL/rlbook_part2.html">
+            
+                <a href="../AL_RL/rlbook_part2.html">
+            
+                    
+                    1 RLBook-函数近似
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../AL_RL/rlbook_part3.html">
+            
+                <a href="../AL_RL/rlbook_part3.html">
+            
+                    
+                    1 RLBook-应用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../AL_RL/spinup_PG.html">
+            
+                <a href="../AL_RL/spinup_PG.html">
+            
+                    
+                    2 spinup-PG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../AL_RL/spinup_VPG.html">
+            
+                <a href="../AL_RL/spinup_VPG.html">
+            
+                    
+                    2 spinup-VPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../AL_RL/spinup_TRPO.html">
+            
+                <a href="../AL_RL/spinup_TRPO.html">
+            
+                    
+                    2 spinup-TRPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../AL_RL/spinup_PPO.html">
+            
+                <a href="../AL_RL/spinup_PPO.html">
+            
+                    
+                    2 spinup-PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../AL_RL/spinup_DDPG.html">
+            
+                <a href="../AL_RL/spinup_DDPG.html">
+            
+                    
+                    2 spinup-DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../AL_RL/spinup_TD3.html">
+            
+                <a href="../AL_RL/spinup_TD3.html">
+            
+                    
+                    2 spinup-TD3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../AL_RL/spinup_SAC.html">
+            
+                <a href="../AL_RL/spinup_SAC.html">
+            
+                    
+                    2 spinup-SAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="../AL_RL/zhou_overview.html">
+            
+                <a href="../AL_RL/zhou_overview.html">
+            
+                    
+                    4 周博磊 RL-1-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="../AL_RL/zhou_mdp.html">
+            
+                <a href="../AL_RL/zhou_mdp.html">
+            
+                    
+                    4 周博磊 RL-2-MDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.17" data-path="../AL_RL/zhou_model_free.html">
+            
+                <a href="../AL_RL/zhou_model_free.html">
+            
+                    
+                    4 周博磊 RL-3-model_free
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.18" data-path="../AL_RL/zhou_func_approx.html">
+            
+                <a href="../AL_RL/zhou_func_approx.html">
+            
+                    
+                    4 周博磊 RL-4-值函数逼近
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.19" data-path="../AL_RL/zhou_pg.html">
+            
+                <a href="../AL_RL/zhou_pg.html">
+            
+                    
+                    4 周博磊 RL-56-策略优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.20" data-path="../AL_RL/zhou_model_based.html">
+            
+                <a href="../AL_RL/zhou_model_based.html">
+            
+                    
+                    4 周博磊 RL-7-model_based
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.21" data-path="../AL_RL/zhou_IRL.html">
+            
+                <a href="../AL_RL/zhou_IRL.html">
+            
+                    
+                    4 周博磊 RL-8-IRL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.22" data-path="../AL_RL/zhou_distributed.html">
+            
+                <a href="../AL_RL/zhou_distributed.html">
+            
+                    
+                    4 周博磊 RL-9-分布式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.23" data-path="../AL_RL/zhou_summary.html">
+            
+                <a href="../AL_RL/zhou_summary.html">
+            
+                    
+                    4 周博磊 RL-10-总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.24" data-path="../AL_RL/zhou_alphastar.html">
+            
+                <a href="../AL_RL/zhou_alphastar.html">
+            
+                    
+                    4 周博磊 RL-11-番外-AlphaStar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="QMIX.html">
+            
+                <a href="QMIX.html">
+            
+                    
+                    1.1 协作 MARL：QMIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="QTRAN.html">
+            
+                <a href="QTRAN.html">
+            
+                    
+                    1.2 协作 MARL：QTRAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="Qatten.html">
+            
+                <a href="Qatten.html">
+            
+                    
+                    1.3 协作 MARL：Qatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="MAVEN.html">
+            
+                <a href="MAVEN.html">
+            
+                    
+                    1.4 协作 MARL：MAVEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.5" data-path="NearlyDecomposableFunc.html">
+            
+                <a href="NearlyDecomposableFunc.html">
+            
+                    
+                    2.1 沟通 MARL：近似可分解函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../AL_Recommend/">
+            
+                <a href="../AL_Recommend/">
+            
+                    
+                    Recommend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../AL_Recommend/FM.html">
+            
+                <a href="../AL_Recommend/FM.html">
+            
+                    
+                    1 传统算法-FM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../AL_Recommend/CF.html">
+            
+                <a href="../AL_Recommend/CF.html">
+            
+                    
+                    1 传统算法-CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../AL_SC2/">
+            
+                <a href="../AL_SC2/">
+            
+                    
+                    SC2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../AL_SC2/env_build.html">
+            
+                <a href="../AL_SC2/env_build.html">
+            
+                    
+                    1 环境安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">论文翻译</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../paper_RL/">
+            
+                <a href="../paper_RL/">
+            
+                    
+                    RL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../paper_RL/GAE.html">
+            
+                <a href="../paper_RL/GAE.html">
+            
+                    
+                    0. 强化学习-GAE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../paper_RL/DPG.html">
+            
+                <a href="../paper_RL/DPG.html">
+            
+                    
+                    0. 强化学习-DPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../paper_RL/DDPG.html">
+            
+                <a href="../paper_RL/DDPG.html">
+            
+                    
+                    0. 强化学习-DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../paper_RL/PPO.html">
+            
+                <a href="../paper_RL/PPO.html">
+            
+                    
+                    0. 强化学习-PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../paper_RL/MAXQ.html">
+            
+                <a href="../paper_RL/MAXQ.html">
+            
+                    
+                    2. 分层强化学习-MAXQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../paper_RL/AlphaGoMaster.html">
+            
+                <a href="../paper_RL/AlphaGoMaster.html">
+            
+                    
+                    3. 游戏 AI-AlphaGoMaster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../paper_RL/AlphaGoZero.html">
+            
+                <a href="../paper_RL/AlphaGoZero.html">
+            
+                    
+                    3. 游戏 AI-AlphaGoZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../paper_RL/AlphaZero.html">
+            
+                <a href="../paper_RL/AlphaZero.html">
+            
+                    
+                    3. 游戏 AI-AlphaZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../paper_RL/MuZero.html">
+            
+                <a href="../paper_RL/MuZero.html">
+            
+                    
+                    3. 游戏 AI-MuZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../paper_RL/juewu1.html">
+            
+                <a href="../paper_RL/juewu1.html">
+            
+                    
+                    3. 游戏 AI-绝悟 1-AAAI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../paper_RL/juewu2.html">
+            
+                <a href="../paper_RL/juewu2.html">
+            
+                    
+                    3. 游戏 AI-绝悟 2-NIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../paper_RL/juewu3.html">
+            
+                <a href="../paper_RL/juewu3.html">
+            
+                    
+                    3. 游戏 AI-绝悟 3-TNNLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../paper_RL/juewu4.html">
+            
+                <a href="../paper_RL/juewu4.html">
+            
+                    
+                    3. 游戏 AI-绝悟 4-英雄选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../paper_RL/AlphaStar1.html">
+            
+                <a href="../paper_RL/AlphaStar1.html">
+            
+                    
+                    3. 游戏 AI-星际-AlphaStar1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../paper_RL/douzero.html">
+            
+                <a href="../paper_RL/douzero.html">
+            
+                    
+                    3. 游戏 AI-斗地主-DouZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../paper_RL/deltadou.html">
+            
+                <a href="../paper_RL/deltadou.html">
+            
+                    
+                    3. 游戏 AI-斗地主-DeltaDou
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../paper_RL/cql.html">
+            
+                <a href="../paper_RL/cql.html">
+            
+                    
+                    3. 游戏 AI-斗地主-CQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../paper_RL/EmergentComplexity.html">
+            
+                <a href="../paper_RL/EmergentComplexity.html">
+            
+                    
+                    4. 探索-自博弈-课程学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../paper_RL/deep_neuroecolution.html">
+            
+                <a href="../paper_RL/deep_neuroecolution.html">
+            
+                    
+                    10. 深度神经进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.20" data-path="../paper_RL/ES.html">
+            
+                <a href="../paper_RL/ES.html">
+            
+                    
+                    10. 进化策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../paper_MARL/">
+            
+                <a href="../paper_MARL/">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../paper_MARL/gft.html">
+            
+                <a href="../paper_MARL/gft.html">
+            
+                    
+                    0. 遗传模糊树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../paper_MARL/gft_train.html">
+            
+                <a href="../paper_MARL/gft_train.html">
+            
+                    
+                    0. 遗传模糊树训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../paper_MARL/IQL.html">
+            
+                <a href="../paper_MARL/IQL.html">
+            
+                    
+                    1. 值分解-IQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../paper_MARL/VDN.html">
+            
+                <a href="../paper_MARL/VDN.html">
+            
+                    
+                    1. 值分解-VDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../paper_MARL/QMIX.html">
+            
+                <a href="../paper_MARL/QMIX.html">
+            
+                    
+                    1. 值分解-QMIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../paper_MARL/QTRAN.html">
+            
+                <a href="../paper_MARL/QTRAN.html">
+            
+                    
+                    1. 值分解-QTRAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="../paper_MARL/Qatten.html">
+            
+                <a href="../paper_MARL/Qatten.html">
+            
+                    
+                    1. 值分解-Qatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.8" data-path="../paper_MARL/MADDPG.html">
+            
+                <a href="../paper_MARL/MADDPG.html">
+            
+                    
+                    1. 混合-MADDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.9" data-path="../paper_MARL/COMA.html">
+            
+                <a href="../paper_MARL/COMA.html">
+            
+                    
+                    1. 混合-COMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.10" data-path="../paper_MARL/commNet.html">
+            
+                <a href="../paper_MARL/commNet.html">
+            
+                    
+                    2. 交流-commNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.11" data-path="../paper_MARL/IC3Net.html">
+            
+                <a href="../paper_MARL/IC3Net.html">
+            
+                    
+                    2. 交流-IC3Net
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.12" data-path="../paper_MARL/BicNet.html">
+            
+                <a href="../paper_MARL/BicNet.html">
+            
+                    
+                    2. 交流-BicNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.13" data-path="../paper_MARL/RIAL_DIAL.html">
+            
+                <a href="../paper_MARL/RIAL_DIAL.html">
+            
+                    
+                    2. 交流-RIAL_DIAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.14" data-path="../paper_MARL/GatedMLAC.html">
+            
+                <a href="../paper_MARL/GatedMLAC.html">
+            
+                    
+                    2. 交流-GatedMLAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.15" data-path="../paper_MARL/SchedNet.html">
+            
+                <a href="../paper_MARL/SchedNet.html">
+            
+                    
+                    2. 交流-SchedNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.16" data-path="../paper_MARL/MAAC.html">
+            
+                <a href="../paper_MARL/MAAC.html">
+            
+                    
+                    2. 交流-MAAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.17" data-path="../paper_MARL/tarMAC.html">
+            
+                <a href="../paper_MARL/tarMAC.html">
+            
+                    
+                    2. 交流-tarMAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.18" data-path="../paper_MARL/ATOC.html">
+            
+                <a href="../paper_MARL/ATOC.html">
+            
+                    
+                    2. 交流-ATOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.19" data-path="../paper_MARL/NearlyDecomposableFunc.html">
+            
+                <a href="../paper_MARL/NearlyDecomposableFunc.html">
+            
+                    
+                    2. 基于交流最小化的近似可分解价值函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.20" data-path="../paper_MARL/I2C.html">
+            
+                <a href="../paper_MARL/I2C.html">
+            
+                    
+                    2. 交流-I2C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.21" data-path="../paper_MARL/MAVEN.html">
+            
+                <a href="../paper_MARL/MAVEN.html">
+            
+                    
+                    3. 探索-MAVEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../paper_MMARL/">
+            
+                <a href="../paper_MMARL/">
+            
+                    
+                    Meta MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../paper_MMARL/LIIR.html">
+            
+                <a href="../paper_MMARL/LIIR.html">
+            
+                    
+                    1. LIIR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../paper_MMARL/learn_RL.html">
+            
+                <a href="../paper_MMARL/learn_RL.html">
+            
+                    
+                    1. learning to reinforcement learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../paper_MMARL/RL2.html">
+            
+                <a href="../paper_MMARL/RL2.html">
+            
+                    
+                    1. RL2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../paper_IRL/">
+            
+                <a href="../paper_IRL/">
+            
+                    
+                    Inverse RL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../paper_IRL/GAIL.html">
+            
+                <a href="../paper_IRL/GAIL.html">
+            
+                    
+                    1. IRL-GAIL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../paper_IRL/OvercookedGame.html">
+            
+                <a href="../paper_IRL/OvercookedGame.html">
+            
+                    
+                    2. IMARL-OvercookedGame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Ridesourcing/">
+            
+                <a href="../Ridesourcing/">
+            
+                    
+                    打车
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../Ridesourcing/review.html">
+            
+                <a href="../Ridesourcing/review.html">
+            
+                    
+                    0. 综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../Ridesourcing/heteta.html">
+            
+                <a href="../Ridesourcing/heteta.html">
+            
+                    
+                    1. ETA-HetETA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../Ridesourcing/didikdd17.html">
+            
+                <a href="../Ridesourcing/didikdd17.html">
+            
+                    
+                    2. 派单-滴滴 KDD17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../Ridesourcing/didikdd18.html">
+            
+                <a href="../Ridesourcing/didikdd18.html">
+            
+                    
+                    2. 派单-滴滴 KDD18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../Ridesourcing/didikdd19.html">
+            
+                <a href="../Ridesourcing/didikdd19.html">
+            
+                    
+                    2. 派单-滴滴 KDD19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../Ridesourcing/dididrl_kt.html">
+            
+                <a href="../Ridesourcing/dididrl_kt.html">
+            
+                    
+                    2. 派单-DRL-with-knowledge-transger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../RecSys/">
+            
+                <a href="../RecSys/">
+            
+                    
+                    推荐系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../RecSys/graph_learning_review.html">
+            
+                <a href="../RecSys/graph_learning_review.html">
+            
+                    
+                    0. 综述-图学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../RecSys/dl_review.html">
+            
+                <a href="../RecSys/dl_review.html">
+            
+                    
+                    0. 综述-DL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">名词总结</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../glossary/">
+            
+                <a href="../glossary/">
+            
+                    
+                    总述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../glossary/ml.html">
+            
+                <a href="../glossary/ml.html">
+            
+                    
+                    ML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../glossary/dl.html">
+            
+                <a href="../glossary/dl.html">
+            
+                    
+                    DL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../glossary/rl.html">
+            
+                <a href="../glossary/rl.html">
+            
+                    
+                    RL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../glossary/marl.html">
+            
+                <a href="../glossary/marl.html">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../glossary/mrl.html">
+            
+                <a href="../glossary/mrl.html">
+            
+                    
+                    Meta-RL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../glossary/questions.html">
+            
+                <a href="../glossary/questions.html">
+            
+                    
+                    Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../glossary/sequences.html">
+            
+                <a href="../glossary/sequences.html">
+            
+                    
+                    Sequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">竞赛</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../AICombat/">
+            
+                <a href="../AICombat/">
+            
+                    
+                    智能博弈挑战赛
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../AICombat/questions.html">
+            
+                <a href="../AICombat/questions.html">
+            
+                    
+                    Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">问题整理</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../problems/git1.html">
+            
+                <a href="../problems/git1.html">
+            
+                    
+                    上传大文件出错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../problems/git2.html">
+            
+                <a href="../problems/git2.html">
+            
+                    
+                    ! [rejected]master -> master (non-fast-forward)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    ubuntu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../problems/ssr.html">
+            
+                <a href="../problems/ssr.html">
+            
+                    
+                    ssr 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../problems/ubuntu_update.html">
+            
+                <a href="../problems/ubuntu_update.html">
+            
+                    
+                    ubuntu 自动更新导致 nvidia 驱动不能用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../problems/ubuntu_del_core.html">
+            
+                <a href="../problems/ubuntu_del_core.html">
+            
+                    
+                    ubuntu 删除系统内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../problems/windows_gym_mujoco.html">
+            
+                <a href="../problems/windows_gym_mujoco.html">
+            
+                    
+                    Windows 安装 mujoco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../problems/windows_gym_box2d.html">
+            
+                <a href="../problems/windows_gym_box2d.html">
+            
+                    
+                    Windows 安装 gym box2d 不能用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="../problems/pip_removed.html">
+            
+                <a href="../problems/pip_removed.html">
+            
+                    
+                    ModuleNotFoundError: No module named 'pip._internal'
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.1 沟通 MARL：近似可分解函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;"><b></b>&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#6-&#x7ED3;&#x8BBA;"><b></b>6. &#x7ED3;&#x8BBA;</a></li><li><span class="title-icon "></span><a href="#7-&#x8BC4;&#x8BBA;"><b></b>7. &#x8BC4;&#x8BBA;</a></li></ul></ul></div><a href="#&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;"><a name="&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x8FC7;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;</h1>
+<p>&#x8BBA;&#x6587;&#x53CA;&#x7FFB;&#x8BD1;&#xFF1A;<a href="paper_MARL/NearlyDecomposableFunc.md">&#x57FA;&#x4E8E;&#x4EA4;&#x6D41;&#x6700;&#x5C0F;&#x5316;&#x7684;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x4EF7;&#x503C;&#x51FD;&#x6570;</a></p>
+<p><strong>Motivation</strong>&#xFF1A;MARL&#x9762;&#x4E34;&#x56F0;&#x96BE;&#xFF1A;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x548C;&#x975E;&#x7A33;&#x5B9A;&#x6027;&#x3002;&#x76EE;&#x524D;&#x503C;&#x51FD;&#x6570;&#x5206;&#x89E3;&#x65B9;&#x6CD5;&#x5728;&#x89E3;&#x51B3;&#x534F;&#x4F5C;&#x591A;&#x667A;&#x80FD;&#x4F53;&#x7CFB;&#x7EDF;&#x5F88;&#x6709;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5B58;&#x65B9;&#x6CD5;&#x8FC7;&#x4E8E;&#x5173;&#x6CE8;&#x5B8C;&#x5168;&#x53BB;&#x4E2D;&#x5FC3;&#x5316;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x5176;&#x5728;&#x4EA4;&#x6D41;&#x573A;&#x666F;&#x4E2D;&#x6548;&#x7387;&#x4E0D;&#x9AD8;&#x3002;&#x672C;&#x6587;&#x63D0;&#x51FA;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x667A;&#x80FD;&#x4F53;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x81EA;&#x5DF1;&#x884C;&#x52A8;&#xFF0C;&#x4F46;&#x662F;&#x5076;&#x5C14;&#x7ED9;&#x5176;&#x4ED6;&#x667A;&#x80FD;&#x4F53;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x63D0;&#x9AD8;&#x534F;&#x4F5C;&#x6548;&#x7387;&#x3002;&#x8BE5;&#x6846;&#x67B6;&#x901A;&#x8FC7;&#x5F15;&#x5165;&#x4E24;&#x4E2A;&#x4FE1;&#x606F;&#x8BBA;&#x7684;&#x6B63;&#x5219;&#x5316;&#x9879;&#x6DF7;&#x5408;&#x503C;&#x51FD;&#x6570;&#x5206;&#x89E3;&#x5B66;&#x4E60;&#x548C;&#x4EA4;&#x6D41;&#x5B66;&#x4E60;&#x3002;&#x8FD9;&#x4E9B;&#x6B63;&#x5219;&#x5316;&#x9879;&#x6700;&#x5927;&#x5316;&#x53BB;&#x4E2D;&#x5FC3;&#x5316;Q&#x51FD;&#x6570;&#x548C;&#x4EA4;&#x6D41;&#x4FE1;&#x606F;&#x4E4B;&#x95F4;&#x7684;&#x4E92;&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x65F6;&#x6700;&#x5C0F;&#x5316;&#x667A;&#x80FD;&#x4F53;&#x4E4B;&#x95F4;&#x6D88;&#x606F;&#x7684;&#x4FE1;&#x606F;&#x71B5;&#x3002;&#x8BE5;&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x5F88;&#x7B80;&#x5355;&#x548C;&#x5DF2;&#x6709;&#x7684;&#x503C;&#x51FD;&#x6570;&#x5206;&#x89E3;&#x65B9;&#x6CD5;&#x7ED3;&#x5408;&#x3002;&#x5E76;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x727A;&#x7272;&#x6027;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5207;&#x65AD;80%&#x7684;&#x901A;&#x4FE1;&#x3002;</p>
+<!-- ## 1. Introduction
+
+写作智能体系统的应用：自动车队管理、智能仓库、传感器网络等。在解决这些问题的RL算法中CTDE范式因其可扩展性和解决非稳定问题的能力受到很大重视。
+
+值函数分解方法解决该范式很有效。该方法为每个智能体学习去中心化的Q函数，并使用一个混合网络组合这些局部Q值，形成一个全局动作价值。相关方法包括VDN、QMIX、QTRAN等。这些方法重点在学习基于局部观察的完全分解，不关注其他智能体的信息，导致协作效率不高。并且在去中心化执行时，自己的局部观察加上其他智能体的动作，使得环境更加不确定，导致合作失败。
+
+本文提出**近似可分解值函数**，使智能体在大多数情况下自己行动，但是偶尔给其他智能体发送消息提高协作效率。该框架通过引入两个信息论的正则化项混合值函数分解学习和交流消息。
+- 消息参数化为随机嵌入空间；
+- 通过引入正则化项最大化去中心化Q函数和交流信息之间的互信息，来把值分解函数学习和交流学习相结合。
+- 通过引入额外正则化项最小化智能体之间消息的信息熵，来最小化交流；
+- 这两个正则化项也保证了何时、如何、和谁交流的问题，也解决了信息交流的表示能力（有效降低智能体Q值的不确定性）和简洁性（只发送有用的信息）。
+- 通过变分推断理论，推导出一个可控的下界目标函数，该目标可以使用已有的QMIX等值分解方法求解。
+
+
+实验结果：表现超过baseline，并且可以阶段80%的交流信息。
+
+## 2 Background
+
+|          **Dec-POMDP**           |
+| :------------------------------: |
+| ![](img/2020-09-30-21-12-23.png) |
+
+多智能体场景面临的困境：
+
+- 如果使用中心化Q函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{tot}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>在不适合智能体数量过多的情况；
+- 直接学习去中心化动作价值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>可以缓解可扩展性问题，但是这种独立训练的方法忽视了智能体之间的交流。 
+
+使用混合网络把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{tot}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>表示为局部信息上的去中心化<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>的混合值，很有效。但这种方法过于关注值函数的完全分解，它们可以通过先学习分布式的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>，然后把他们混合成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Q_{tot}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>降低问题的复杂度，并且训练的主要复杂度集中在混合网络。但是很多部分观察任务中，混合网络不足以解决协作问题。因为没有考虑到其他智能体对于环境不确定性带来的干扰。
+
+## 3 Methodoloty
+
+本部分主要集中在如何使用带交流的近似值函数分解方法，解决完全分解方法带来的问题。
+
+- 在中心化训练阶段，假设学习算法可以访问所有智能体的独立观察-动作历史和全局状态信息；
+- 在去中心化执行阶段，每个智能体基于自己的局部观察历史<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>τ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\tau_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.1132em;">τ</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.1132em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>和接收到的消息<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>m</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">m_i^{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.0833279999999998em;vertical-align:-0.258664em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>学习各自的Q函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>i</mi></msub><mo>(</mo><msub><mi>τ</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>a</mi><mi>i</mi></msub><mo separator="true">,</mo><msubsup><mi>m</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>)</mo></mrow><annotation encoding="application/x-tex">Q_i(\tau_i,a_i,m_i^{in})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.0833279999999998em;vertical-align:-0.258664em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.1132em;">τ</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.1132em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>，并以此指导自己行动。
+- 信息交流也是中心化学习的。
+
+| ![image-20201002141439996](img/image-20201002141439996.png) |
+| ----------------------------------------------------------- |
+| **图1**                                                     |
+
+==消息编码器生成一个嵌入式的分布，抽样得到，并与当前局部历史串联，作为局部Q函数的输入。本框架引入两个正则化项学习表示能力强并且形式简洁的消息，两个损失函数分别是熵损失和互信息损失==
+
+本文框架如图1所示。每个智能体Q网络的输入是自己的局部观察历史和其他智能体的消息。为了学习到近似可分解的框架，使用两个正则化项来最小化交流信息。因此对交流进行了如下假设：
+
+- 表示性强：某智能体发送的消息可以有效减少自身行动给环境带来的不确定性；
+- 简洁性：智能体发送的消息应该越简洁（短）越好。
+
+本文方法灵感来源于变分推断理论，该理论可以从数据中学习结构，同时本文提出了一个关于消息的隐空间，称为“消息嵌入”空间。消息编码为该隐空间中具有对角协方差矩阵的多元高斯分布。编码器<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>m</mi></msub><mo>(</mo><msub><mi>m</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>τ</mi><mi>i</mi></msub><mo separator="true">;</mo><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f_m(m_i|\tau_i;\mathbf{\theta}_c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.1132em;">τ</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.1132em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">;</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>限制在局部历史学习，并由其他智能体共享。在每个时间步，该编码器对每一个智能体<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>输出一个消息分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">M_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>m</mi><mi>i</mi><mi>t</mi></msubsup></mrow><annotation encoding="application/x-tex">m_i^t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.7935559999999999em;"></span><span class="strut bottom" style="height:1.05222em;vertical-align:-0.258664em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>从中重采样得到。同时本文使用点对点通信，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>m</mi><mi>i</mi><mi>t</mi></msubsup><mo>=</mo><mo>&lt;</mo><msubsup><mi>m</mi><mrow><mi>i</mi><mn>1</mn></mrow><mi>t</mi></msubsup><mo separator="true">,</mo><msubsup><mi>m</mi><mrow><mi>i</mi><mn>2</mn></mrow><mi>t</mi></msubsup><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msubsup><mi>m</mi><mrow><mi>i</mi><mi>n</mi></mrow><mi>t</mi></msubsup><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">m_i^t=&lt;m^t_{i1},m^t_{i2},...,m^t_{in}&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.7935559999999999em;"></span><span class="strut bottom" style="height:1.05222em;vertical-align:-0.258664em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mrel">=</span><span class="mrel">&lt;</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathrm mtight">2</span></span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mrel">&gt;</span></span></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">m_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>表示智能体<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span>的消息，由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>抽样得到。
+
+另一个问题是**如何限制消息发送长度**，使智能体单独确定应该发送消息中的哪些bits。智能体<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span>的消息输入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>m</mi><mi>j</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">m_j^{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.219436em;vertical-align:-0.394772em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>应该是截断的消息，而不是全量的消息；然后该消息输入Q函数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>j</mi></msub><mo>(</mo><msub><mi>τ</mi><mi>j</mi></msub><mo separator="true">,</mo><msub><mi>a</mi><mi>j</mi></msub><mo separator="true">,</mo><msubsup><mi>m</mi><mi>j</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>)</mo></mrow><annotation encoding="application/x-tex">Q_j(\tau_j,a_j,m_j^{in})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.219436em;vertical-align:-0.394772em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.1132em;">τ</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.1132em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>；最后所有的局部Q函数输入给混合网络。
+
+本框架除了消息嵌入，其他部分都是使用下游TD损失来端到端训练的：
+
+|                                                                                     |       |
+| :---------------------------------------------------------------------------------: | :---: |
+| <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">L</mi></mrow><mrow><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><mo>=</mo><msub><mrow><mi mathvariant="script">L</mi></mrow><mrow><mi>T</mi><mi>D</mi></mrow></msub><mo>(</mo><mi>θ</mi><mo>)</mo><mo>+</mo><msub><mrow><mi mathvariant="script">L</mi></mrow><mi>c</mi></msub><mo>(</mo><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{L}{(\theta)}=\mathcal{L}_{TD}(\theta)+\mathcal{L}_c(\mathbf{\theta}_c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathcal">L</span></span><span class="mord textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span><span class="mrel">=</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathcal">L</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathcal">L</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span> |  (1)  |
+
+其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">L</mi></mrow><mrow><mi>T</mi><mi>D</mi></mrow></msub><mo>=</mo><mo>[</mo><mi>r</mi><mo>+</mo><mi>γ</mi><mi>m</mi><mi>a</mi><msub><mi>x</mi><mrow><msup><mi>a</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msub><msub><mi>Q</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub><mo>(</mo><msup><mi>s</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo separator="true">,</mo><msup><mrow><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo separator="true">;</mo><msup><mi>θ</mi><mo>−</mo></msup><mo>)</mo><mo>−</mo><msub><mi>Q</mi><mrow><mi>t</mi><mi>o</mi><mi>t</mi></mrow></msub><mo>(</mo><mi>s</mi><mo separator="true">,</mo><mrow><mi mathvariant="bold">a</mi></mrow><mo separator="true">;</mo><mi>θ</mi><msup><mo>]</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mathcal{L}_{TD}=[r+\gamma max_{a&#x27;}Q_{tot}(s&#x27;,\mathbf{a}&#x27;;\theta^-) - Q_{tot}(s,\mathbf{a};\theta]^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathcal">L</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mrel">=</span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.05556em;">γ</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord mathit mtight">a</span><span class="msupsub"><span class="vlist"><span style="top:-0.286em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord scriptscriptstyle cramped mtight"><span class="mord mathrm mtight">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathbf">a</span></span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">;</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">−</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span><span class="mbin">−</span><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">t</span><span class="mord mathit mtight">o</span><span class="mord mathit mtight">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord mathit">s</span><span class="mpunct">,</span><span class="mord textstyle uncramped"><span class="mord mathbf">a</span></span><span class="mpunct">;</span><span class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">L</mi></mrow><mi>c</mi></msub><mo>(</mo><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{L}_c(\mathbf{\theta}_c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathcal">L</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>是消息嵌入的正则化项。
+
+### 3.1 最小化通信目标和变分界限
+
+**加入隐变量有利于消息表示性**，但是并不意味着可以降低不确定性。本文使用最大化<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>之间的互信息，最优化动作智能体j的策略<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">A_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">A</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mrow><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub></mrow></msub><mo>(</mo><msub><mi>A</mi><mi>j</mi></msub><mo separator="true">;</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>j</mi></msub><mo separator="true">,</mo><msub><mi>M</mi><mrow><mo>(</mo><mo>−</mo><mi>i</mi><mo>)</mo><mi>j</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">I_{\mathbf{\theta}_c}(A_j;M_{ij}|T_j,M_{(-i)j})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.1052em;vertical-align:-0.3551999999999999em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.05em;margin-left:-0.07847em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">A</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.18019999999999992em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathit mtight">i</span><span class="mclose mtight">)</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>。但是，如果只用这一个目标，编码器能保证在给定不同历史（即隐空间不同区域的表示）下的消息时学会沟通，但是无法阻断没用的消息。解决该问题的方法是加入消息的entropy。
+
+最后，智能体<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>消息的目标函数变为：
+
+|                             |                                                              |
+| :-------------------------: | :----------------------------------------------------------: |
+| <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>J</mi><mrow><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub></mrow></msub><mo>[</mo><msub><mi>M</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>j</mi></msub><mo separator="true">,</mo><msub><mi>M</mi><mrow><mo>(</mo><mo>−</mo><mi>i</mi><mo>)</mo><mi>j</mi></mrow></msub><mo>]</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>I</mi><mrow><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub></mrow></msub><mo>(</mo><msub><mi>A</mi><mi>j</mi></msub><mo separator="true">;</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>j</mi></msub><mo separator="true">,</mo><msub><mi>M</mi><mrow><mo>(</mo><mo>−</mo><mi>i</mi><mo>)</mo><mi>j</mi></mrow></msub><mo>)</mo><mo>−</mo><mi>β</mi><msub><mi>H</mi><mrow><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub></mrow></msub><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">J_{\mathbf{\theta}_c}[M_i | T_j,M_{(-i)j}]=\sum_{j=1}^n I_{\mathbf{\theta}_c}(A_j;M_{ij} | T_j,M_{(-i)j})-\beta H_{\mathbf{\theta}_c}(M_{ij})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.186118em;vertical-align:-0.436118em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.09618em;">J</span><span class="msupsub"><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.05em;margin-left:-0.09618em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">[</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.18019999999999992em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathit mtight">i</span><span class="mclose mtight">)</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">]</span><span class="mrel">=</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.05em;margin-left:-0.07847em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">A</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">;</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.18019999999999992em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathit mtight">i</span><span class="mclose mtight">)</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span><span class="mbin">−</span><span class="mord mathit" style="margin-right:0.05278em;">β</span><span class="mord"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist"><span style="top:0.15000000000000002em;margin-right:0.05em;margin-left:-0.08125em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span> | (2) |
+
+
+
+
+其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>是关于表示性和简洁性的缩放因子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">M_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>是智能体i到智能体j的消息分布。
+
+由于互信息和熵计算困难，通过变分逼近，引入互信息的下界，
+
+|                                                             |       |
+| :---------------------------------------------------------: | :---: |
+| ![image-20201002152806187](img/image-20201002152806187.png) |  (3)  |
+
+其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">T_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>是智能体j的局部观察历史，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">T</mi></mrow><mo>=</mo><mo>&lt;</mo><msub><mi>T</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>T</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>T</mi><mi>n</mi></msub><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">\mathbf{T}=&lt;T_1,T_2,...,T_n&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.8805499999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbf">T</span></span><span class="mrel">=</span><span class="mrel">&lt;</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mrel">&gt;</span></span></span></span>是从经验缓冲池<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">D</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathcal" style="margin-right:0.02778em;">D</span></span></span></span></span>抽样的联合历史；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>ξ</mi></mrow></msub><mo>(</mo><msub><mi>A</mi><mi>j</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>j</mi></msub><mo separator="true">,</mo><msubsup><mi>M</mi><mi>j</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>)</mo></mrow><annotation encoding="application/x-tex">q_{\xi}(A_j|T_j,M_j^{in})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.219436em;vertical-align:-0.394772em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.04601em;">ξ</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">A</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:-0.10903em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>是变分后验估计值；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>c</mi><mi>ε</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{c\varepsilon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit">c</span><span class="mord mathit">ε</span></span></span></span></span>是交叉熵。通过智能体共享<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ξ</mi></mrow><annotation encoding="application/x-tex">\xi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.04601em;">ξ</span></span></span></span>来加速训练。
+
+下面讨论如何最小化<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>H</mi><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\beta H(M_{ij})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>。直接最小化高斯分布的熵会造成方差坍缩到零。本文将协方差矩阵设为单位矩阵，并使用最小化<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>)</mo><mo>−</mo><mi>H</mi><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">H(M_{ij})-H(M_{ij}|T_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span><span class="mbin">−</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>替代，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>是智能体i历史的随机变量。这么做与最小化<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>H</mi><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\beta H(M_{ij})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>等价，因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">H(M_{ij}|T_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>是多元高斯随机变量，其熵是一个常数（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo>(</mo><mi>d</mi><mi>e</mi><mi>t</mi><mo>(</mo><mn>2</mn><mi>π</mi><mi>e</mi><mi mathvariant="normal">Σ</mi><mo>)</mo><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">log(det(2\pi e\Sigma))/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">d</span><span class="mord mathit">e</span><span class="mord mathit">t</span><span class="mopen">(</span><span class="mord mathrm">2</span><span class="mord mathit" style="margin-right:0.03588em;">π</span><span class="mord mathit">e</span><span class="mord mathrm">Σ</span><span class="mclose">)</span><span class="mclose">)</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">Σ</span></span></span></span>是单位矩阵）。然后我们有
+
+|                                                             |     |
+| ----------------------------------------------------------- | --- |
+| ![image-20201002173215912](img/image-20201002173215912.png) | (4) |
+
+用处理互信息同样的方法——引入一个变分推断分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><msub><mi>m</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">r(m_{ij})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>逼近<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><msub><mi>m</mi><mi>i</mi></msub><mi>j</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(m_ij)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">p</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span>，我们有：
+
+|                                                             |       |
+| ----------------------------------------------------------- | ----- |
+| ![image-20201002173429793](img/image-20201002173429793.png) | （5） |
+
+上式对任何分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><msub><mi>M</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">r(M_{ij})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>都有界。同时为了有效截断消息，我们使用单位高斯分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">N</mi></mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mrow><mi mathvariant="bold">I</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{N}(0,\mathbf{I})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathcal" style="margin-right:0.14736em;">N</span></span><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord textstyle uncramped"><span class="mord mathbf">I</span></span><span class="mclose">)</span></span></span></span>。将公式(3)和公式（5）组合起来，我们就得到了公式（2）的可解的变分下界：
+
+|                                                             |     |
+| ----------------------------------------------------------- | --- |
+| ![image-20201002173859362](img/image-20201002173859362.png) | (6) |
+
+通过最优化该下界，就可以得到一个表示性和简洁性都很好的消息嵌入。特别的，我们最小化如下函数：
+
+|                                                             |     |
+| ----------------------------------------------------------- | --- |
+| ![image-20201002174040252](img/image-20201002174040252.png) | (7) |
+
+上式，第一项损失称为expressiveness loss，为了保证减少带给其他智能体的Q函数的不确定性；第二项称为succinctness loss，为了保证消息近似单位高斯分布。同时，因为消息嵌入的协方差矩阵是单位矩阵，这实际上把消息的均值限制在隐空间的原点。上述两个损失函数，限制了无用消息分布靠近原点，重要消息在其他空间位置。
+
+注意，公式（7）中的损失用来更新消息编码的参数。同时，所有部分（个体Q函数、消息编码器、混合网络）在训练时和QMIX一样，使用端到端的TD损失训练。因此，消息编码器<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>m</mi></msub><mo>(</mo><msub><mi>M</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>T</mi><mi>i</mi></msub><mo separator="true">;</mo><msub><mrow><mi>θ</mi></mrow><mi>c</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f_m(M_i|T_i;\mathbf{\theta}_c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">;</span><span class="mord"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">θ</span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">c</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>通过两个梯度进行更新：公式（6）中的随机梯度和TD中的相关梯度。
+
+### 3.2 消息截断
+
+本文的目标函数可以用来截断那些对减少不确定性贡献不大的消息，即在空间中靠近原点的消息。通过根据均值对消息分布进行排序，并倒序截断。注意，因为使用的协方差矩阵是单位阵，一条消息中的bits是相互独立的。因此可以消息是可以变长的。
+
+这样就可以选择何时（如果全部截断就保持沉默）发送多少消息（bits长度可变）。
+
+
+
+## 4 Related Works
+
+ 混合环境、递归推理，多智能体策略梯度相关算法，解决信用分配问题：
+
+- COMA
+- MADDPG
+- PR2
+
+基于值函数的MARL算法，值函数分解方法：
+
+- VDN
+- QMIX
+- QTRAN
+
+多智能体交流，主要是学习可微分的信道
+
+- 学习去中心化交流协议，解决什么时候、和谁交流的问题。Sukhbaatar et al. (2016); Hoshen (2017); Jiang & Lu (2018); Singh et al. (2019); Das et al. (2019)
+- 多智能体上下文中的自然语言问题。Foerster et al. (2016); Das et al. (2017); Lazaridou et al. (2017); Mordatch & Abbeel (2018)
+- IC3Net，在混合环境中学习门控机制控制智能体与队友交流。
+- 在有限的交流信道下协作行动。Zhang & Lesser (2013); Kim et al. (2019)
+- Social influence和InfoBot惩罚那些对其他智能体策略贡献很小的消息。
+
+与本文最相关的是TarMAC算法。使用attention机制区分输入消息的重要性。本文使用变分推断决定消息内容。
+
+环境使用StarCraft unit micromanagement
+
+## 5 Experimental Result
+
+本节实验解决如下问题：
+
+1. 完全值分解方法是否普遍存在错误引导问题？
+2. 任务需要学习最小化的消息吗？
+3. 学习消息分布能否减少其他智能体Q函数的不确定性？
+4. 本文方法与attention机制的交流方法有什么不同？
+5. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>是如何影响交流协议的？
+
+### 5.1 基线和消融
+
+- 用QMIX代表完全值分解方法；
+- 对比本文方法和TarMAC方法的attention机制的区别；
+- 把TarMAC和QMIX结合作为强baseline。
+
+### 5.2 示例
+
+使用三个任务证明不同的方面：
+
+- 传感器网络：完全值分解方法得到的解是次优的，本文方法可以学到最有的交流策略。同时展示不同<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>的大小如何影响算法学习到的消息嵌入形式。在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>很大（=1.0）时，所有的消息都在截断值以下（不交流）；当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>太小（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>5</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mtight">−</span><span class="mord mathrm mtight">5</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>）时，算法主要关注于减少不确定性，而不是压缩消息，所以智能体2和3都给1发送消息。
+- 走廊任务：Dec-POMDP任务中，完全值分解方法在多步场景中会存在错误引导。
+- 独立搜索任务。说明本文方法在智能体相互独立的场景中，可以学习不通信。
+
+### 5.3 最大化值函数分解
+
+ 在多智能体场景中广泛存在错误引导问题。同时增加任务难度：
+
+- ==把视线范围从9降到2==；
+- 增加困难的地图，地形复杂或者单元位置随机。
+
+共使用6个场景，3b vs 1h1m, 3s vs 5z, 1o2r vs 4r, 5z vs 1ul, MMM, and 1o10b vs 1r。
+
+#### 5.3.1 性能对比
+
+所有星际2场景使用同样的超参数，消息长度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">m_{ij}=3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.9305479999999999em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mrel">=</span><span class="mord mathrm">3</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\beta=10^{-3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord"><span class="mord mathrm">0</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mtight">−</span><span class="mord mathrm mtight">3</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>，训练时每100k步测试48个episode。图7展示的是没有进行信息截断的算法性能对比。
+
+| ![image-20201004205555407](img/image-20201004205555407.png) |
+| ----------------------------------------------------------- |
+| 图2                                                         |
+
+本文框架表现很好，也证明了**错误引导问题广泛存在**于完全分解方法中，尤其当环境的随机性很强的时候，例如1o2r vs 4r, 3b vs 1h1m, and 1o10b vs 1r。尤其本文框架比注意力机制表现好，这两种方法都用了TD-error，但是本文方法好，说明本文的消息嵌入机制很有效，尤其是表示性约束。TarMAC表现不好，==因为其不能解决全局奖励问题==。
+
+#### 5.3.2 消息截断
+
+本文重点在关注==近似可分解的结构--智能体只需要与少数几个智能体交流就可以，而不是所有的智能体==。因此尝试根据消息分布的均值，将消息截断80%，结果如图8所示。
+
+| ![image-20201004213119993](img/image-20201004213119993.png) |
+| ----------------------------------------------------------- |
+| 图3                                                         |
+
+==为了对比，将QMIX+TarMAC的权重变小80%，发现其性能降低明显。说明本文框架比attention交流机制性能更强。== -->
+<h2 id="6-&#x7ED3;&#x8BBA;"><a name="6-&#x7ED3;&#x8BBA;" class="anchor-navigation-ex-anchor" href="#6-&#x7ED3;&#x8BBA;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x7ED3;&#x8BBA;</h2>
+<ol>
+<li>&#x63D0;&#x51FA;&#x4E00;&#x79CD;CTDE&#x8303;&#x5F0F;&#x4E0B;&#x7684;&#x591A;&#x667A;&#x80FD;&#x4F53;&#x4EA4;&#x6D41;&#x534F;&#x4F5C;&#x6846;&#x67B6;&#xFF0C;&#x5C06;&#x503C;&#x5206;&#x89E3;&#x65B9;&#x6CD5;&#x548C;&#x4EA4;&#x6D41;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x7ED3;&#x5408;&#xFF0C;&#x9AD8;&#x6548;&#x5B66;&#x4E60;&#x8FD1;&#x4F3C;&#x53EF;&#x5206;&#x89E3;&#x503C;&#x51FD;&#x6570;&#xFF1B;</li>
+<li>&#x5F15;&#x5165;&#x4E24;&#x79CD;&#x6B63;&#x5219;&#x5316;&#x9879;&#x5C3D;&#x91CF;&#x51CF;&#x5C11;&#x5168;&#x4F53;&#x6C9F;&#x901A;&#xFF0C;&#x540C;&#x65F6;&#x6700;&#x5927;&#x5316;&#x4FE1;&#x606F;&#x7684;&#x534F;&#x8C03;&#xFF1B;</li>
+<li>&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x5C55;&#x793A;&#xFF0C;&#x672C;&#x6587;&#x65B9;&#x6CD5;&#x6027;&#x80FD;&#x5F88;&#x597D;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x622A;&#x65AD;&#x6D88;&#x606F;80%&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x80FD;&#x8FBE;&#x5230;&#x5F88;&#x597D;&#x7684;&#x6548;&#x679C;&#x3002;</li>
+</ol>
+<h2 id="7-&#x8BC4;&#x8BBA;"><a name="7-&#x8BC4;&#x8BBA;" class="anchor-navigation-ex-anchor" href="#7-&#x8BC4;&#x8BBA;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x8BC4;&#x8BBA;</h2>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x9A8C;&#x90E8;&#x5206;&#xFF0C;&#x628A;&#x89C6;&#x91CE;&#x53D8;&#x6210;2&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x628A;&#x667A;&#x80FD;&#x4F53;&#x53D8;&#x6210;&#x4E86;&#x778E;&#x5B50;&#xFF0C;&#x7136;&#x540E;&#x80AF;&#x5B9A;&#x6709;&#x4EA4;&#x6D41;&#x7684;&#x6BD4;&#x6CA1;&#x6709;&#x4EA4;&#x6D41;&#x7684;&#x8868;&#x73B0;&#x597D;&#x3002;</p>
+<p>&#x6CA1;&#x6709;&#x5F88;&#x597D;&#x5730;&#x5206;&#x6790;&#x4ED6;&#x52A0;&#x5165;&#x6B63;&#x5219;&#x5316;&#x9879;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5206;&#x6790;&#x4E0D;&#x8DB3;&#x3002;&#x6D88;&#x878D;&#x5B9E;&#x9A8C;&#x4E5F;&#x4E0D;&#x597D;&#x3002;</p>
+<p>TarMAC&#x4E3A;&#x4EC0;&#x4E48;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x6D88;&#x606F;&#x622A;&#x65AD;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x622A;&#x65AD;&#x6D88;&#x606F;&#x3002;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x6743;&#x91CD;&#x51CF;&#x5C11;80%&#xFF1F;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> create By <a href="https://github.com/thesouther" target="_blank">cicoa</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2022-06-28 03:15:43 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MAVEN.html" class="navigation navigation-prev " aria-label="Previous page: 1.4 协作 MARL：MAVEN">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../AL_Recommend/" class="navigation navigation-next " aria-label="Next page: Recommend">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1 沟通 MARL：近似可分解函数","level":"2.6.5","depth":2,"next":{"title":"Recommend","level":"2.7","depth":1,"path":"AL_Recommend/index.md","ref":"./AL_Recommend/index.md","articles":[{"title":"1 传统算法-FM","level":"2.7.1","depth":2,"path":"AL_Recommend/FM.md","ref":"./AL_Recommend/FM.md","articles":[]},{"title":"1 传统算法-CF","level":"2.7.2","depth":2,"path":"AL_Recommend/CF.md","ref":"./AL_Recommend/CF.md","articles":[]}]},"previous":{"title":"1.4 协作 MARL：MAVEN","level":"2.6.4","depth":2,"path":"AL_MARL/MAVEN.md","ref":"./AL_MARL/MAVEN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","-todo","copy-code-button","expandable-chapters","chapter-fold","-donate","-page-treeview","pageview-count","auto-scroll-table","-popup","-mathjax-pro","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/thesouther/myNotes/blob/master/README.md"},"page-footer-ex":{"copyright":"create By [cicoa](https://github.com/thesouther)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"auto-scroll-table":{},"donate":{"wechat":"https://gitee.com/cicoa/picgo/raw/master/img/image-20200716233015691.png","alipay":"https://gitee.com/cicoa/picgo/raw/master/img/image-20200716232207049.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"thesouther","repo":"myNotes","type":"star","size":"small","count":true}]},"mathjax-pro":{"version":"2.7.7"},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-131910384-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"cicoa","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"AL_MARL/NearlyDecomposableFunc.md","mtime":"2022-06-28T03:15:43.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-28T03:17:43.556Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

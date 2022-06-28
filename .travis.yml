@@ -1,0 +1,35 @@
+language: node_js
+node_js:
+  - "10"
+cache: npm
+
+notifications:
+  email:
+    recipients:
+      - 1183864793@qq.com # 设置通知邮件
+    on_success: change
+    on_failure: always
+
+install:
+  - npm install -g gitbook-cli
+  - npm install mathjax@2.7.7
+  - gitbook install ./ 
+
+script:
+  - gitbook build
+
+after_script:
+  - cd _book
+  - git init
+  - git remote add origin https://${REF}
+  - git add .
+  - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
+  - git push --force --quiet "https://${TOKEN}@${REF}" master:gh-pages
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - REF=github.com/thesouther/myNotes.git # 设置 github 地址

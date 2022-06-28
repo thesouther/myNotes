@@ -1,0 +1,2622 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1 百面 ML-3 经典算法 · title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cicoa">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="baimian_jaingwei.html" />
+    
+    
+    <link rel="prev" href="activation_funcs.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"thesouther","repo":"myNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">论文总结与算法学习</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Basis/">
+            
+                <a href="../Basis/">
+            
+                    
+                    基础概念汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Basis/la.html">
+            
+                <a href="../Basis/la.html">
+            
+                    
+                    1-线性代数/矩阵论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Basis/introProb.html">
+            
+                <a href="../Basis/introProb.html">
+            
+                    
+                    2-概率论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Basis/sp.html">
+            
+                <a href="../Basis/sp.html">
+            
+                    
+                    4-随机过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Basis/ml.html">
+            
+                <a href="../Basis/ml.html">
+            
+                    
+                    5-机器学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../Basis/lp.html">
+            
+                <a href="../Basis/lp.html">
+            
+                    
+                    6-线性规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Basis/ip.html">
+            
+                <a href="../Basis/ip.html">
+            
+                    
+                    7-整数规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../Basis/co.html">
+            
+                <a href="../Basis/co.html">
+            
+                    
+                    8-凸优化(0)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../Basis/LagrangianDual.html">
+            
+                <a href="../Basis/LagrangianDual.html">
+            
+                    
+                    8-拉格朗日对偶理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CS/">
+            
+                <a href="../CS/">
+            
+                    
+                    CS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CS/alg.html">
+            
+                <a href="../CS/alg.html">
+            
+                    
+                    0 CS-排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CS/topk.html">
+            
+                <a href="../CS/topk.html">
+            
+                    
+                    0 CS-TOP-K 问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="python1.html">
+            
+                <a href="python1.html">
+            
+                    
+                    3 Python 经典问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="questions_ml.html">
+            
+                <a href="questions_ml.html">
+            
+                    
+                    0 ML-经典面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="questions_pinggu.html">
+            
+                <a href="questions_pinggu.html">
+            
+                    
+                    0 ML-评估指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="activation_funcs.html">
+            
+                <a href="activation_funcs.html">
+            
+                    
+                    0 ML-激活函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.4" data-path="baimian_alg.html">
+            
+                <a href="baimian_alg.html">
+            
+                    
+                    1 百面 ML-3 经典算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="baimian_jaingwei.html">
+            
+                <a href="baimian_jaingwei.html">
+            
+                    
+                    1 百面 ML-3 降维/非监督学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="baimian_cnn_rnn.html">
+            
+                <a href="baimian_cnn_rnn.html">
+            
+                    
+                    1 百面 ML-3CNN/RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="baimian_optimal.html">
+            
+                <a href="baimian_optimal.html">
+            
+                    
+                    1 百面 ML-3 优化算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="bagging_boosting.html">
+            
+                <a href="bagging_boosting.html">
+            
+                    
+                    1 百面 ML-集成学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="Li1_Optimization.html">
+            
+                <a href="Li1_Optimization.html">
+            
+                    
+                    2 李宏毅 ML-Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="BasicGA.html">
+            
+                <a href="BasicGA.html">
+            
+                    
+                    10.1 遗传算法-基本原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="AdaptiveGA.html">
+            
+                <a href="AdaptiveGA.html">
+            
+                    
+                    10.2 遗传算法-自适应策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="ElitistPreservationGA.html">
+            
+                <a href="ElitistPreservationGA.html">
+            
+                    
+                    10.3 遗传算法-精英保留
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../AL_RL/">
+            
+                <a href="../AL_RL/">
+            
+                    
+                    RL 算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../AL_RL/dqn.html">
+            
+                <a href="../AL_RL/dqn.html">
+            
+                    
+                    1 经典-DQN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../AL_RL/double_dqn.html">
+            
+                <a href="../AL_RL/double_dqn.html">
+            
+                    
+                    1 经典-double dqn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../AL_RL/dueling_dqn.html">
+            
+                <a href="../AL_RL/dueling_dqn.html">
+            
+                    
+                    1 经典-dueling dqn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../AL_RL/prio_experience.html">
+            
+                <a href="../AL_RL/prio_experience.html">
+            
+                    
+                    1 经典-Prioritized experience
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../AL_RL/a3c.html">
+            
+                <a href="../AL_RL/a3c.html">
+            
+                    
+                    1 经典-A3C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../AL_RL/hrl_hiro.html">
+            
+                <a href="../AL_RL/hrl_hiro.html">
+            
+                    
+                    2 HRL-HIRO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="../AL_RL/hrl_fun.html">
+            
+                <a href="../AL_RL/hrl_fun.html">
+            
+                    
+                    2 HRL-FuN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="../AL_RL/kndis_intro.html">
+            
+                <a href="../AL_RL/kndis_intro.html">
+            
+                    
+                    3 知识蒸馏简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="../AL_RL/kndis.html">
+            
+                <a href="../AL_RL/kndis.html">
+            
+                    
+                    3 知识蒸馏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../AL_RL/podis.html">
+            
+                <a href="../AL_RL/podis.html">
+            
+                    
+                    3 策略蒸馏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="../AL_RL/dpd.html">
+            
+                <a href="../AL_RL/dpd.html">
+            
+                    
+                    3 Distilling Policy Distillation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="../AL_RL/opd.html">
+            
+                <a href="../AL_RL/opd.html">
+            
+                    
+                    3 Oracle Policy Distillation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.13" data-path="../AL_RL/DeepNeuro.html">
+            
+                <a href="../AL_RL/DeepNeuro.html">
+            
+                    
+                    10 深度神经进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.14" data-path="../AL_RL/GFT.html">
+            
+                <a href="../AL_RL/GFT.html">
+            
+                    
+                    10 遗传模糊树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../AL_RL/">
+            
+                <a href="../AL_RL/">
+            
+                    
+                    RL 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../AL_RL/questions.html">
+            
+                <a href="../AL_RL/questions.html">
+            
+                    
+                    0 面试-简历相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../AL_RL/questions_rl.html">
+            
+                <a href="../AL_RL/questions_rl.html">
+            
+                    
+                    0 面试-RL 相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../AL_RL/questions_dl.html">
+            
+                <a href="../AL_RL/questions_dl.html">
+            
+                    
+                    0 面试-DL 相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../AL_RL/rlbook_start.html">
+            
+                <a href="../AL_RL/rlbook_start.html">
+            
+                    
+                    1 RLBook-start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../AL_RL/rlbook_part1.html">
+            
+                <a href="../AL_RL/rlbook_part1.html">
+            
+                    
+                    1 RLBook-表格型方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../AL_RL/rlbook_part2.html">
+            
+                <a href="../AL_RL/rlbook_part2.html">
+            
+                    
+                    1 RLBook-函数近似
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../AL_RL/rlbook_part3.html">
+            
+                <a href="../AL_RL/rlbook_part3.html">
+            
+                    
+                    1 RLBook-应用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../AL_RL/spinup_PG.html">
+            
+                <a href="../AL_RL/spinup_PG.html">
+            
+                    
+                    2 spinup-PG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../AL_RL/spinup_VPG.html">
+            
+                <a href="../AL_RL/spinup_VPG.html">
+            
+                    
+                    2 spinup-VPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../AL_RL/spinup_TRPO.html">
+            
+                <a href="../AL_RL/spinup_TRPO.html">
+            
+                    
+                    2 spinup-TRPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../AL_RL/spinup_PPO.html">
+            
+                <a href="../AL_RL/spinup_PPO.html">
+            
+                    
+                    2 spinup-PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../AL_RL/spinup_DDPG.html">
+            
+                <a href="../AL_RL/spinup_DDPG.html">
+            
+                    
+                    2 spinup-DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../AL_RL/spinup_TD3.html">
+            
+                <a href="../AL_RL/spinup_TD3.html">
+            
+                    
+                    2 spinup-TD3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../AL_RL/spinup_SAC.html">
+            
+                <a href="../AL_RL/spinup_SAC.html">
+            
+                    
+                    2 spinup-SAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="../AL_RL/zhou_overview.html">
+            
+                <a href="../AL_RL/zhou_overview.html">
+            
+                    
+                    4 周博磊 RL-1-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="../AL_RL/zhou_mdp.html">
+            
+                <a href="../AL_RL/zhou_mdp.html">
+            
+                    
+                    4 周博磊 RL-2-MDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.17" data-path="../AL_RL/zhou_model_free.html">
+            
+                <a href="../AL_RL/zhou_model_free.html">
+            
+                    
+                    4 周博磊 RL-3-model_free
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.18" data-path="../AL_RL/zhou_func_approx.html">
+            
+                <a href="../AL_RL/zhou_func_approx.html">
+            
+                    
+                    4 周博磊 RL-4-值函数逼近
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.19" data-path="../AL_RL/zhou_pg.html">
+            
+                <a href="../AL_RL/zhou_pg.html">
+            
+                    
+                    4 周博磊 RL-56-策略优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.20" data-path="../AL_RL/zhou_model_based.html">
+            
+                <a href="../AL_RL/zhou_model_based.html">
+            
+                    
+                    4 周博磊 RL-7-model_based
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.21" data-path="../AL_RL/zhou_IRL.html">
+            
+                <a href="../AL_RL/zhou_IRL.html">
+            
+                    
+                    4 周博磊 RL-8-IRL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.22" data-path="../AL_RL/zhou_distributed.html">
+            
+                <a href="../AL_RL/zhou_distributed.html">
+            
+                    
+                    4 周博磊 RL-9-分布式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.23" data-path="../AL_RL/zhou_summary.html">
+            
+                <a href="../AL_RL/zhou_summary.html">
+            
+                    
+                    4 周博磊 RL-10-总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.24" data-path="../AL_RL/zhou_alphastar.html">
+            
+                <a href="../AL_RL/zhou_alphastar.html">
+            
+                    
+                    4 周博磊 RL-11-番外-AlphaStar
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../AL_MARL/">
+            
+                <a href="../AL_MARL/">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../AL_MARL/QMIX.html">
+            
+                <a href="../AL_MARL/QMIX.html">
+            
+                    
+                    1.1 协作 MARL：QMIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../AL_MARL/QTRAN.html">
+            
+                <a href="../AL_MARL/QTRAN.html">
+            
+                    
+                    1.2 协作 MARL：QTRAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../AL_MARL/Qatten.html">
+            
+                <a href="../AL_MARL/Qatten.html">
+            
+                    
+                    1.3 协作 MARL：Qatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../AL_MARL/MAVEN.html">
+            
+                <a href="../AL_MARL/MAVEN.html">
+            
+                    
+                    1.4 协作 MARL：MAVEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../AL_MARL/NearlyDecomposableFunc.html">
+            
+                <a href="../AL_MARL/NearlyDecomposableFunc.html">
+            
+                    
+                    2.1 沟通 MARL：近似可分解函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../AL_Recommend/">
+            
+                <a href="../AL_Recommend/">
+            
+                    
+                    Recommend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../AL_Recommend/FM.html">
+            
+                <a href="../AL_Recommend/FM.html">
+            
+                    
+                    1 传统算法-FM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../AL_Recommend/CF.html">
+            
+                <a href="../AL_Recommend/CF.html">
+            
+                    
+                    1 传统算法-CF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../AL_SC2/">
+            
+                <a href="../AL_SC2/">
+            
+                    
+                    SC2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../AL_SC2/env_build.html">
+            
+                <a href="../AL_SC2/env_build.html">
+            
+                    
+                    1 环境安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">论文翻译</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../paper_RL/">
+            
+                <a href="../paper_RL/">
+            
+                    
+                    RL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../paper_RL/GAE.html">
+            
+                <a href="../paper_RL/GAE.html">
+            
+                    
+                    0. 强化学习-GAE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../paper_RL/DPG.html">
+            
+                <a href="../paper_RL/DPG.html">
+            
+                    
+                    0. 强化学习-DPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../paper_RL/DDPG.html">
+            
+                <a href="../paper_RL/DDPG.html">
+            
+                    
+                    0. 强化学习-DDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../paper_RL/PPO.html">
+            
+                <a href="../paper_RL/PPO.html">
+            
+                    
+                    0. 强化学习-PPO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../paper_RL/MAXQ.html">
+            
+                <a href="../paper_RL/MAXQ.html">
+            
+                    
+                    2. 分层强化学习-MAXQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../paper_RL/AlphaGoMaster.html">
+            
+                <a href="../paper_RL/AlphaGoMaster.html">
+            
+                    
+                    3. 游戏 AI-AlphaGoMaster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../paper_RL/AlphaGoZero.html">
+            
+                <a href="../paper_RL/AlphaGoZero.html">
+            
+                    
+                    3. 游戏 AI-AlphaGoZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../paper_RL/AlphaZero.html">
+            
+                <a href="../paper_RL/AlphaZero.html">
+            
+                    
+                    3. 游戏 AI-AlphaZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../paper_RL/MuZero.html">
+            
+                <a href="../paper_RL/MuZero.html">
+            
+                    
+                    3. 游戏 AI-MuZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../paper_RL/juewu1.html">
+            
+                <a href="../paper_RL/juewu1.html">
+            
+                    
+                    3. 游戏 AI-绝悟 1-AAAI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../paper_RL/juewu2.html">
+            
+                <a href="../paper_RL/juewu2.html">
+            
+                    
+                    3. 游戏 AI-绝悟 2-NIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../paper_RL/juewu3.html">
+            
+                <a href="../paper_RL/juewu3.html">
+            
+                    
+                    3. 游戏 AI-绝悟 3-TNNLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../paper_RL/juewu4.html">
+            
+                <a href="../paper_RL/juewu4.html">
+            
+                    
+                    3. 游戏 AI-绝悟 4-英雄选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../paper_RL/AlphaStar1.html">
+            
+                <a href="../paper_RL/AlphaStar1.html">
+            
+                    
+                    3. 游戏 AI-星际-AlphaStar1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../paper_RL/douzero.html">
+            
+                <a href="../paper_RL/douzero.html">
+            
+                    
+                    3. 游戏 AI-斗地主-DouZero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../paper_RL/deltadou.html">
+            
+                <a href="../paper_RL/deltadou.html">
+            
+                    
+                    3. 游戏 AI-斗地主-DeltaDou
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../paper_RL/cql.html">
+            
+                <a href="../paper_RL/cql.html">
+            
+                    
+                    3. 游戏 AI-斗地主-CQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../paper_RL/EmergentComplexity.html">
+            
+                <a href="../paper_RL/EmergentComplexity.html">
+            
+                    
+                    4. 探索-自博弈-课程学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../paper_RL/deep_neuroecolution.html">
+            
+                <a href="../paper_RL/deep_neuroecolution.html">
+            
+                    
+                    10. 深度神经进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.20" data-path="../paper_RL/ES.html">
+            
+                <a href="../paper_RL/ES.html">
+            
+                    
+                    10. 进化策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../paper_MARL/">
+            
+                <a href="../paper_MARL/">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../paper_MARL/gft.html">
+            
+                <a href="../paper_MARL/gft.html">
+            
+                    
+                    0. 遗传模糊树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../paper_MARL/gft_train.html">
+            
+                <a href="../paper_MARL/gft_train.html">
+            
+                    
+                    0. 遗传模糊树训练
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../paper_MARL/IQL.html">
+            
+                <a href="../paper_MARL/IQL.html">
+            
+                    
+                    1. 值分解-IQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../paper_MARL/VDN.html">
+            
+                <a href="../paper_MARL/VDN.html">
+            
+                    
+                    1. 值分解-VDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../paper_MARL/QMIX.html">
+            
+                <a href="../paper_MARL/QMIX.html">
+            
+                    
+                    1. 值分解-QMIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../paper_MARL/QTRAN.html">
+            
+                <a href="../paper_MARL/QTRAN.html">
+            
+                    
+                    1. 值分解-QTRAN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="../paper_MARL/Qatten.html">
+            
+                <a href="../paper_MARL/Qatten.html">
+            
+                    
+                    1. 值分解-Qatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.8" data-path="../paper_MARL/MADDPG.html">
+            
+                <a href="../paper_MARL/MADDPG.html">
+            
+                    
+                    1. 混合-MADDPG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.9" data-path="../paper_MARL/COMA.html">
+            
+                <a href="../paper_MARL/COMA.html">
+            
+                    
+                    1. 混合-COMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.10" data-path="../paper_MARL/commNet.html">
+            
+                <a href="../paper_MARL/commNet.html">
+            
+                    
+                    2. 交流-commNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.11" data-path="../paper_MARL/IC3Net.html">
+            
+                <a href="../paper_MARL/IC3Net.html">
+            
+                    
+                    2. 交流-IC3Net
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.12" data-path="../paper_MARL/BicNet.html">
+            
+                <a href="../paper_MARL/BicNet.html">
+            
+                    
+                    2. 交流-BicNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.13" data-path="../paper_MARL/RIAL_DIAL.html">
+            
+                <a href="../paper_MARL/RIAL_DIAL.html">
+            
+                    
+                    2. 交流-RIAL_DIAL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.14" data-path="../paper_MARL/GatedMLAC.html">
+            
+                <a href="../paper_MARL/GatedMLAC.html">
+            
+                    
+                    2. 交流-GatedMLAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.15" data-path="../paper_MARL/SchedNet.html">
+            
+                <a href="../paper_MARL/SchedNet.html">
+            
+                    
+                    2. 交流-SchedNet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.16" data-path="../paper_MARL/MAAC.html">
+            
+                <a href="../paper_MARL/MAAC.html">
+            
+                    
+                    2. 交流-MAAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.17" data-path="../paper_MARL/tarMAC.html">
+            
+                <a href="../paper_MARL/tarMAC.html">
+            
+                    
+                    2. 交流-tarMAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.18" data-path="../paper_MARL/ATOC.html">
+            
+                <a href="../paper_MARL/ATOC.html">
+            
+                    
+                    2. 交流-ATOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.19" data-path="../paper_MARL/NearlyDecomposableFunc.html">
+            
+                <a href="../paper_MARL/NearlyDecomposableFunc.html">
+            
+                    
+                    2. 基于交流最小化的近似可分解价值函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.20" data-path="../paper_MARL/I2C.html">
+            
+                <a href="../paper_MARL/I2C.html">
+            
+                    
+                    2. 交流-I2C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.21" data-path="../paper_MARL/MAVEN.html">
+            
+                <a href="../paper_MARL/MAVEN.html">
+            
+                    
+                    3. 探索-MAVEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../paper_MMARL/">
+            
+                <a href="../paper_MMARL/">
+            
+                    
+                    Meta MARL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../paper_MMARL/LIIR.html">
+            
+                <a href="../paper_MMARL/LIIR.html">
+            
+                    
+                    1. LIIR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../paper_MMARL/learn_RL.html">
+            
+                <a href="../paper_MMARL/learn_RL.html">
+            
+                    
+                    1. learning to reinforcement learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../paper_MMARL/RL2.html">
+            
+                <a href="../paper_MMARL/RL2.html">
+            
+                    
+                    1. RL2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../paper_IRL/">
+            
+                <a href="../paper_IRL/">
+            
+                    
+                    Inverse RL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../paper_IRL/GAIL.html">
+            
+                <a href="../paper_IRL/GAIL.html">
+            
+                    
+                    1. IRL-GAIL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../paper_IRL/OvercookedGame.html">
+            
+                <a href="../paper_IRL/OvercookedGame.html">
+            
+                    
+                    2. IMARL-OvercookedGame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../Ridesourcing/">
+            
+                <a href="../Ridesourcing/">
+            
+                    
+                    打车
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../Ridesourcing/review.html">
+            
+                <a href="../Ridesourcing/review.html">
+            
+                    
+                    0. 综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../Ridesourcing/heteta.html">
+            
+                <a href="../Ridesourcing/heteta.html">
+            
+                    
+                    1. ETA-HetETA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../Ridesourcing/didikdd17.html">
+            
+                <a href="../Ridesourcing/didikdd17.html">
+            
+                    
+                    2. 派单-滴滴 KDD17
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../Ridesourcing/didikdd18.html">
+            
+                <a href="../Ridesourcing/didikdd18.html">
+            
+                    
+                    2. 派单-滴滴 KDD18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../Ridesourcing/didikdd19.html">
+            
+                <a href="../Ridesourcing/didikdd19.html">
+            
+                    
+                    2. 派单-滴滴 KDD19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../Ridesourcing/dididrl_kt.html">
+            
+                <a href="../Ridesourcing/dididrl_kt.html">
+            
+                    
+                    2. 派单-DRL-with-knowledge-transger
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../RecSys/">
+            
+                <a href="../RecSys/">
+            
+                    
+                    推荐系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../RecSys/graph_learning_review.html">
+            
+                <a href="../RecSys/graph_learning_review.html">
+            
+                    
+                    0. 综述-图学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../RecSys/dl_review.html">
+            
+                <a href="../RecSys/dl_review.html">
+            
+                    
+                    0. 综述-DL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">名词总结</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../glossary/">
+            
+                <a href="../glossary/">
+            
+                    
+                    总述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../glossary/ml.html">
+            
+                <a href="../glossary/ml.html">
+            
+                    
+                    ML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../glossary/dl.html">
+            
+                <a href="../glossary/dl.html">
+            
+                    
+                    DL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../glossary/rl.html">
+            
+                <a href="../glossary/rl.html">
+            
+                    
+                    RL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../glossary/marl.html">
+            
+                <a href="../glossary/marl.html">
+            
+                    
+                    MARL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../glossary/mrl.html">
+            
+                <a href="../glossary/mrl.html">
+            
+                    
+                    Meta-RL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../glossary/questions.html">
+            
+                <a href="../glossary/questions.html">
+            
+                    
+                    Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../glossary/sequences.html">
+            
+                <a href="../glossary/sequences.html">
+            
+                    
+                    Sequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">竞赛</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../AICombat/">
+            
+                <a href="../AICombat/">
+            
+                    
+                    智能博弈挑战赛
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../AICombat/questions.html">
+            
+                <a href="../AICombat/questions.html">
+            
+                    
+                    Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">问题整理</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../problems/git1.html">
+            
+                <a href="../problems/git1.html">
+            
+                    
+                    上传大文件出错
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../problems/git2.html">
+            
+                <a href="../problems/git2.html">
+            
+                    
+                    ! [rejected]master -> master (non-fast-forward)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    ubuntu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../problems/ssr.html">
+            
+                <a href="../problems/ssr.html">
+            
+                    
+                    ssr 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../problems/ubuntu_update.html">
+            
+                <a href="../problems/ubuntu_update.html">
+            
+                    
+                    ubuntu 自动更新导致 nvidia 驱动不能用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../problems/ubuntu_del_core.html">
+            
+                <a href="../problems/ubuntu_del_core.html">
+            
+                    
+                    ubuntu 删除系统内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../problems/windows_gym_mujoco.html">
+            
+                <a href="../problems/windows_gym_mujoco.html">
+            
+                    
+                    Windows 安装 mujoco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../problems/windows_gym_box2d.html">
+            
+                <a href="../problems/windows_gym_box2d.html">
+            
+                    
+                    Windows 安装 gym box2d 不能用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../problems/">
+            
+                <a href="../problems/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="../problems/pip_removed.html">
+            
+                <a href="../problems/pip_removed.html">
+            
+                    
+                    ModuleNotFoundError: No module named 'pip._internal'
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1 百面 ML-3 经典算法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#1-&#x767E;&#x9762;-ml-3-&#x7ECF;&#x5178;&#x7B97;&#x6CD5;"><b></b>1 &#x767E;&#x9762; ML-3 &#x7ECF;&#x5178;&#x7B97;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#1-lr-&#x7B97;&#x6CD5;"><b></b>1 LR &#x7B97;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#11-&#x539F;&#x7406;"><b></b>1.1 &#x539F;&#x7406;</a></li><li><span class="title-icon "></span><a href="#12-&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x5F02;&#x540C;"><b></b>1.2 &#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x5F02;&#x540C;</a></li><li><span class="title-icon "></span><a href="#13-&#x4F18;&#x7F3A;&#x70B9;"><b></b>1.3 &#x4F18;&#x7F3A;&#x70B9;</a></li></ul><li><span class="title-icon "></span><a href="#2-&#x51B3;&#x7B56;&#x6811;"><b></b>2 &#x51B3;&#x7B56;&#x6811;</a></li><ul><li><span class="title-icon "></span><a href="#21-id3&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x4E92;&#x4FE1;&#x606F;&#xFF0C;-&#x71B5;-&#x6761;&#x4EF6;&#x71B5;-gdahd-hda"><b></b>2.1 ID3&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;(&#x4E92;&#x4FE1;&#x606F;)&#xFF0C; &#x71B5;-&#x6761;&#x4EF6;&#x71B5;, g(D,A)=H(D)-H(D|A)</a></li><li><span class="title-icon "></span><a href="#22-c45&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x6BD4;"><b></b>2.2. C4.5&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x6BD4;</a></li><li><span class="title-icon "></span><a href="#23-cart&#xFF1A;&#x53EA;&#x80FD;&#x4E8C;&#x5206;&#x7C7B;&#x57FA;&#x5C3C;&#x7CFB;&#x6570;&#x6700;&#x5C0F;&#x5316;-&#x53EF;&#x56DE;&#x5F52;mse-&#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;"><b></b>2.3. CART&#xFF1A;&#x53EA;&#x80FD;&#x4E8C;&#x5206;&#x7C7B;(&#x57FA;&#x5C3C;&#x7CFB;&#x6570;&#x6700;&#x5C0F;&#x5316;), &#x53EF;&#x56DE;&#x5F52;(MSE &#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;)</a></li></ul></ul></ul></div><a href="#1-&#x767E;&#x9762;-ml-3-&#x7ECF;&#x5178;&#x7B97;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="1-&#x767E;&#x9762;-ml-3-&#x7ECF;&#x5178;&#x7B97;&#x6CD5;"><a name="1-&#x767E;&#x9762;-ml-3-&#x7ECF;&#x5178;&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#1-&#x767E;&#x9762;-ml-3-&#x7ECF;&#x5178;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1 &#x767E;&#x9762; ML-3 &#x7ECF;&#x5178;&#x7B97;&#x6CD5;</h1>
+<h2 id="1-lr-&#x7B97;&#x6CD5;"><a name="1-lr-&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#1-lr-&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1 LR &#x7B97;&#x6CD5;</h2>
+<h3 id="11-&#x539F;&#x7406;"><a name="11-&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#11-&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1 &#x539F;&#x7406;</h3>
+<h4 id="&#x57FA;&#x672C;&#x539F;&#x7406;"><a name="&#x57FA;&#x672C;&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x539F;&#x7406;</h4>
+<ol>
+<li><p>&#x901A;&#x8FC7; sigmoid &#x51FD;&#x6570;&#x5C06;&#x6837;&#x672C; x &#x9884;&#x6D4B;&#x503C;&#x6620;&#x5C04;&#x5230;(0, 1)&#x4E4B;&#x95F4;, &#x5E76;&#x4E14;&#x5728;&#x505A;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#x65F6;, &#x5C06;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>w</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow></msup><mi mathvariant="normal">/</mi><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mi>w</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{wx+b}/1+e^{wx+b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:1.099108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.02691em;">w</span><span class="mord mathit mtight">x</span><span class="mbin mtight">+</span><span class="mord mathit mtight">b</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm">/</span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.02691em;">w</span><span class="mord mathit mtight">x</span><span class="mbin mtight">+</span><span class="mord mathit mtight">b</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#x4F5C;&#x4E3A;&#x5206;&#x7C7B;&#x4E3A; 1 &#x7684;&#x6982;&#x7387;, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mi>w</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow></msup></mrow><annotation encoding="application/x-tex">1/1+e^{wx+b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:1.099108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">/</span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.02691em;">w</span><span class="mord mathit mtight">x</span><span class="mbin mtight">+</span><span class="mord mathit mtight">b</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#x4F5C;&#x4E3A;&#x5206;&#x7C7B;&#x4E3A;&#x8D1F;&#x6837;&#x672C;&#x7684;&#x6982;&#x7387;.</p>
+</li>
+<li><p>LR &#x6A21;&#x578B;&#x7684;&#x57FA;&#x672C;&#x5047;&#x8BBE;&#x8FD8;&#x662F; <strong>&#x6A21;&#x578B;&#x8F93;&#x51FA; Y=1 &#x7684;&#x5BF9;&#x6570;&#x51E0;&#x7387;&#x65F6;&#x5173;&#x4E8E; x &#x7684;&#x7EBF;&#x6027;&#x51FD;&#x6570;</strong>. &#x5373;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mfrac><mrow><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">&#x2223;</mi><mi>x</mi><mo>)</mo></mrow><mrow><mn>1</mn><mo>&#x2212;</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">&#x2223;</mi><mi>x</mi><mo>)</mo></mrow></mfrac><mo>=</mo><mi>w</mi><mo>&#x22C5;</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">
+   log \frac{P(Y=1|x)}{1-P(Y=1|x)}=w \cdot x
+   </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.427em;"></span><span class="strut bottom" style="height:2.363em;vertical-align:-0.936em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord mathrm">&#x2223;</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span><span style="top:-0.2300000000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord mathrm">&#x2223;</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mbin">&#x22C5;</span><span class="mord mathit">x</span></span></span></span></span></p>
+</li>
+</ol>
+<h4 id="&#x8BAD;&#x7EC3;"><a name="&#x8BAD;&#x7EC3;" class="anchor-navigation-ex-anchor" href="#&#x8BAD;&#x7EC3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BAD;&#x7EC3;</h4>
+<p>&#x5728;&#x8BAD;&#x7EC3;&#x65F6;, LR &#x7684; loss &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6781;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;</p>
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width="100%" src="img/2021_06_02_21_26_46.png">
+</div>
+
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x65B9;&#x4FBF;&#x6C42;&#x89E3;, &#x6211;&#x4EEC;&#x5BF9;&#x7B49;&#x5F0F;&#x4E24;&#x8FB9;&#x540C;&#x53D6;&#x5BF9;&#x6570;, &#x5199;&#x6210;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;:</p>
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width="100%" src="img/2021_06_02_21_31_17.png">
+</div>
+&#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#x6211;&#x4EEC;&#x6709;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x6982;&#x5FF5;, &#x5176;&#x8861;&#x91CF;&#x7684;&#x662F;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x9519;&#x8BEF;&#x7684;&#x7A0B;&#x5EA6;. &#x5982;&#x679C;&#x53D6;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x7684;&#x5E73;&#x5747;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x635F;&#x5931;, &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;:
+
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>(</mo><mi>w</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>N</mi></mrow></mfrac><mi>l</mi><mi>n</mi><mi>L</mi><mo>(</mo><mi>w</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">
+J(w) = \frac{1}{N} ln L(w)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.32144em;"></span><span class="strut bottom" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.09618em;">J</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">n</span><span class="mord mathit">L</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mclose">)</span></span></span></span></span>
+
+&#x5373;&#x5728;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x4E2D;, &#x6211;&#x4EEC;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x548C;&#x6700;&#x5C0F;&#x5316;&#x635F;&#x5931;&#x51FD;&#x6570;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x7B49;&#x4EF7;&#x7684;.
+
+**&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x6C42;&#x89E3;**
+
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width="100%" src="img/2021_06_02_21_34_08.png">
+</div>
+
+<h4 id="&#x725B;&#x987F;&#x6CD5;"><a name="&#x725B;&#x987F;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x725B;&#x987F;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x725B;&#x987F;&#x6CD5;</h4>
+<p>&#x725B;&#x987F;&#x6CD5;&#x7684;&#x57FA;&#x672C;&#x601D;&#x8DEF;&#x662F;, &#x5728;&#x73B0;&#x6709;&#x6781;&#x5C0F;&#x70B9;&#x4F30;&#x8BA1;&#x503C;&#x7684;&#x9644;&#x8FD1;&#x5BF9; f(x) &#x505A;&#x4E8C;&#x9636;&#x6CF0;&#x52D2;&#x5C55;&#x5F00;, &#x8FDB;&#x800C;&#x627E;&#x5230;&#x6781;&#x5C0F;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x4F30;&#x8BA1;&#x503C;. &#x5047;&#x8BBE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>w</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">w^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:0.849108em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x4E3A;&#x5F53;&#x524D;&#x7684;&#x6781;&#x5C0F;&#x503C;&#x4F30;&#x8BA1;&#x503C;, &#x90A3;&#x4E48;&#x6709;:</p>
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width="100%" src="img/2021_06_02_21_35_01.png">
+</div>
+
+<h3 id="12-&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x5F02;&#x540C;"><a name="12-&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x5F02;&#x540C;" class="anchor-navigation-ex-anchor" href="#12-&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x5F02;&#x540C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2 &#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x548C;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x5F02;&#x540C;</h3>
+<ol>
+<li>&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x505A;&#x56DE;&#x5F52;&#xFF0C;LR &#x662F;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>LR &#x53EF;&#x4EE5;&#x4E0D;&#x7B26;&#x5408;&#x7EBF;&#x6027;&#x5173;&#x7CFB;.</li>
+<li>&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x56E0;&#x53D8;&#x91CF;&#x662F;&#x79BB;&#x6563;&#x7684;&#xFF0C;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x56E0;&#x53D8;&#x91CF;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#x3002;</li>
+<li>&#x4E24;&#x8005;&#x90FD;&#x7528;&#x6781;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x5EFA;&#x6A21;&#xFF0C;&#x4E5F;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x65B9;&#x6CD5;&#x6C42;&#x89E3;&#x3002;</li>
+</ol>
+<h3 id="13-&#x4F18;&#x7F3A;&#x70B9;"><a name="13-&#x4F18;&#x7F3A;&#x70B9;" class="anchor-navigation-ex-anchor" href="#13-&#x4F18;&#x7F3A;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3 &#x4F18;&#x7F3A;&#x70B9;</h3>
+<ol>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x5B9E;&#x73B0;&#x7B80;&#x5355;, &#x8BA1;&#x7B97;&#x4EE3;&#x4EF7;&#x4E0D;&#x9AD8;, &#x6613;&#x4E8E;&#x7406;&#x89E3;&#x548C;&#x5B9E;&#x73B0;, &#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x4E8E;&#x5DE5;&#x4E1A;&#x95EE;&#x9898;&#x4E0A;;</li>
+<li>&#x5206;&#x7C7B;&#x65F6;&#x8BA1;&#x7B97;&#x91CF;&#x975E;&#x5E38;&#x5C0F;, &#x901F;&#x5EA6;&#x5F88;&#x5FEB;, &#x5B58;&#x50A8;&#x8D44;&#x6E90;&#x4F4E;;</li>
+<li>&#x4FBF;&#x5229;&#x7684;&#x89C2;&#x6D4B;&#x6837;&#x672C;&#x6982;&#x7387;&#x5206;&#x6570;;</li>
+<li>&#x5BF9;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x800C;&#x8A00;, &#x591A;&#x91CD;&#x5171;&#x7EBF;&#x6027;&#x5E76;&#x4E0D;&#x662F;&#x95EE;&#x9898;, &#x5B83;&#x53EF;&#x4EE5;&#x7ED3;&#x5408; L2 &#x6B63;&#x5219;&#x5316;&#x6765;&#x89E3;&#x51B3;&#x8BE5;&#x95EE;&#x9898;;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x5F53;&#x7279;&#x5F81;&#x7A7A;&#x95F4;&#x5F88;&#x5927;&#x65F6;, &#x903B;&#x8F91;&#x56DE;&#x5F52;&#x7684;&#x6027;&#x80FD;&#x4E0D;&#x662F;&#x5F88;&#x597D;;</li>
+<li>&#x5BB9;&#x6613;&#x6B20;&#x62DF;&#x5408;, &#x4E00;&#x822C;&#x51C6;&#x786E;&#x5EA6;&#x4E0D;&#x592A;&#x9AD8;</li>
+<li>&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x5730;&#x5904;&#x7406;&#x5927;&#x91CF;&#x591A;&#x7C7B;&#x7279;&#x5F81;&#x6216;&#x53D8;&#x91CF;;</li>
+<li>&#x53EA;&#x80FD;&#x5904;&#x7406;&#x4E24;&#x5206;&#x7C7B;&#x95EE;&#x9898;(&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#x884D;&#x751F;&#x51FA;&#x6765;&#x7684; softmax &#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x591A;&#x5206;&#x7C7B;), &#x4E14;&#x5FC5;&#x987B;&#x7EBF;&#x6027;&#x53EF;&#x5206;;</li>
+<li>&#x5BF9;&#x4E8E;&#x975E;&#x7EBF;&#x6027;&#x7279;&#x5F81;, &#x9700;&#x8981;&#x8FDB;&#x884C;&#x8F6C;&#x6362;;</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-&#x51B3;&#x7B56;&#x6811;"><a name="2-&#x51B3;&#x7B56;&#x6811;" class="anchor-navigation-ex-anchor" href="#2-&#x51B3;&#x7B56;&#x6811;"><i class="fa fa-link" aria-hidden="true"></i></a>2 &#x51B3;&#x7B56;&#x6811;</h2>
+<p>&#x7279;&#x5F81;&#x9009;&#x62E9;, &#x6811;&#x7684;&#x6784;&#x9020;, &#x6811;&#x7684;&#x526A;&#x679D;</p>
+<h3 id="21-id3&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x4E92;&#x4FE1;&#x606F;&#xFF0C;-&#x71B5;-&#x6761;&#x4EF6;&#x71B5;-gdahd-hda"><a name="21-id3&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x4E92;&#x4FE1;&#x606F;&#xFF0C;-&#x71B5;-&#x6761;&#x4EF6;&#x71B5;-gdahd-hda" class="anchor-navigation-ex-anchor" href="#21-id3&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x4E92;&#x4FE1;&#x606F;&#xFF0C;-&#x71B5;-&#x6761;&#x4EF6;&#x71B5;-gdahd-hda"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 ID3&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;(&#x4E92;&#x4FE1;&#x606F;)&#xFF0C; &#x71B5;-&#x6761;&#x4EF6;&#x71B5;, g(D,A)=H(D)-H(D|A)</h3>
+<ul>
+<li>&#x503E;&#x5411;&#x4E8E;&#x9009;&#x53D6;&#x503C;&#x591A;&#x7684;&#x7279;&#x5F81;</li>
+<li>&#x53EA;&#x80FD;&#x5904;&#x7406;&#x79BB;&#x6563;&#x53D8;&#x91CF;, &#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5206;&#x7C7B;, &#x5BF9;&#x7F3A;&#x5931;&#x503C;&#x654F;&#x611F;, &#x53EF;&#x591A;&#x5206;&#x652F;</li>
+</ul>
+<h3 id="22-c45&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x6BD4;"><a name="22-c45&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x6BD4;" class="anchor-navigation-ex-anchor" href="#22-c45&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. C4.5&#xFF1A;&#x6700;&#x5927;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#x6BD4;</h3>
+<ul>
+<li>&#x5BF9; ID3 &#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;, &#x5E73;&#x8861;&#x4E86;&#x5206;&#x7C7B;&#x7684;&#x95EE;&#x9898;, &#x5BF9;&#x53D6;&#x503C;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x4E86;&#x60E9;&#x7F5A;, &#x5728; ID3 &#x57FA;&#x7840;&#x4E0A;&#x9664;&#x4EE5;&#x5173;&#x4E8E;&#x7279;&#x5F81;&#x7684;&#x71B5;.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>R</mi></msub><mo>(</mo><mi>D</mi><mo separator="true">,</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>g</mi><mo>(</mo><mi>D</mi><mo separator="true">,</mo><mi>A</mi><mo>)</mo></mrow><mrow><msub><mi>H</mi><mi>A</mi></msub><mo>(</mo><mi>D</mi><mo>)</mo></mrow></mfrac><mo separator="true">,</mo><msub><mi>H</mi><mi>A</mi></msub><mo>(</mo><mi>D</mi><mo>)</mo><mo>=</mo><mo>&#x2212;</mo><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><mfrac><mrow><mi mathvariant="normal">&#x2223;</mi><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">&#x2223;</mi></mrow><mrow><mi mathvariant="normal">&#x2223;</mi><mi>D</mi><mi mathvariant="normal">&#x2223;</mi></mrow></mfrac><msub><mi>log</mi><mn>2</mn></msub><mfrac><mrow><mi mathvariant="normal">&#x2223;</mi><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">&#x2223;</mi></mrow><mrow><mi mathvariant="normal">&#x2223;</mi><mi>D</mi><mi mathvariant="normal">&#x2223;</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">g_R (D,A)=\frac{g (D,A)}{H_A (D)}, H_A (D) = - \sum_{i=1}^{n}\frac{|D_i|}{|D|} \log _2 \frac{|D_i|}{|D|}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.01em;"></span><span class="strut bottom" style="height:1.53em;vertical-align:-0.52em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mord mathit">A</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.34500000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist"><span style="top:0.14329285714285717em;margin-right:0.07142857142857144em;margin-left:-0.08125em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">A</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen mtight">(</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="mclose mtight">)</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">g</span><span class="mopen mtight">(</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="mpunct mtight">,</span><span class="mord mathit mtight">A</span><span class="mclose mtight">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.08125em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">A</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord">&#x2212;</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.34500000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight">&#x2223;</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="mord mathrm mtight">&#x2223;</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">&#x2223;</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm mtight">&#x2223;</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.34500000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight">&#x2223;</span><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="mord mathrm mtight">&#x2223;</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">&#x2223;</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathrm mtight">&#x2223;</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span>, n &#x662F;&#x7279;&#x5F81;&#x4E2A;&#x6570;.</li>
+<li>&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x8FDE;&#x7EED;&#x53D8;&#x91CF;, &#x8FDB;&#x884C;&#x5207;&#x5206;, &#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x5206;&#x7C7B;, &#x53EF;&#x591A;&#x5206;&#x652F;</li>
+</ul>
+<h3 id="23-cart&#xFF1A;&#x53EA;&#x80FD;&#x4E8C;&#x5206;&#x7C7B;&#x57FA;&#x5C3C;&#x7CFB;&#x6570;&#x6700;&#x5C0F;&#x5316;-&#x53EF;&#x56DE;&#x5F52;mse-&#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;"><a name="23-cart&#xFF1A;&#x53EA;&#x80FD;&#x4E8C;&#x5206;&#x7C7B;&#x57FA;&#x5C3C;&#x7CFB;&#x6570;&#x6700;&#x5C0F;&#x5316;-&#x53EF;&#x56DE;&#x5F52;mse-&#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;" class="anchor-navigation-ex-anchor" href="#23-cart&#xFF1A;&#x53EA;&#x80FD;&#x4E8C;&#x5206;&#x7C7B;&#x57FA;&#x5C3C;&#x7CFB;&#x6570;&#x6700;&#x5C0F;&#x5316;-&#x53EF;&#x56DE;&#x5F52;mse-&#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. CART&#xFF1A;&#x53EA;&#x80FD;&#x4E8C;&#x5206;&#x7C7B;(&#x57FA;&#x5C3C;&#x7CFB;&#x6570;&#x6700;&#x5C0F;&#x5316;), &#x53EF;&#x56DE;&#x5F52;(MSE &#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;)</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>i</mi><mi>n</mi><mi>i</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><msubsup><mo>&#x2211;</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><msub><mi>p</mi><mi>k</mi></msub><mo>(</mo><mn>1</mn><mo>&#x2212;</mo><msub><mi>p</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><mn>1</mn><mo>&#x2212;</mo><msubsup><mo>&#x2211;</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><msubsup><mi>p</mi><mi>k</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">Gini(p)=\sum_{k=1}^K p_k(1-p_k)=1-\sum_{k=1}^K p_k^2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8423309999999999em;"></span><span class="strut bottom" style="height:1.142341em;vertical-align:-0.30001em;"></span><span class="base textstyle uncramped"><span class="mord mathit">G</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">i</span><span class="mopen">(</span><span class="mord mathit">p</span><span class="mclose">)</span><span class="mrel">=</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">K</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord mathit">p</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit">p</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mop"><span class="mop op-symbol small-op" style="top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.30001em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.07153em;">K</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord mathit">p</span><span class="msupsub"><span class="vlist"><span style="top:0.2831079999999999em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></li>
+<li>&#x4E8C;&#x5206;&#x7C7B;: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>i</mi><mi>n</mi><mi>i</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><mn>2</mn><mi>p</mi><mo>(</mo><mn>1</mn><mo>&#x2212;</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Gini(p)=2p(1-p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">G</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">i</span><span class="mopen">(</span><span class="mord mathit">p</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mord mathit">p</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">&#x2212;</span><span class="mord mathit">p</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x4E8C;&#x5143;&#x6811;, &#x5F53;&#x57FA;&#x5C3C;&#x6307;&#x6570;&#x964D;&#x4E3A; 0, &#x5B8C;&#x6210;&#x51B3;&#x7B56;&#x6811;&#x7684;&#x751F;&#x957F;.</li>
+</ul>
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width="100%" src="img/2021_07_14_21_56_00.png">
+<img width="100%" src="img/2021_07_14_21_56_07.png">
+</div>
+
+<p>&#x5BF9;&#x4E8E;&#x5C5E;&#x6027; A&#xFF0C;&#x5206;&#x522B;&#x8BA1;&#x7B97;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x503C;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#x4E4B;&#x540E;&#x7684; Gain_Gini&#xFF0C;&#x9009;&#x53D6;&#x5176;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027; A &#x5F97;&#x5230;&#x7684;&#x6700;&#x4F18;&#x4E8C;&#x5206;&#x65B9;&#x6848;&#x3002;
+&#x7136;&#x540E;&#x5BF9;&#x4E8E;&#x8BAD;&#x7EC3;&#x96C6; S&#xFF0C;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x6700;&#x4F18;&#x4E8C;&#x5206;&#x65B9;&#x6848;&#xFF0C;&#x9009;&#x53D6;&#x5176;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x4F5C;&#x4E3A;&#x6837;&#x672C;&#x53CA; S &#x7684;&#x6700;&#x4F18;&#x4E8C;&#x5206;&#x65B9;&#x6848;&#x3002;</p>
+<div style="text-align: center; width: 80%; margin: auto; ">
+<img width="100%" src="img/2021_07_14_21_56_27.png">
+</div>
+
+
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> create By <a href="https://github.com/thesouther" target="_blank">cicoa</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2022-06-28 03:15:43 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="activation_funcs.html" class="navigation navigation-prev " aria-label="Previous page: 0 ML-激活函数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="baimian_jaingwei.html" class="navigation navigation-next " aria-label="Next page: 1 百面 ML-3 降维/非监督学习">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1 百面 ML-3 经典算法","level":"2.3.4","depth":2,"next":{"title":"1 百面 ML-3 降维/非监督学习","level":"2.3.5","depth":2,"path":"AL_ML/baimian_jaingwei.md","ref":"./AL_ML/baimian_jaingwei.md","articles":[]},"previous":{"title":"0 ML-激活函数","level":"2.3.3","depth":2,"path":"AL_ML/activation_funcs.md","ref":"./AL_ML/activation_funcs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","-disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","-todo","copy-code-button","expandable-chapters","chapter-fold","-donate","-page-treeview","pageview-count","auto-scroll-table","-popup","-mathjax-pro","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/thesouther/myNotes/blob/master/README.md"},"page-footer-ex":{"copyright":"create By [cicoa](https://github.com/thesouther)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"auto-scroll-table":{},"donate":{"wechat":"https://gitee.com/cicoa/picgo/raw/master/img/image-20200716233015691.png","alipay":"https://gitee.com/cicoa/picgo/raw/master/img/image-20200716232207049.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"thesouther","repo":"myNotes","type":"star","size":"small","count":true}]},"mathjax-pro":{"version":"2.7.7"},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-131910384-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"cicoa","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"title","bib":[],"gitbook":"*"},"file":{"path":"AL_ML/baimian_alg.md","mtime":"2022-06-28T03:15:43.027Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-28T03:17:43.556Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
